@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="lib/reproductor/basicplayer3.0.jar"/>
+	<classpathentry kind="lib" path="lib/reproductor/commons-logging-api.jar"/>
+	<classpathentry kind="lib" path="lib/reproductor/jl1.0.jar"/>
+	<classpathentry kind="lib" path="lib/reproductor/jogg-0.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/reproductor/jorbis-0.0.15.jar"/>
+	<classpathentry kind="lib" path="lib/reproductor/jspeex0.9.7.jar"/>
+	<classpathentry kind="lib" path="lib/reproductor/mp3spi1.9.4.jar"/>
+	<classpathentry kind="lib" path="lib/reproductor/tritonus_share.jar"/>
+	<classpathentry kind="lib" path="lib/reproductor/vorbisspi1.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/xBee/rxtx-2.2.jar"/>
+	<classpathentry kind="lib" path="lib/xBee/slf4j-api-1.7.12.jar"/>
+	<classpathentry kind="lib" path="lib/xBee/slf4j-jdk14-1.7.12.jar"/>
+	<classpathentry kind="lib" path="lib/xBee/slf4j-nop-1.7.12.jar"/>
+	<classpathentry kind="lib" path="lib/xBee/slf4j-simple-1.7.12.jar"/>
+	<classpathentry kind="lib" path="lib/xBee/xbjlib-1.1.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
