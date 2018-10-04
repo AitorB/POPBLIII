@@ -41,8 +41,13 @@ public class DialogoAnadirCoche extends DialogoAnadir {
 	 */
 	private Coche coche;
 	private Coche nuevoCoche;
-	private JTextField modelo, longitud, distanciaEjes, diametroRueda, masa;
-
+	private JTextField modelo;
+	private JTextField longitud;
+	private JTextField distanciaEjes;
+	private JTextField diametroRueda;
+	private JTextField masa;
+	
+	
 	/**
 	 * @brief Constructor
 	 * @param ventana Referencia a la ventana de tipo JFrame
@@ -70,39 +75,19 @@ public class DialogoAnadirCoche extends DialogoAnadir {
 
 		modelo = new JTextField();
 		modelo.setHorizontalAlignment(JTextField.RIGHT);
-		modelo.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				longitud.requestFocusInWindow();
-			}
-		});
+		modelo.addActionListener(event -> longitud.requestFocusInWindow());
 
 		longitud = new JTextField();
 		longitud.setHorizontalAlignment(JTextField.RIGHT);
-		longitud.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				distanciaEjes.requestFocusInWindow();
-			}
-		});
+		longitud.addActionListener(event -> distanciaEjes.requestFocusInWindow());
 
 		distanciaEjes = new JTextField();
 		distanciaEjes.setHorizontalAlignment(JTextField.RIGHT);
-		distanciaEjes.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				diametroRueda.requestFocusInWindow();
-			}
-		});
+		distanciaEjes.addActionListener(event -> diametroRueda.requestFocusInWindow());
 
 		diametroRueda = new JTextField();
 		diametroRueda.setHorizontalAlignment(JTextField.RIGHT);
-		diametroRueda.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				masa.requestFocusInWindow();
-			}
-		});
+		diametroRueda.addActionListener(event -> masa.requestFocusInWindow());
 
 		masa = new JTextField();
 		masa.setHorizontalAlignment(JTextField.RIGHT);

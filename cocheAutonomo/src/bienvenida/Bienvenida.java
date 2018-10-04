@@ -155,7 +155,8 @@ public class Bienvenida extends JDialog implements Observer {
 	 * @return void
 	 */
 	private void crearCopiaSeguridad() {
-		File ficheroOriginal, ficheroCopia;
+		File ficheroOriginal;
+		File ficheroCopia;
 		
 		ficheroOriginal = new File(Main.FICHERO_ORIGINAL);
 		
@@ -172,8 +173,6 @@ public class Bienvenida extends JDialog implements Observer {
 							writer.write(buffer, 0, longitud);
 						}
 					}
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

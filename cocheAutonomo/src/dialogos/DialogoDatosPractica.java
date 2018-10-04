@@ -46,8 +46,11 @@ public class DialogoDatosPractica extends DialogoAnadir {
 	 * @brief Atributos
 	 */
 	private JTextField textoRevoluciones;
-	private JRadioButton botonIzquierda, botonDerecha;
+	private JRadioButton botonIzquierda;
+	private JRadioButton botonDerecha;
 	private boolean iniciarPractica;
+	
+	private static final String FONT_TYPE = "Arial";
 
 	/**
 	 * @brief Constructor
@@ -87,11 +90,11 @@ public class DialogoDatosPractica extends DialogoAnadir {
 		ButtonGroup grupo = new ButtonGroup();
 
 		JLabel texto = new JLabel("Sentido del circuito:");
-		texto.setFont(new Font("Arial", Font.BOLD, 13));
+		texto.setFont(new Font(FONT_TYPE, Font.BOLD, 13));
 		texto.setHorizontalAlignment(JLabel.LEFT);
 		
 		botonIzquierda = new JRadioButton("  IZQUIERDA");
-		botonIzquierda.setFont(new Font("Arial", Font.BOLD, 12));
+		botonIzquierda.setFont(new Font(FONT_TYPE, Font.BOLD, 12));
 		botonIzquierda.setHorizontalAlignment(JButton.RIGHT);
 		botonIzquierda.setSelected(true);
 		botonIzquierda.addActionListener(new ActionListener() {
@@ -104,7 +107,7 @@ public class DialogoDatosPractica extends DialogoAnadir {
 
 		botonDerecha = new JRadioButton("  DERECHA");
 		botonDerecha.setHorizontalAlignment(JButton.RIGHT);
-		botonDerecha.setFont(new Font("Arial", Font.BOLD, 12));
+		botonDerecha.setFont(new Font(FONT_TYPE, Font.BOLD, 12));
 		botonDerecha.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -131,10 +134,10 @@ public class DialogoDatosPractica extends DialogoAnadir {
 		JPanel panel = new JPanel(new BorderLayout());
 
 		JLabel mensaje = new JLabel("Revoluciones (%):");
-		mensaje.setFont(new Font("Arial", Font.BOLD, 13));
+		mensaje.setFont(new Font(FONT_TYPE, Font.BOLD, 13));
 		
 		textoRevoluciones = new JTextField();
-		textoRevoluciones.setFont(new Font("Arial", Font.BOLD, 17));
+		textoRevoluciones.setFont(new Font(FONT_TYPE, Font.BOLD, 17));
 		textoRevoluciones.setPreferredSize(new Dimension(120, 40));
 		textoRevoluciones.setHorizontalAlignment(JTextField.CENTER);
 		textoRevoluciones.setBorder(null);
