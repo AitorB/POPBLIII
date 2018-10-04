@@ -55,7 +55,10 @@ public class PanelCoche extends JPanel implements ActionListener {
 	private Usuario usuario;
 	private Coche coche;
 	private JLabel textoModelo;
-	private JTextField valorLongitud, valorDistanciaEjes, valorDiametroRueda, valorMasa;
+	private JTextField valorLongitud;
+	private JTextField valorDistanciaEjes; 
+	private JTextField valorDiametroRueda;
+	private JTextField valorMasa;
 	
 	/**
 	 * @brief Constructor

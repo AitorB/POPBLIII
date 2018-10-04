@@ -64,8 +64,11 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	private JList<Circuito> listaCircuitos;
 	private DefaultListModel<Circuito> modeloCircuitos;
 	private Circuito circuito;
-	private JTextField valorRecta, valorRadio, valorFriccion;
-	private JButton anadir, borrar;
+	private JTextField valorRecta;
+	private JTextField valorRadio;
+    private JTextField valorFriccion;
+	private JButton anadir;
+	private JButton borrar;
 
 	/**
 	 * @brief Constructor
