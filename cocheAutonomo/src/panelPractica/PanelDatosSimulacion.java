@@ -33,6 +33,11 @@ import panelConfiguracion.Coche;
 import recursos.Fisica;
 
 /**
+ * @brief Constante string tipo de fuente Arial
+ */
+private final String ARIAL = "Arial";
+
+/**
  * @brief Clase PanelDatosSimulacion
  */
 public class PanelDatosSimulacion extends JPanel {
@@ -46,7 +51,11 @@ public class PanelDatosSimulacion extends JPanel {
 	 */
 	private Circuito circuito;
 	private Coche coche;
-	private JTextField distancia, tiempo, velocidad, vueltasRueda;
+	private JTextField;
+  private distancia;
+  private tiempo;
+  private velocidad;
+  private vueltasRueda;
 
 	/**
 	 * @brief Constructor
@@ -69,12 +78,12 @@ public class PanelDatosSimulacion extends JPanel {
 		panel.setPreferredSize(new Dimension(180, 0));
 
 		JLabel textoSuperior = new JLabel("DATOS");
-		textoSuperior.setFont(new Font("Arial", Font.BOLD, 20));
+		textoSuperior.setFont(new Font(ARIAL, Font.BOLD, 20));
 		textoSuperior.setHorizontalAlignment(JLabel.CENTER);
 		textoSuperior.setVerticalAlignment(JLabel.BOTTOM);
 
 		JLabel textoInferior = new JLabel("SIMULACIÓN");
-		textoInferior.setFont(new Font("Arial", Font.BOLD, 20));
+		textoInferior.setFont(new Font(ARIAL, Font.BOLD, 20));
 		textoInferior.setHorizontalAlignment(JLabel.CENTER);
 		textoInferior.setVerticalAlignment(JLabel.NORTH);
 
@@ -109,11 +118,11 @@ public class PanelDatosSimulacion extends JPanel {
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
 
 		JLabel textoDistancia = new JLabel("DISTANCIA:");
-		textoDistancia.setFont(new Font("Arial", Font.BOLD, 12));
+		textoDistancia.setFont(new Font(ARIAL, Font.BOLD, 12));
 		textoDistancia.setHorizontalAlignment(JTextField.CENTER);
 
 		distancia = new JTextField("-");
-		distancia.setFont(new Font("Arial", Font.BOLD, 17));
+		distancia.setFont(new Font(ARIAL, Font.BOLD, 17));
 		distancia.setHorizontalAlignment(JTextField.CENTER);
 		distancia.setBorder(null);
 		distancia.setEditable(false);
@@ -134,11 +143,11 @@ public class PanelDatosSimulacion extends JPanel {
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
 
 		JLabel textoTiempo = new JLabel("TIEMPO:");
-		textoTiempo.setFont(new Font("Arial", Font.BOLD, 12));
+		textoTiempo.setFont(new Font(ARIAL, Font.BOLD, 12));
 		textoTiempo.setHorizontalAlignment(JTextField.CENTER);
 
 		tiempo = new JTextField("-");
-		tiempo.setFont(new Font("Arial", Font.BOLD, 17));
+		tiempo.setFont(new Font(ARIAL, Font.BOLD, 17));
 		tiempo.setHorizontalAlignment(JTextField.CENTER);
 		tiempo.setBorder(null);
 		tiempo.setEditable(false);
@@ -159,11 +168,11 @@ public class PanelDatosSimulacion extends JPanel {
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
 
 		JLabel textoVelocidad = new JLabel("VELOCIDAD:");
-		textoVelocidad.setFont(new Font("Arial", Font.BOLD, 12));
+		textoVelocidad.setFont(new Font(ARIAL, Font.BOLD, 12));
 		textoVelocidad.setHorizontalAlignment(JTextField.CENTER);
 
 		velocidad = new JTextField("-");
-		velocidad.setFont(new Font("Arial", Font.BOLD, 17));
+		velocidad.setFont(new Font(ARIAL, Font.BOLD, 17));
 		velocidad.setHorizontalAlignment(JTextField.CENTER);
 		velocidad.setBorder(null);
 		velocidad.setEditable(false);
@@ -184,11 +193,11 @@ public class PanelDatosSimulacion extends JPanel {
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 9));
 
 		JLabel textoVueltasRueda = new JLabel("VUELTAS RUEDA:");
-		textoVueltasRueda.setFont(new Font("Arial", Font.BOLD, 12));
+		textoVueltasRueda.setFont(new Font(ARIAL, Font.BOLD, 12));
 		textoVueltasRueda.setHorizontalAlignment(JTextField.CENTER);
 
 		vueltasRueda = new JTextField("-");
-		vueltasRueda.setFont(new Font("Arial", Font.BOLD, 17));
+		vueltasRueda.setFont(new Font(ARIAL, Font.BOLD, 17));
 		vueltasRueda.setHorizontalAlignment(JTextField.CENTER);
 		vueltasRueda.setBorder(null);
 		vueltasRueda.setEditable(false);

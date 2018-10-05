@@ -2,5 +2,5 @@ projectKey=org.cocheAutonomo:sonarqube-scanner
 serverUrl=http://localhost:9000
 serverVersion=7.3.0.15553
 dashboardUrl=http://localhost:9000/dashboard?id=org.cocheAutonomo%3Asonarqube-scanner
-ceTaskId=AWY-AvW3otZ11AjTffjS
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AWY-AvW3otZ11AjTffjS
+ceTaskId=AWY_wByifFPDGH0DALEK
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWY_wByifFPDGH0DALEK

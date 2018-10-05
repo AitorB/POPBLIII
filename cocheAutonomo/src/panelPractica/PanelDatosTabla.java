@@ -40,6 +40,11 @@ import dialogos.DialogoOpcionesAlerta;
 import dialogos.DialogoOpcionesConfirmar;
 
 /**
+ * @brief Constante string tipo de fuente Arial
+ */
+private final String ARIAL = "Arial";
+
+/**
  * @brief Clase PanelDatosTabla
  */
 public class PanelDatosTabla extends JPanel implements ActionListener {
@@ -53,8 +58,6 @@ public class PanelDatosTabla extends JPanel implements ActionListener {
 	 */
 	private JFrame ventana;
 	private JTable tabla;
-	private AdaptadorTabla adaptador;
-	private ModeloColumnasTabla modeloColumnas;
 	private ModeloTabla modeloTabla;
 
 	/**
@@ -79,12 +82,12 @@ public class PanelDatosTabla extends JPanel implements ActionListener {
 		panel.setPreferredSize(new Dimension(180, 0));
 
 		JLabel textoSuperior = new JLabel("DATOS");
-		textoSuperior.setFont(new Font("Arial", Font.BOLD, 20));
+		textoSuperior.setFont(new Font(ARIAL, Font.BOLD, 20));
 		textoSuperior.setHorizontalAlignment(JLabel.CENTER);
 		textoSuperior.setVerticalAlignment(JLabel.BOTTOM);
 
 		JLabel textoInferior = new JLabel("REALES");
-		textoInferior.setFont(new Font("Arial", Font.BOLD, 20));
+		textoInferior.setFont(new Font(ARIAL, Font.BOLD, 20));
 		textoInferior.setHorizontalAlignment(JLabel.CENTER);
 		textoInferior.setVerticalAlignment(JLabel.NORTH);
 
@@ -114,9 +117,8 @@ public class PanelDatosTabla extends JPanel implements ActionListener {
 	 */
 	private Component crearPanelTabla() {
 		JScrollPane panelScroll = new JScrollPane();
-		
-		adaptador = new AdaptadorTabla();
-		modeloColumnas = new ModeloColumnasTabla(adaptador);
+		AdaptadorTabla adaptador = new AdaptadorTabla();
+		ModeloColumnasTabla modeloColumnas = new ModeloColumnasTabla(adaptador);
 		modeloTabla = new ModeloTabla(modeloColumnas);
 		
 		tabla = new JTable(modeloTabla, modeloColumnas);
@@ -126,7 +128,7 @@ public class PanelDatosTabla extends JPanel implements ActionListener {
 		tabla.setFillsViewportHeight(true);
 
 		((JLabel)tabla.getTableHeader().getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
-		tabla.getTableHeader().setFont(new Font("Arial", Font.BOLD, 12));
+		tabla.getTableHeader().setFont(new Font(ARIAL, Font.BOLD, 12));
 		tabla.getTableHeader().setBackground(Color.BLACK);
 		
 		panelScroll.setViewportView(tabla);
@@ -144,7 +146,7 @@ public class PanelDatosTabla extends JPanel implements ActionListener {
 				BorderFactory.createEtchedBorder()));
 
 		JButton borrar = new JButton("BORRAR");
-		borrar.setFont(new Font("Arial", Font.BOLD, 20));
+		borrar.setFont(new Font(ARIAL, Font.BOLD, 20));
 		borrar.setMnemonic(KeyEvent.VK_B);
 		borrar.setPreferredSize(new Dimension(124, 0));
 		borrar.setActionCommand("borrar");

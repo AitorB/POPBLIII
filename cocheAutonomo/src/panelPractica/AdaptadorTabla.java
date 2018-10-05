@@ -66,7 +66,7 @@ public class AdaptadorTabla extends DefaultTableCellRenderer {
 		this.setFont(new Font("Arial", Font.BOLD, 13));
 		
 		switch (columna) {
-		case 0: 
+		case 0: case 5:
 			this.setHorizontalAlignment(CENTER);
 			this.setText(this.getText() + " %");
 			break;
@@ -74,24 +74,11 @@ public class AdaptadorTabla extends DefaultTableCellRenderer {
 			this.setHorizontalAlignment(CENTER);
 			this.setText(this.getText() + " m");
 			break;
-		case 2: 
-			this.setHorizontalAlignment(CENTER);
-			break;
 		case 3: 
 			this.setHorizontalAlignment(CENTER);
 			this.setText(this.getText() + " Km/h");
 			break;
-		case 4: 
-			this.setHorizontalAlignment(CENTER);
-			break;
-		case 5: 
-			this.setHorizontalAlignment(CENTER);
-			this.setText(this.getText() + " %");
-			break;
-		case 6: 
-			this.setHorizontalAlignment(CENTER);
-			break;
-		case 7: 
+		default:
 			this.setHorizontalAlignment(CENTER);
 			break;
 		}

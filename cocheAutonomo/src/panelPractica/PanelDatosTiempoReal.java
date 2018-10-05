@@ -49,6 +49,16 @@ import recursos.Fisica;
 import xBee.DispositivoXBee;
 
 /**
+ * @brief Constante string tipo de fuente Arial
+ */
+private final String ARIAL = "Arial";
+
+/**
+ * @brief Constante string error
+ */
+private final String ERROR = "ERROR";
+
+/**
  * @brief Clase PanelDatosTiempoReal
  */
 public class PanelDatosTiempoReal extends JPanel implements ActionListener, Observer {
@@ -67,15 +77,21 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 	private Circuito circuito;
 	private Coche coche;
 
-	private JTextField textoDistanciaRecorrida, textoVelocidad, textoVueltasRueda, textoPosicionServo,
-			textoRevolucionesMotor, textoObstaculo;
+	private JTextField textoDistanciaRecorrida;
+	private JTextField textoVelocidad;
+	private JTextField textoVueltasRueda;
+	private JTextField textoPosicionServo;
+	private JTextField textoRevolucionesMotor;
+	private JTextField textoObstaculo;
 	private JLabel completado;
 	private BarraProceso barraProceso;
 	private Cronometro cronometro;
-	private JButton iniciar, detener;
+	private JButton iniciar;
+	private JButton detener;
 
-	private double distanciaRecorrida, velocidad;
-	private int vueltasRueda, revolucionesMotor;
+	private double distanciaRecorrida;
+	private int vueltasRueda;
+	private int revolucionesMotor;
 	private boolean obstaculo;
 	private double porcentaje;
 
@@ -118,7 +134,7 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 		panel.setBorder(BorderFactory.createEtchedBorder());
 
 		iniciar = new JButton("  INICIAR", new ImageIcon("iconos\\iniciar.png"));
-		iniciar.setFont(new Font("Arial", Font.BOLD, 20));
+		iniciar.setFont(new Font(ARIAL, Font.BOLD, 20));
 		iniciar.setHorizontalAlignment(JButton.CENTER);
 		iniciar.setMnemonic(KeyEvent.VK_I);
 		iniciar.setActionCommand("iniciar");
@@ -138,7 +154,7 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 		panel.setBorder(BorderFactory.createEtchedBorder());
 
 		detener = new JButton("  DETENER", new ImageIcon("iconos\\detener.png"));
-		detener.setFont(new Font("Arial", Font.BOLD, 20));
+		detener.setFont(new Font(ARIAL, Font.BOLD, 20));
 		detener.setHorizontalAlignment(JButton.CENTER);
 		detener.setMnemonic(KeyEvent.VK_D);
 		detener.setActionCommand("detener");
@@ -190,11 +206,11 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 0));
 
 		JLabel titulo = new JLabel("DISTANCIA RECORRIDA:");
-		titulo.setFont(new Font("Arial", Font.BOLD, 12));
+		titulo.setFont(new Font(ARIAL, Font.BOLD, 12));
 		titulo.setHorizontalAlignment(JTextField.CENTER);
 
 		textoDistanciaRecorrida = new JTextField("0 m");
-		textoDistanciaRecorrida.setFont(new Font("Arial", Font.BOLD, 20));
+		textoDistanciaRecorrida.setFont(new Font(ARIAL, Font.BOLD, 20));
 		textoDistanciaRecorrida.setForeground(new Color(255, 107, 107));
 		textoDistanciaRecorrida.setHorizontalAlignment(JTextField.CENTER);
 		textoDistanciaRecorrida.setBorder(null);
@@ -216,11 +232,11 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 0));
 
 		JLabel titulo = new JLabel("VELOCIDAD ACTUAL:");
-		titulo.setFont(new Font("Arial", Font.BOLD, 12));
+		titulo.setFont(new Font(ARIAL, Font.BOLD, 12));
 		titulo.setHorizontalAlignment(JTextField.CENTER);
 
 		textoVelocidad = new JTextField("0 Km/h");
-		textoVelocidad.setFont(new Font("Arial", Font.BOLD, 20));
+		textoVelocidad.setFont(new Font(ARIAL, Font.BOLD, 20));
 		textoVelocidad.setForeground(new Color(255, 107, 107));
 		textoVelocidad.setHorizontalAlignment(JTextField.CENTER);
 		textoVelocidad.setBorder(null);
@@ -242,11 +258,11 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 10));
 
 		JLabel titulo = new JLabel("POSICIÓN SERVO:");
-		titulo.setFont(new Font("Arial", Font.BOLD, 12));
+		titulo.setFont(new Font(ARIAL, Font.BOLD, 12));
 		titulo.setHorizontalAlignment(JTextField.CENTER);
 
 		textoPosicionServo = new JTextField("0 %");
-		textoPosicionServo.setFont(new Font("Arial", Font.BOLD, 20));
+		textoPosicionServo.setFont(new Font(ARIAL, Font.BOLD, 20));
 		textoPosicionServo.setForeground(new Color(255, 107, 107));
 		textoPosicionServo.setHorizontalAlignment(JTextField.CENTER);
 		textoPosicionServo.setBorder(null);
@@ -268,10 +284,10 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 		panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
 
 		JLabel titulo = new JLabel("TIEMPO TRANSCURRIDO:");
-		titulo.setFont(new Font("Arial", Font.BOLD, 12));
+		titulo.setFont(new Font(ARIAL, Font.BOLD, 12));
 		titulo.setHorizontalAlignment(JTextField.CENTER);
 
-		cronometro = new Cronometro(new Color(255, 107, 107), new Font("Arial", Font.BOLD, 20), Color.WHITE);
+		cronometro = new Cronometro(new Color(255, 107, 107), new Font(ARIAL, Font.BOLD, 20), Color.WHITE);
 
 		panel.add(titulo);
 		panel.add(cronometro);
@@ -288,11 +304,11 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 		panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
 
 		JLabel titulo = new JLabel("VUELTAS RUEDA:");
-		titulo.setFont(new Font("Arial", Font.BOLD, 12));
+		titulo.setFont(new Font(ARIAL, Font.BOLD, 12));
 		titulo.setHorizontalAlignment(JTextField.CENTER);
 
 		textoVueltasRueda = new JTextField("0");
-		textoVueltasRueda.setFont(new Font("Arial", Font.BOLD, 20));
+		textoVueltasRueda.setFont(new Font(ARIAL, Font.BOLD, 20));
 		textoVueltasRueda.setForeground(new Color(255, 107, 107));
 		textoVueltasRueda.setHorizontalAlignment(JTextField.CENTER);
 		textoVueltasRueda.setBorder(null);
@@ -314,11 +330,11 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 		panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 10));
 
 		JLabel titulo = new JLabel("REVOLUCIONES MOTOR:");
-		titulo.setFont(new Font("Arial", Font.BOLD, 12));
+		titulo.setFont(new Font(ARIAL, Font.BOLD, 12));
 		titulo.setHorizontalAlignment(JTextField.CENTER);
 
 		textoRevolucionesMotor = new JTextField("0 %");
-		textoRevolucionesMotor.setFont(new Font("Arial", Font.BOLD, 20));
+		textoRevolucionesMotor.setFont(new Font(ARIAL, Font.BOLD, 20));
 		textoRevolucionesMotor.setForeground(new Color(255, 107, 107));
 		textoRevolucionesMotor.setHorizontalAlignment(JTextField.CENTER);
 		textoRevolucionesMotor.setBorder(null);
@@ -370,7 +386,7 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 
 		completado = new JLabel();
 		completado.setText("0 % COMPLETADO");
-		completado.setFont(new Font("Arial", Font.BOLD, 15));
+		completado.setFont(new Font(ARIAL, Font.BOLD, 15));
 
 		panel.add(completado, BorderLayout.CENTER);
 
@@ -402,11 +418,11 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 10));
 
 		JLabel titulo = new JLabel("OBSTÁCULO:");
-		titulo.setFont(new Font("Arial", Font.BOLD, 12));
+		titulo.setFont(new Font(ARIAL, Font.BOLD, 12));
 		titulo.setHorizontalAlignment(JTextField.CENTER);
 
 		textoObstaculo = new JTextField("NO");
-		textoObstaculo.setFont(new Font("Arial", Font.BOLD, 20));
+		textoObstaculo.setFont(new Font(ARIAL, Font.BOLD, 20));
 		textoObstaculo.setForeground(new Color(255, 107, 107));
 		textoObstaculo.setHorizontalAlignment(JTextField.CENTER);
 		textoObstaculo.setBorder(null);
@@ -465,6 +481,7 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 	private void leerMensajeXBee(XBeeMessage mensajeXBee) {
 		byte[] arrayBytes = mensajeXBee.getData();
 		int dato = arrayBytes[0];
+ 		double velocidad;
 
 		switch (dato) {
 		case DispositivoXBee.VUELTAS_RUEDA_PRACTICA:
@@ -500,7 +517,7 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 					DispositivoXBee.DETENER);
 			
 			detenerPractica();
-			new DialogoOpcionesAlerta(ventana, "¡Datos incorrectos!", "ERROR");
+			new DialogoOpcionesAlerta(ventana, "¡Datos incorrectos!", ERROR);
 			break;
 		}
 	}
@@ -580,10 +597,10 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 								DispositivoXBee.INICIAR, Fisica.calcularAnguloGiro(circuito, coche));
 					}
 				} else {
-					new DialogoOpcionesAlerta(ventana, "¡Ya hay una prueba en curso!", "ERROR");
+					new DialogoOpcionesAlerta(ventana, "¡Ya hay una prueba en curso!", ERROR);
 				}
 			} else {
-				new DialogoOpcionesAlerta(ventana, "¡Dispositivo XBee no conectado!", "ERROR");
+				new DialogoOpcionesAlerta(ventana, "¡Dispositivo XBee no conectado!", ERROR);
 			}
 
 		} else if (e.getActionCommand().equals("detener")) {
