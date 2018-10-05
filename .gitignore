@@ -23,7 +23,9 @@
 hs_err_pid*
 /.metadata/
 
+cocheAutonomo/.metadata/
 
+*metadata
 # Created by https://www.gitignore.io/api/eclipse
 
 ### Eclipse ###
