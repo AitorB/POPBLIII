@@ -12,7 +12,7 @@
 
 /** @brief Paquete PanelPractica
  */
-package panelPractica;
+package panelpractica;
 
 /** @brief Librerías
  */
@@ -40,11 +40,6 @@ import dialogos.DialogoOpcionesAlerta;
 import dialogos.DialogoOpcionesConfirmar;
 
 /**
- * @brief Constante string tipo de fuente Arial
- */
-private final String ARIAL = "Arial";
-
-/**
  * @brief Clase PanelDatosTabla
  */
 public class PanelDatosTabla extends JPanel implements ActionListener {
@@ -59,6 +54,8 @@ public class PanelDatosTabla extends JPanel implements ActionListener {
 	private JFrame ventana;
 	private JTable tabla;
 	private ModeloTabla modeloTabla;
+	
+	private static final String ARIAL = "Arial";
 
 	/**
 	 * @brief Constructor

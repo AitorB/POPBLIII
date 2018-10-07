@@ -12,7 +12,7 @@
 
 /** @brief Paquete PanelPractica
  */
-package panelPractica;
+package panelpractica;
 
 /** @brief Librerías
  */
@@ -33,11 +33,6 @@ import panelconfiguracion.Coche;
 import recursos.Fisica;
 
 /**
- * @brief Constante string tipo de fuente Arial
- */
-private final String ARIAL = "Arial";
-
-/**
  * @brief Clase PanelDatosSimulacion
  */
 public class PanelDatosSimulacion extends JPanel {
@@ -51,11 +46,13 @@ public class PanelDatosSimulacion extends JPanel {
 	 */
 	private Circuito circuito;
 	private Coche coche;
-	private JTextField;
-  private distancia;
-  private tiempo;
-  private velocidad;
-  private vueltasRueda;
+
+	private JTextField distancia;
+	private JTextField tiempo;
+	private JTextField velocidad;
+  	private JTextField vueltasRueda;
+  	
+  	private static final String ARIAL="Arial";
 
 	/**
 	 * @brief Constructor
@@ -110,7 +107,8 @@ public class PanelDatosSimulacion extends JPanel {
 	}
 
 	/**
-	 * @brief Método del panel distancia: muestra la distancia total a recorrer en el circuito
+	 * @brief Método del panel distancia: muestra la distancia total a recorrer en
+	 *        el circuito
 	 * @return Component
 	 */
 	private Component crearPanelDistancia() {
@@ -135,7 +133,8 @@ public class PanelDatosSimulacion extends JPanel {
 	}
 
 	/**
-	 * @brief Método del panel tiempo: muestra el tiempo necesario para completar el circuito
+	 * @brief Método del panel tiempo: muestra el tiempo necesario para completar el
+	 *        circuito
 	 * @return Component
 	 */
 	private Component crearPanelTiempo() {
@@ -160,7 +159,8 @@ public class PanelDatosSimulacion extends JPanel {
 	}
 
 	/**
-	 * @brief Método del panel velocidad: muestra a que velocidad se realizó el circuito
+	 * @brief Método del panel velocidad: muestra a que velocidad se realizó el
+	 *        circuito
 	 * @return Component
 	 */
 	private Component crearPanelVelocidad() {
@@ -185,7 +185,8 @@ public class PanelDatosSimulacion extends JPanel {
 	}
 
 	/**
-	 * @brief Método del panel vueltas rueda: muestra el número de vueltas de la rueda para completar el circuito
+	 * @brief Método del panel vueltas rueda: muestra el número de vueltas de la
+	 *        rueda para completar el circuito
 	 * @return Component
 	 */
 	private Component crearPanelVueltasRueda() {
@@ -244,5 +245,5 @@ public class PanelDatosSimulacion extends JPanel {
 	public void setCircuito(Circuito circuito) {
 		this.circuito = circuito;
 	}
-	
+
 }

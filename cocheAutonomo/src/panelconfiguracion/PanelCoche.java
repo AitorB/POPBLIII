@@ -36,7 +36,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import dialogos.DialogoAnadirCoche;
-import inicioSesion.Usuario;
+import iniciosesion.Usuario;
 import principal.VentanaPrincipal;
 
 /**

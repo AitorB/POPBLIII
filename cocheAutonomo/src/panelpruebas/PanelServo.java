@@ -12,7 +12,7 @@
 
 /** @brief Paquete panelPruebas
  */
-package panelPruebas;
+package panelpruebas;
 
 import java.awt.Component;
 import java.awt.Font;

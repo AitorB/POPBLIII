@@ -28,7 +28,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import inicioSesion.Usuario;
+import iniciosesion.Usuario;
 
 /**
  * @brief Clase DialogoAnadirUsuario

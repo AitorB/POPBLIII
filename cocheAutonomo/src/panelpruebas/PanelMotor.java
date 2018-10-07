@@ -1,5 +1,5 @@
-/** @file PanelDerrape.java
- *  @brief Clase para crear un panel que permite visualizar el panel de pruebas de derrape
+/** @file PanelMotor.java
+ *  @brief Clase para crear un panel que permite visualizar el panel de pruebas del motor
  *  @authors
  *  Nombre        | Apellido       | Email                                |
  *  ------------- | -------------- | ------------------------------------ |
@@ -12,7 +12,7 @@
 
 /** @brief Paquete panelPruebas
  */
-package panelPruebas;
+package panelpruebas;
 
 import java.awt.Component;
 import java.awt.Font;
@@ -32,9 +32,9 @@ import dialogos.DialogoOpcionesAlerta;
 import xBee.DispositivoXBee;
 
 /**
- * @brief Clase PanelDerrape
+ * @brief Clase PanelMotor
  */
-public class PanelDerrape extends Pruebas {
+public class PanelMotor extends Pruebas {
 	/**
 	 * @brief Número de versión de la clase
 	 */
@@ -44,7 +44,7 @@ public class PanelDerrape extends Pruebas {
 	 * @brief Atributos
 	 */
 	private JFrame ventana;
-	private JRadioButton izquierda, derecha;
+	private JRadioButton adelante, atras;
 	private JTextField revoluciones;
 
 	/**
@@ -52,7 +52,7 @@ public class PanelDerrape extends Pruebas {
 	 * @param ventana Referencia a la ventana principal
 	 * @param titulo Título del panel
 	 */
-	public PanelDerrape(JFrame ventana, String titulo) {
+	public PanelMotor(JFrame ventana, String titulo) {
 		super(ventana, titulo);
 
 		this.ventana = ventana;
@@ -66,7 +66,7 @@ public class PanelDerrape extends Pruebas {
 		JPanel panel = new JPanel(new GridLayout(1, 2, 5, 0));
 
 		panel.add(crearPanelRadioButton());
-		panel.add(crearPanelDerrape());
+		panel.add(crearPanelRevoluciones());
 
 		return panel;
 	}
@@ -80,31 +80,31 @@ public class PanelDerrape extends Pruebas {
 
 		ButtonGroup grupo = new ButtonGroup();
 
-		izquierda = new JRadioButton("  IZQUIERDA");
-		izquierda.setFont(new Font("Arial", Font.BOLD, 12));
-		izquierda.setVerticalAlignment(JButton.CENTER);
-		izquierda.setSelected(true);
-		izquierda.addActionListener(this);
+		adelante = new JRadioButton("  ADELANTE");
+		adelante.setFont(new Font("Arial", Font.BOLD, 12));
+		adelante.setVerticalAlignment(JButton.CENTER);
+		adelante.setSelected(true);
+		adelante.addActionListener(this);
 
-		derecha = new JRadioButton("  DERECHA");
-		derecha.setVerticalAlignment(JButton.CENTER);
-		derecha.setFont(new Font("Arial", Font.BOLD, 12));
-		derecha.addActionListener(this);
+		atras = new JRadioButton("  ATRÁS");
+		atras.setVerticalAlignment(JButton.CENTER);
+		atras.setFont(new Font("Arial", Font.BOLD, 12));
+		atras.addActionListener(this);
 
-		grupo.add(izquierda);
-		grupo.add(derecha);
+		grupo.add(adelante);
+		grupo.add(atras);
 
-		panel.add(izquierda);
-		panel.add(derecha);
+		panel.add(adelante);
+		panel.add(atras);
 
 		return panel;
 	}
 
 	/**
-	 * @brief Método del panel datos: pedir revoluciones del motor
+	 * @brief Método del panel revoluciones: pedir revoluciones del motor
 	 * @return Component
 	 */
-	protected Component crearPanelDerrape() {
+	private Component crearPanelRevoluciones() {
 		JPanel panel = new JPanel(new GridLayout(1, 2, 5, 0));
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
 
@@ -177,8 +177,8 @@ public class PanelDerrape extends Pruebas {
 							detener.setEnabled(true);
 	
 							dispositivoXBee.iniciarXBee();
-							dispositivoXBee.enviarDatosPrueba(DispositivoXBee.DERRAPE,
-									(derecha.isSelected() ? DispositivoXBee.DERECHA : DispositivoXBee.IZQUIERDA),
+							dispositivoXBee.enviarDatosPrueba(DispositivoXBee.MOTOR,
+									(adelante.isSelected() ? DispositivoXBee.ADELANTE : DispositivoXBee.ATRAS),
 									DispositivoXBee.INICIAR, Integer.valueOf(revoluciones.getText()));
 						} else {
 							new DialogoOpcionesAlerta(ventana, "¡Ya hay una prueba en curso!", "ERROR");
@@ -195,7 +195,7 @@ public class PanelDerrape extends Pruebas {
 			iniciar.setEnabled(true);
 			detener.setEnabled(false);
 
-			dispositivoXBee.enviarDatosPrueba(DispositivoXBee.DERRAPE, DispositivoXBee.DETENER, DispositivoXBee.DETENER,
+			dispositivoXBee.enviarDatosPrueba(DispositivoXBee.MOTOR, DispositivoXBee.DETENER, DispositivoXBee.DETENER,
 					DispositivoXBee.DETENER);
 			dispositivoXBee.detenerXBee();
 		}

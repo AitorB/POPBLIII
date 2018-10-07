@@ -1,5 +1,5 @@
-/** @file PanelMotor.java
- *  @brief Clase para crear un panel que permite visualizar el panel de pruebas del motor
+/** @file PanelDistancia.java
+ *  @brief Clase para crear un panel que permite visualizar el panel de pruebas de distancia
  *  @authors
  *  Nombre        | Apellido       | Email                                |
  *  ------------- | -------------- | ------------------------------------ |
@@ -12,7 +12,7 @@
 
 /** @brief Paquete panelPruebas
  */
-package panelPruebas;
+package panelpruebas;
 
 import java.awt.Component;
 import java.awt.Font;
@@ -29,12 +29,14 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import dialogos.DialogoOpcionesAlerta;
+import panelconfiguracion.Coche;
+import recursos.Fisica;
 import xBee.DispositivoXBee;
 
 /**
- * @brief Clase PanelMotor
+ * @brief Clase PanelDistancia
  */
-public class PanelMotor extends Pruebas {
+public class PanelDistancia extends Pruebas {
 	/**
 	 * @brief Número de versión de la clase
 	 */
@@ -44,15 +46,16 @@ public class PanelMotor extends Pruebas {
 	 * @brief Atributos
 	 */
 	private JFrame ventana;
+	private Coche coche;
 	private JRadioButton adelante, atras;
-	private JTextField revoluciones;
+	private JTextField distancia;
 
 	/**
 	 * @brief Constructor
 	 * @param ventana Referencia a la ventana principal
 	 * @param titulo Título del panel
 	 */
-	public PanelMotor(JFrame ventana, String titulo) {
+	public PanelDistancia(JFrame ventana, String titulo) {
 		super(ventana, titulo);
 
 		this.ventana = ventana;
@@ -66,7 +69,7 @@ public class PanelMotor extends Pruebas {
 		JPanel panel = new JPanel(new GridLayout(1, 2, 5, 0));
 
 		panel.add(crearPanelRadioButton());
-		panel.add(crearPanelRevoluciones());
+		panel.add(crearPanelDistancia());
 
 		return panel;
 	}
@@ -101,23 +104,23 @@ public class PanelMotor extends Pruebas {
 	}
 
 	/**
-	 * @brief Método del panel revoluciones: pedir revoluciones del motor
+	 * @brief Método del panel distancia: pedir distancia a recorrer por el coche
 	 * @return Component
 	 */
-	private Component crearPanelRevoluciones() {
+	private Component crearPanelDistancia() {
 		JPanel panel = new JPanel(new GridLayout(1, 2, 5, 0));
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
 
-		JLabel texto = new JLabel("RPM (%):");
+		JLabel texto = new JLabel("DISTANCIA (m):");
 		texto.setFont(new Font("Arial", Font.BOLD, 12));
 
-		revoluciones = new JTextField();
-		revoluciones.setFont(new Font("Arial", Font.BOLD, 17));
-		revoluciones.setHorizontalAlignment(JTextField.CENTER);
-		revoluciones.setBorder(null);
+		distancia = new JTextField();
+		distancia.setFont(new Font("Arial", Font.BOLD, 17));
+		distancia.setHorizontalAlignment(JTextField.CENTER);
+		distancia.setBorder(null);
 
 		panel.add(texto);
-		panel.add(revoluciones);
+		panel.add(distancia);
 
 		return panel;
 	}
@@ -129,7 +132,7 @@ public class PanelMotor extends Pruebas {
 	private boolean camposVacios() {
 		boolean camposVacios = false;
 
-		if (revoluciones.getText().isEmpty()) {
+		if (distancia.getText().isEmpty()) {
 			camposVacios = true;
 		}
 
@@ -144,18 +147,18 @@ public class PanelMotor extends Pruebas {
 		boolean datosValidos = true;
 
 		try {
-			if (Double.parseDouble(revoluciones.getText()) < 15 || Double.parseDouble(revoluciones.getText()) > 100) {
+			if (Double.parseDouble(distancia.getText()) < 1 || Double.parseDouble(distancia.getText()) > 30) {
 				datosValidos = false;
-				new DialogoOpcionesAlerta(ventana, "¡Datos incorrectos! Revoluciones del motor: entre 15% y 100%",
+				new DialogoOpcionesAlerta(ventana, "¡Datos incorrectos! Distancia: mayor a 1 metro y menor a 30 metros",
 						"ERROR");
-				revoluciones.setText(null);
-				revoluciones.requestFocusInWindow();
+				distancia.setText(null);
+				distancia.requestFocusInWindow();
 			}
 		} catch (NumberFormatException e) {
 			datosValidos = false;
 			new DialogoOpcionesAlerta(ventana, "¡Formato de datos no válido!", "ERROR");
-			revoluciones.setText(null);
-			revoluciones.requestFocusInWindow();
+			distancia.setText(null);
+			distancia.requestFocusInWindow();
 		}
 
 		return datosValidos;
@@ -177,9 +180,9 @@ public class PanelMotor extends Pruebas {
 							detener.setEnabled(true);
 	
 							dispositivoXBee.iniciarXBee();
-							dispositivoXBee.enviarDatosPrueba(DispositivoXBee.MOTOR,
+							dispositivoXBee.enviarDatosPrueba(DispositivoXBee.DISTANCIA,
 									(adelante.isSelected() ? DispositivoXBee.ADELANTE : DispositivoXBee.ATRAS),
-									DispositivoXBee.INICIAR, Integer.valueOf(revoluciones.getText()));
+									DispositivoXBee.INICIAR, Fisica.calcularVueltasTramo(Integer.valueOf(distancia.getText()), coche));
 						} else {
 							new DialogoOpcionesAlerta(ventana, "¡Ya hay una prueba en curso!", "ERROR");
 						}
@@ -189,16 +192,25 @@ public class PanelMotor extends Pruebas {
 				}
 			} else {
 				new DialogoOpcionesAlerta(ventana, "Introduce un valor", "ERROR");
-				revoluciones.requestFocusInWindow();
+				distancia.requestFocusInWindow();
 			}
 		} else if (e.getActionCommand().equals("detener")) {
 			iniciar.setEnabled(true);
 			detener.setEnabled(false);
 
-			dispositivoXBee.enviarDatosPrueba(DispositivoXBee.MOTOR, DispositivoXBee.DETENER, DispositivoXBee.DETENER,
-					DispositivoXBee.DETENER);
+			dispositivoXBee.enviarDatosPrueba(DispositivoXBee.DISTANCIA, DispositivoXBee.DETENER,
+					DispositivoXBee.DETENER, DispositivoXBee.DETENER);
 			dispositivoXBee.detenerXBee();
 		}
 	}
 
+	/**
+	 * @brief Método para determinar el valor del objeto coche
+	 * @param coche Datos del coche a utilizar por el usuario
+	 * @return void
+	 */
+	public void setCoche(Coche coche) {
+		this.coche = coche;
+	}
+	
 }

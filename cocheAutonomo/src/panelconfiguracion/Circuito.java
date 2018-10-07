@@ -20,7 +20,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import panelPractica.Practica;
+import panelpractica.Practica;
 
 /**
  * @brief Clase Circuito

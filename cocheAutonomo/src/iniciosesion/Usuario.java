@@ -12,31 +12,24 @@
 
 /** @brief Paquete inicarSesion
  */
-package inicioSesion;
+package iniciosesion;
 
-import java.io.FileInputStream;
+/** @brief Librerías
+ */
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-/** @brief Librerías
- */
+
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-<<<<<<< HEAD
+
 import panelconfiguracion.Circuito;
 import panelconfiguracion.Coche;
-=======
 import main.Main;
-import panelConfiguracion.Circuito;
-import panelConfiguracion.Coche;
-import panelConfiguracion.PanelConfiguracion;
->>>>>>> dev-docTestPanel
 
 /**
  * @brief Clase Usuario
@@ -77,33 +70,6 @@ public class Usuario implements Serializable {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * @brief Método que actualiza los datos del usuario en el fichero
-	 * @return void
-	 */
-	@SuppressWarnings("unchecked")
-	public void actualizarUsuario(PanelConfiguracion panelConfiguracion, Usuario usuario) {
-		Map<String, Usuario> mapaUsuarios = new HashMap<>();
-
-		try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(Main.FICHERO_ORIGINAL))) {
-			mapaUsuarios = (Map<String, Usuario>) reader.readObject();
-
-			usuario.setListaCircuitos(panelConfiguracion.getPanelCircuitos().getListaCircuitos());
-			usuario.setCoche(panelConfiguracion.getPanelCoche().getCoche());
-			mapaUsuarios.put(usuario.getNombre().toLowerCase(), usuario);
-
-			try (ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(Main.FICHERO_ORIGINAL))) {
-				writer.writeObject(mapaUsuarios);
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			// e.printStackTrace();
-		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 	}

@@ -12,7 +12,7 @@
 
 /** @brief Paquete PanelPractica
  */
-package panelPractica;
+package panelpractica;
 
 /** @brief Librerías
  */

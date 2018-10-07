@@ -12,7 +12,7 @@
 
 /** @brief Paquete panelPractica
  */
-package panelPractica;
+package panelpractica;
 
 import java.awt.Color;
 /** @brief Librerías

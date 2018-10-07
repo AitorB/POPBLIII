@@ -12,7 +12,7 @@
 
 /** @brief Paquete iniciarSesion
  */
-package inicioSesion;
+package iniciosesion;
 
 /** @brief Librerías
  */

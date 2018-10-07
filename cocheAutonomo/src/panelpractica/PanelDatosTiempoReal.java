@@ -12,7 +12,7 @@
 
 /** @brief Paquete PanelPractica
  */
-package panelPractica;
+package panelpractica;
 
 /** @brief Librerías
  */
@@ -47,16 +47,6 @@ import recursos.BarraProceso;
 import recursos.Cronometro;
 import recursos.Fisica;
 import xBee.DispositivoXBee;
-
-/**
- * @brief Constante string tipo de fuente Arial
- */
-private final String ARIAL = "Arial";
-
-/**
- * @brief Constante string error
- */
-private final String ERROR = "ERROR";
 
 /**
  * @brief Clase PanelDatosTiempoReal
@@ -94,7 +84,10 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 	private int revolucionesMotor;
 	private boolean obstaculo;
 	private double porcentaje;
-
+	
+	private static final String ARIAL = "Arial";
+	private static final String ERROR = "ERROR";
+	
 	/**
 	 * @brief Constructor
 	 * @param ventana Referencia a la ventana de la que se lanza el diálogo

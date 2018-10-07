@@ -12,7 +12,7 @@
 
 /** @brief Paquete panelSimulacion
  */
-package panelSimulacion;
+package panelsimulacion;
  
 /** @brief Librerías
  */

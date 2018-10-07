@@ -21,7 +21,7 @@ import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import inicioSesion.Usuario;
+import iniciosesion.Usuario;
 
 /**
  * @brief Clase PanelConfiguracion

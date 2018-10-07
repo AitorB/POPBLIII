@@ -44,7 +44,7 @@ import javax.swing.event.ListSelectionListener;
 
 import dialogos.DialogoAnadirCircuito;
 import dialogos.DialogoOpcionesConfirmar;
-import inicioSesion.Usuario;
+import iniciosesion.Usuario;
 import principal.VentanaPrincipal;
 
 /**
