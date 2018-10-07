@@ -97,24 +97,12 @@ public class DialogoDatosPractica extends DialogoAnadir {
 		botonIzquierda.setFont(new Font(FONT_TYPE, Font.BOLD, 12));
 		botonIzquierda.setHorizontalAlignment(JButton.RIGHT);
 		botonIzquierda.setSelected(true);
-		botonIzquierda.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				textoRevoluciones.selectAll();
-				textoRevoluciones.requestFocusInWindow();
-			}
-		});
-
+		botonIzquierda.addActionListener(event -> {textoRevoluciones.selectAll(); textoRevoluciones.requestFocusInWindow();});
+		
 		botonDerecha = new JRadioButton("  DERECHA");
 		botonDerecha.setHorizontalAlignment(JButton.RIGHT);
 		botonDerecha.setFont(new Font(FONT_TYPE, Font.BOLD, 12));
-		botonDerecha.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				textoRevoluciones.selectAll();
-				textoRevoluciones.requestFocusInWindow();
-			}
-		});
+		botonDerecha.addActionListener(event -> {textoRevoluciones.selectAll(); textoRevoluciones.requestFocusInWindow();});
 
 		grupo.add(botonIzquierda);
 		grupo.add(botonDerecha);
