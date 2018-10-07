@@ -69,7 +69,7 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
     private JTextField valorFriccion;
 	private JButton anadir;
 	private JButton borrar;
-	private final String FONT ="Arial";
+	private static final String FONT ="Arial";
 	/**
 	 * @brief Constructor
 	 * @param ventana Referencia a la ventana de la que se lanza el diálogo

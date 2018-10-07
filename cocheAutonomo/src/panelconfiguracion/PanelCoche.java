@@ -59,7 +59,7 @@ public class PanelCoche extends JPanel implements ActionListener {
 	private JTextField valorDistanciaEjes; 
 	private JTextField valorDiametroRueda;
 	private JTextField valorMasa;
-	private final String FONT ="Arial";
+	private static final String FONT ="Arial";
 	
 	/**
 	 * @brief Constructor
