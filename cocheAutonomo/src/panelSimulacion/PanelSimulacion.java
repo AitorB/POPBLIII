@@ -36,8 +36,8 @@ import javax.swing.JPanel;
 
 import interfaces.Observable;
 import interfaces.Observer;
-import panelConfiguracion.Circuito;
-import panelConfiguracion.Coche;
+import panelconfiguracion.Circuito;
+import panelconfiguracion.Coche;
 import recursos.BarraProceso;
 import recursos.Fisica;
 

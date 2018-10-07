@@ -12,7 +12,7 @@
 
 /** @brief Paquete panelConfiguracion
  */
-package panelConfiguracion;
+package panelconfiguracion;
 
 /** @brief Librerías
  */
@@ -69,7 +69,7 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
     private JTextField valorFriccion;
 	private JButton anadir;
 	private JButton borrar;
-
+	private final String FONT ="Arial";
 	/**
 	 * @brief Constructor
 	 * @param ventana Referencia a la ventana de la que se lanza el diálogo
@@ -96,7 +96,7 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 		panel.setBorder(BorderFactory.createEtchedBorder());
 
 		JLabel titulo = new JLabel("Configuración de circuitos");
-		titulo.setFont(new Font("Arial", Font.BOLD, 20));
+		titulo.setFont(new Font(FONT, Font.BOLD, 20));
 
 		panel.add(titulo);
 
@@ -154,30 +154,30 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 				BorderFactory.createEmptyBorder(8, 8, 8, 8)));
 
 		JLabel textoRecta = new JLabel("Longitud de la recta:");
-		textoRecta.setFont(new Font("Arial", Font.BOLD, 15));
+		textoRecta.setFont(new Font(FONT, Font.BOLD, 15));
 
 		valorRecta = new JTextField();
-		valorRecta.setFont(new Font("Arial", Font.BOLD, 17));
+		valorRecta.setFont(new Font(FONT, Font.BOLD, 17));
 		valorRecta.setHorizontalAlignment(JTextField.CENTER);
 		valorRecta.setBorder(null);
 		valorRecta.setEditable(false);
 		valorRecta.setBackground(Color.WHITE);
 
 		JLabel textoRadio = new JLabel("Radio de la curva:");
-		textoRadio.setFont(new Font("Arial", Font.BOLD, 15));
+		textoRadio.setFont(new Font(FONT, Font.BOLD, 15));
 
 		valorRadio = new JTextField();
-		valorRadio.setFont(new Font("Arial", Font.BOLD, 17));
+		valorRadio.setFont(new Font(FONT, Font.BOLD, 17));
 		valorRadio.setHorizontalAlignment(JTextField.CENTER);
 		valorRadio.setBorder(null);
 		valorRadio.setEditable(false);
 		valorRadio.setBackground(Color.WHITE);
 
 		JLabel textoFriccion = new JLabel("Coeficiente de fricción:");
-		textoFriccion.setFont(new Font("Arial", Font.BOLD, 15));
+		textoFriccion.setFont(new Font(FONT, Font.BOLD, 15));
 
 		valorFriccion = new JTextField();
-		valorFriccion.setFont(new Font("Arial", Font.BOLD, 17));
+		valorFriccion.setFont(new Font(FONT, Font.BOLD, 17));
 		valorFriccion.setHorizontalAlignment(JTextField.CENTER);
 		valorFriccion.setBorder(null);
 		valorFriccion.setEditable(false);
@@ -203,14 +203,14 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 		JPanel panel = new JPanel(new GridLayout(1, 2, 10, 0));
 
 		anadir = new JButton("  AÑADIR", new ImageIcon("iconos\\anadir.png"));
-		anadir.setFont(new Font("Arial", Font.BOLD, 20));
+		anadir.setFont(new Font(FONT, Font.BOLD, 20));
 		anadir.setMnemonic(KeyEvent.VK_A);
 		anadir.setPreferredSize(new Dimension(0, 50));
 		anadir.setActionCommand("anadir");
 		anadir.addActionListener(this);
 		
 		borrar = new JButton("  BORRAR", new ImageIcon("iconos\\borrar.png"));
-		borrar.setFont(new Font("Arial", Font.BOLD, 20));
+		borrar.setFont(new Font(FONT, Font.BOLD, 20));
 		borrar.setMnemonic(KeyEvent.VK_B);
 		borrar.setPreferredSize(new Dimension(0, 50));
 		borrar.setActionCommand("borrar");
@@ -264,8 +264,8 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	 * @return void
 	 */
 	private void cargarCircuitosUsuario() {
-		for (Circuito circuito : usuario.getListaCircuitos()) {
-			modeloCircuitos.addElement(circuito);
+		for (Circuito circuit : usuario.getListaCircuitos()) {
+			modeloCircuitos.addElement(circuit);
 		}
 	}
 
@@ -313,13 +313,13 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	 * @return List<Circuito>
 	 */
 	public List<Circuito> getListaCircuitos() {
-		List<Circuito> listaCircuitos = new ArrayList<>();
+		List<Circuito> ciruitList = new ArrayList<>();
 
 		for (int i = 0; i < modeloCircuitos.size(); i++) {
-			listaCircuitos.add(modeloCircuitos.getElementAt(i));
+			ciruitList.add(modeloCircuitos.getElementAt(i));
 		}
 
-		return listaCircuitos;
+		return ciruitList;
 	}
 
 	/**

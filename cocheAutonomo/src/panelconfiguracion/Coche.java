@@ -12,7 +12,7 @@
 
 /** @brief Paquete panelConfiguracion
  */
-package panelConfiguracion;
+package panelconfiguracion;
 
 /** @brief Librerías
  */

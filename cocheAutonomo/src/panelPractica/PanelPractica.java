@@ -26,8 +26,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import panelConfiguracion.Circuito;
-import panelConfiguracion.Coche;
+import panelconfiguracion.Circuito;
+import panelconfiguracion.Coche;
 import xBee.DispositivoXBee;
 
 /**

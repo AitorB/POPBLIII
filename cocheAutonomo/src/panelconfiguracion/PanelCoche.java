@@ -12,7 +12,7 @@
 
 /** @brief Paquete panelConfiguracion
  */
-package panelConfiguracion;
+package panelconfiguracion;
 
 /** @brief Librerías
  */
@@ -59,6 +59,7 @@ public class PanelCoche extends JPanel implements ActionListener {
 	private JTextField valorDistanciaEjes; 
 	private JTextField valorDiametroRueda;
 	private JTextField valorMasa;
+	private final String FONT ="Arial";
 	
 	/**
 	 * @brief Constructor
@@ -86,7 +87,7 @@ public class PanelCoche extends JPanel implements ActionListener {
 		panel.setBorder(BorderFactory.createEtchedBorder());
 
 		JLabel titulo = new JLabel("Configuración del coche");
-		titulo.setFont(new Font("Arial", Font.BOLD, 20));
+		titulo.setFont(new Font(FONT, Font.BOLD, 20));
 
 		panel.add(titulo);
 
@@ -148,7 +149,7 @@ public class PanelCoche extends JPanel implements ActionListener {
 				BorderFactory.createEmptyBorder(13, 0, 13, 0)));
 
 		textoModelo = new JLabel("INTRODUCE UN COCHE");
-		textoModelo.setFont(new Font("Arial", Font.BOLD, 20));
+		textoModelo.setFont(new Font(FONT, Font.BOLD, 20));
 
 		if (coche != null) {
 			textoModelo.setText(String.valueOf(coche.getModelo()));
@@ -167,40 +168,40 @@ public class PanelCoche extends JPanel implements ActionListener {
 		JPanel panel = new JPanel((new GridLayout(2, 4, 10, 10)));
 
 		JLabel textoLongitud = new JLabel("Longitud:");
-		textoLongitud.setFont(new Font("Arial", Font.BOLD, 15));
+		textoLongitud.setFont(new Font(FONT, Font.BOLD, 15));
 
 		valorLongitud = new JTextField();
-		valorLongitud.setFont(new Font("Arial", Font.BOLD, 17));
+		valorLongitud.setFont(new Font(FONT, Font.BOLD, 17));
 		valorLongitud.setHorizontalAlignment(JTextField.CENTER);
 		valorLongitud.setBorder(null);
 		valorLongitud.setEditable(false);
 		valorLongitud.setBackground(Color.WHITE);
 
 		JLabel textoDistanciaEjes = new JLabel("Distancia ejes:");
-		textoDistanciaEjes.setFont(new Font("Arial", Font.BOLD, 15));
+		textoDistanciaEjes.setFont(new Font(FONT, Font.BOLD, 15));
 
 		valorDistanciaEjes = new JTextField();
-		valorDistanciaEjes.setFont(new Font("Arial", Font.BOLD, 17));
+		valorDistanciaEjes.setFont(new Font(FONT, Font.BOLD, 17));
 		valorDistanciaEjes.setHorizontalAlignment(JTextField.CENTER);
 		valorDistanciaEjes.setBorder(null);
 		valorDistanciaEjes.setEditable(false);
 		valorDistanciaEjes.setBackground(Color.WHITE);
 
 		JLabel textoDiametroRueda = new JLabel("Diámetro rueda:");
-		textoDiametroRueda.setFont(new Font("Arial", Font.BOLD, 15));
+		textoDiametroRueda.setFont(new Font(FONT, Font.BOLD, 15));
 
 		valorDiametroRueda = new JTextField();
-		valorDiametroRueda.setFont(new Font("Arial", Font.BOLD, 17));
+		valorDiametroRueda.setFont(new Font(FONT, Font.BOLD, 17));
 		valorDiametroRueda.setHorizontalAlignment(JTextField.CENTER);
 		valorDiametroRueda.setBorder(null);
 		valorDiametroRueda.setEditable(false);
 		valorDiametroRueda.setBackground(Color.WHITE);
 
 		JLabel textoMasa = new JLabel("Masa:");
-		textoMasa.setFont(new Font("Arial", Font.BOLD, 15));
+		textoMasa.setFont(new Font(FONT, Font.BOLD, 15));
 
 		valorMasa = new JTextField();
-		valorMasa.setFont(new Font("Arial", Font.BOLD, 17));
+		valorMasa.setFont(new Font(FONT, Font.BOLD, 17));
 		valorMasa.setHorizontalAlignment(JTextField.CENTER);
 		valorMasa.setBorder(null);
 		valorMasa.setEditable(false);
@@ -233,7 +234,7 @@ public class PanelCoche extends JPanel implements ActionListener {
 		JPanel panel = new JPanel(new BorderLayout());
 
 		JButton configurar = new JButton("  CONFIGURAR", new ImageIcon("iconos\\configurar.png"));
-		configurar.setFont(new Font("Arial", Font.BOLD, 20));
+		configurar.setFont(new Font(FONT, Font.BOLD, 20));
 		configurar.setMnemonic(KeyEvent.VK_O);
 		configurar.setPreferredSize(new Dimension(0, 50));
 		configurar.setActionCommand("configurar");

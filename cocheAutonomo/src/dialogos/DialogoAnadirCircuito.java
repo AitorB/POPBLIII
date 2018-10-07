@@ -28,7 +28,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import panelConfiguracion.Circuito;
+import panelconfiguracion.Circuito;
 
 /**
  * @brief Clase DialogoAnadirCircuito

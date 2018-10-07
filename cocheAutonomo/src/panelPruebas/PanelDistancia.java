@@ -29,7 +29,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import dialogos.DialogoOpcionesAlerta;
-import panelConfiguracion.Coche;
+import panelconfiguracion.Coche;
 import recursos.Fisica;
 import xBee.DispositivoXBee;
 

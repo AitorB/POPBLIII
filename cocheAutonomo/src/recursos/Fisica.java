@@ -14,10 +14,8 @@
  */
 package recursos;
 
-/** @brief Librerías
- */
-import panelConfiguracion.Circuito;
-import panelConfiguracion.Coche;
+import panelconfiguracion.Circuito;
+import panelconfiguracion.Coche;
 
 /**
  * @brief Clase Fisica

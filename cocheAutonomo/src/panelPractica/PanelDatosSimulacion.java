@@ -28,8 +28,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import panelConfiguracion.Circuito;
-import panelConfiguracion.Coche;
+import panelconfiguracion.Circuito;
+import panelconfiguracion.Coche;
 import recursos.Fisica;
 
 /**

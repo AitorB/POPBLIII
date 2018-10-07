@@ -20,8 +20,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import panelConfiguracion.Circuito;
-import panelConfiguracion.Coche;
+import panelconfiguracion.Circuito;
+import panelconfiguracion.Coche;
 
 /**
  * @brief Clase Usuario

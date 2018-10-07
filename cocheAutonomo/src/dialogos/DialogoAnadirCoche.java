@@ -25,7 +25,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import panelConfiguracion.Coche;
+import panelconfiguracion.Coche;
 
 /**
  * @brief Clase DialogoAnadirCoche
