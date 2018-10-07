@@ -30,14 +30,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -333,40 +325,13 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * @brief Método que actualiza los datos del usuario en el fichero
-	 * @return void
-	 */
-	@SuppressWarnings("unchecked")
-	private void actualizarUsuario() {
-		Map<String, Usuario> mapaUsuarios = new HashMap<>();
-
-		try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(Main.FICHERO_ORIGINAL))) {
-			mapaUsuarios = (Map<String, Usuario>) reader.readObject();
-
-			usuario.setListaCircuitos(panelConfiguracion.getPanelCircuitos().getListaCircuitos());
-			usuario.setCoche(panelConfiguracion.getPanelCoche().getCoche());
-			mapaUsuarios.put(usuario.getNombre().toLowerCase(), usuario);
-
-			try (ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(Main.FICHERO_ORIGINAL))) {
-				writer.writeObject(mapaUsuarios);
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			// e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
 	 * @brief Método para cerrar la aplicación con diálogo de confirmación
 	 * @return void
 	 */
 	private void cerrarAplicacion() {
 		DialogoOpcionesConfirmar dialogo = new DialogoOpcionesConfirmar(this, "¿Desea cerrar la aplicación?", "PREGUNTA");
 		if (dialogo.getAceptar()) {
-			actualizarUsuario();
+			usuario.actualizarUsuario(panelConfiguracion, usuario);
 			System.exit(0);
 		}
 	}
@@ -405,7 +370,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 			DialogoOpcionesConfirmar dialogo = new DialogoOpcionesConfirmar(this,
 					"¿Desea cerrar la sesión de " + usuario.getNombre() + " ?", "PREGUNTA");
 			if (dialogo.getAceptar()) {
-				actualizarUsuario();
+				usuario.actualizarUsuario(panelConfiguracion, usuario);
 				this.dispose();
 				new VentanaPrincipal(false);
 			}
@@ -430,7 +395,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 	public JButton getBotonPractica() {
 		return practica;
 	}
-	
+
 	/**
 	 * @brief Método para obtener el valor del panel configuración
 	 * @return PanelConfiguracion

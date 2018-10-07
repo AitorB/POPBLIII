@@ -27,7 +27,6 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -155,7 +154,8 @@ public class Bienvenida extends JDialog implements Observer {
 	 * @return void
 	 */
 	private void crearCopiaSeguridad() {
-		File ficheroOriginal, ficheroCopia;
+		File ficheroOriginal;
+		File ficheroCopia;
 		
 		ficheroOriginal = new File(Main.FICHERO_ORIGINAL);
 		
@@ -172,8 +172,6 @@ public class Bienvenida extends JDialog implements Observer {
 							writer.write(buffer, 0, longitud);
 						}
 					}
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

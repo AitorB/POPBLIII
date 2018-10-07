@@ -43,8 +43,14 @@ public class DialogoAnadirCircuito extends DialogoAnadir {
 	 * @brief Atributos
 	 */
 	private Circuito nuevoCircuito;
-	private JTextField nombre, recta, radio, anchoCarretera, friccion;
+	private JTextField nombre;
+	private JTextField recta;
+	private JTextField radio;
+	private JTextField anchoCarretera;
+	private JTextField friccion;
 	private DefaultListModel<Circuito> modeloCircuitos;
+	
+	private static final String DIALOGO_ERROR = "ERROR";
 
 	/**
 	 * @brief Constructor
@@ -70,39 +76,19 @@ public class DialogoAnadirCircuito extends DialogoAnadir {
 
 		nombre = new JTextField();
 		nombre.setHorizontalAlignment(JTextField.RIGHT);
-		nombre.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				recta.requestFocusInWindow();
-			}
-		});
+		nombre.addActionListener(event -> recta.requestFocusInWindow());
 
 		recta = new JTextField();
 		recta.setHorizontalAlignment(JTextField.RIGHT);
-		recta.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				radio.requestFocusInWindow();
-			}
-		});
-
+		recta.addActionListener(event -> radio.requestFocusInWindow());
+		
 		radio = new JTextField();
 		radio.setHorizontalAlignment(JTextField.RIGHT);
-		radio.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				anchoCarretera.requestFocusInWindow();
-			}
-		});
+		radio.addActionListener(event -> anchoCarretera.requestFocusInWindow());
 
 		anchoCarretera = new JTextField();
 		anchoCarretera.setHorizontalAlignment(JTextField.RIGHT);
-		anchoCarretera.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				friccion.requestFocusInWindow();
-			}
-		});
+		anchoCarretera.addActionListener(event -> friccion.requestFocusInWindow());
 
 		friccion = new JTextField();
 		friccion.setHorizontalAlignment(JTextField.RIGHT);
@@ -169,13 +155,13 @@ public class DialogoAnadirCircuito extends DialogoAnadir {
 			if (Double.parseDouble(recta.getText()) < 1.5 || Double.parseDouble(recta.getText()) > 60) {
 				datosValidos = false;
 				new DialogoOpcionesAlerta(this, "¡Datos incorrectos! Valor recta: mayor a 1.5 metros y menor a 60 metros",
-						"ERROR");
+						DIALOGO_ERROR);
 				recta.setText(null);
 				recta.requestFocusInWindow();
 
 			} else if (Double.parseDouble(radio.getText()) < 1 || Double.parseDouble(radio.getText()) > 50) {
 				datosValidos = false;
-				new DialogoOpcionesAlerta(this, "¡Datos incorrectos! Valor radio: mayor a 1 metro y menor a 50 metros", "ERROR");
+				new DialogoOpcionesAlerta(this, "¡Datos incorrectos! Valor radio: mayor a 1 metro y menor a 50 metros", DIALOGO_ERROR);
 				radio.setText(null);
 				radio.requestFocusInWindow();
 
@@ -183,19 +169,19 @@ public class DialogoAnadirCircuito extends DialogoAnadir {
 					|| Double.parseDouble(anchoCarretera.getText()) > 5) {
 				datosValidos = false;
 				new DialogoOpcionesAlerta(this, "¡Datos incorrectos! Valor ancho carretera: mayor a 1 metro y menor a 5 metros",
-						"ERROR");
+						DIALOGO_ERROR);
 				anchoCarretera.setText(null);
 				anchoCarretera.requestFocusInWindow();
 			} else if (Double.parseDouble(friccion.getText()) <= 0 || Double.parseDouble(friccion.getText()) >= 1) {
 				datosValidos = false;
 				new DialogoOpcionesAlerta(this, "¡Datos incorrectos! Valor coeficiente de fricción: mayor a 0 y menor a 1",
-						"ERROR");
+						DIALOGO_ERROR);
 				friccion.setText(null);
 				friccion.requestFocusInWindow();
 			}
 		} catch (NumberFormatException e) {
 			datosValidos = false;
-			new DialogoOpcionesAlerta(this, "¡Formato de datos no válido!", "ERROR");
+			new DialogoOpcionesAlerta(this, "¡Formato de datos no válido!", DIALOGO_ERROR);
 			recta.setText(null);
 			radio.setText(null);
 			anchoCarretera.setText(null);
@@ -230,12 +216,12 @@ public class DialogoAnadirCircuito extends DialogoAnadir {
 						this.dispose();
 					}
 				} else {
-					new DialogoOpcionesAlerta(this, "¡El circuito ya existe!", "ERROR");
+					new DialogoOpcionesAlerta(this, "¡El circuito ya existe!", DIALOGO_ERROR);
 					nombre.setText(null);
 					nombre.requestFocusInWindow();
 				}
 			} else {
-				new DialogoOpcionesAlerta(this, "Rellena todos los campos", "ERROR");
+				new DialogoOpcionesAlerta(this, "Rellena todos los campos", DIALOGO_ERROR);
 				nombre.selectAll();
 				nombre.requestFocusInWindow();
 			}

@@ -17,7 +17,6 @@ package dialogos;
 import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
@@ -45,8 +44,11 @@ public class DialogoAnadirUsuario extends DialogoAnadir {
 	 */
 	private Usuario nuevoUsuario;
 	private JTextField nombre;
-	private JPasswordField contrasena, confirmarContrasena;
+	private JPasswordField contrasena;
+	private JPasswordField confirmarContrasena;
 	private Map<String, Usuario> mapaUsuarios;
+	
+	private static final String DIALOGO_ERROR = "ERROR";
 
 	/**
 	 * @brief Constructor
@@ -71,28 +73,13 @@ public class DialogoAnadirUsuario extends DialogoAnadir {
 		panel.setBorder(BorderFactory.createEmptyBorder(6, 6, 6, 6));
 
 		nombre = new JTextField();
-		nombre.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				contrasena.requestFocusInWindow();
-			}
-		});
+		nombre.addActionListener(event -> contrasena.requestFocusInWindow());
 
 		contrasena = new JPasswordField();
-		contrasena.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				confirmarContrasena.requestFocusInWindow();
-			}
-		});
+		contrasena.addActionListener(event -> confirmarContrasena.requestFocusInWindow());
 
 		confirmarContrasena = new JPasswordField();
-		confirmarContrasena.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				aceptar.requestFocusInWindow();
-			}
-		});
+		confirmarContrasena.addActionListener(event -> aceptar.requestFocusInWindow());
 
 		panel.add(new JLabel("Nombre:"));
 		panel.add(nombre);
@@ -128,7 +115,7 @@ public class DialogoAnadirUsuario extends DialogoAnadir {
 
 		Iterator<String> iterator = mapaUsuarios.keySet().iterator();
 
-		while (iterator.hasNext() && usuarioValido == true) {
+		while (iterator.hasNext() && usuarioValido) {
 			String clave = iterator.next();
 			if (clave.equalsIgnoreCase(nombre.getText())) {
 				usuarioValido = false;
@@ -174,18 +161,18 @@ public class DialogoAnadirUsuario extends DialogoAnadir {
 						this.crearUsuario();
 						this.dispose();
 					} else {
-						new DialogoOpcionesAlerta(this, "¡El usuario ya existe!", "ERROR");
+						new DialogoOpcionesAlerta(this, "¡El usuario ya existe!", DIALOGO_ERROR);
 						nombre.setText(null);
 						nombre.requestFocusInWindow();
 					}
 				} else {
-					new DialogoOpcionesAlerta(this, "Las contraseñas no coinciden", "ERROR");
+					new DialogoOpcionesAlerta(this, "Las contraseñas no coinciden", DIALOGO_ERROR);
 					contrasena.requestFocusInWindow();
 					contrasena.setText(null);
 					confirmarContrasena.setText(null);
 				}
 			} else {
-				new DialogoOpcionesAlerta(this, "Rellena todos los campos", "ERROR");
+				new DialogoOpcionesAlerta(this, "Rellena todos los campos", DIALOGO_ERROR);
 				nombre.selectAll();
 				nombre.requestFocusInWindow();
 			}
