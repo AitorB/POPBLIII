@@ -1,0 +1,5 @@
+<map id="recursos.BarraProceso.actionPerformed" name="recursos.BarraProceso.actionPerformed">
+<area shape="rect" id="node2" href="$classrecursos_1_1_barra_proceso.html#aa5b020b82dbdbb1d6974080f69573bc3" title="Método que permite notificar cambios a los observadores. " alt="" coords="254,5,445,47"/>
+<area shape="rect" id="node4" href="$classrecursos_1_1_barra_proceso.html#a76e91b2873732dbdf0c9b24da786044d" title="Método para detener el proceso. " alt="" coords="248,71,451,98"/>
+<area shape="rect" id="node3" href="$interfaceinterfaces_1_1_observer.html#a8efd5b428244050d79aa7ef716242245" title="Método que se ejecuta tras observar un cambio en una clase observable. " alt="" coords="499,13,675,39"/>
+</map>

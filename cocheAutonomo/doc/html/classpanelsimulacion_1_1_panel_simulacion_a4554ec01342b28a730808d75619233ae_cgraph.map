@@ -1,0 +1,25 @@
+<map id="panelsimulacion.PanelSimulacion.actionPerformed" name="panelsimulacion.PanelSimulacion.actionPerformed">
+<area shape="rect" id="node2" href="$classpanelsimulacion_1_1_panel_simulacion.html#a6c550af6896634f6396f98ad6cd9264d" title="Método para iniciar la simulación. " alt="" coords="308,253,563,295"/>
+<area shape="rect" id="node21" href="$classpanelsimulacion_1_1_panel_dibujo.html#af679672d091ddbc191d5d591cdad0aa5" title="Método parar el coche. " alt="" coords="325,384,546,425"/>
+<area shape="rect" id="node22" href="$classrecursos_1_1_barra_proceso.html#ab56239e9cc0253648bf55b4ed16b11bc" title="Método para reiniciar el proceso. " alt="" coords="333,581,537,607"/>
+<area shape="rect" id="node3" href="$classrecursos_1_1_fisica.html#a4d90322789cf69803cc004c068beeadf" title="Método estático de clase para la distancia total del recorrido. " alt="" coords="644,253,804,295"/>
+<area shape="rect" id="node7" href="$classrecursos_1_1_fisica.html#a4a8053394dbd5f6fc13035f8f0a9200c" title="Método estático de clase para calcular la velocidad del coche en km/h. " alt="" coords="644,513,804,555"/>
+<area shape="rect" id="node10" href="$classrecursos_1_1_fisica.html#a974e8174fda04cdbfea9b35c741957a1" title="Método estático de clase para calcular el número de vueltas de la rueda para completar la recta..." alt="" coords="644,188,804,229"/>
+<area shape="rect" id="node13" href="$classrecursos_1_1_fisica.html#a3752cbaddcee4cf13df3d494a925e64e" title="Método estático de clase para calcular el número de vueltas de la rueda para completar la curva..." alt="" coords="644,417,804,459"/>
+<area shape="rect" id="node15" href="$classrecursos_1_1_fisica.html#a2e07a57b0d08083c702673d7f7367212" title="Método estático de clase para calcular el tiempo en dar una vuelta al circuito. " alt="" coords="644,319,804,360"/>
+<area shape="rect" id="node18" href="$classpanelsimulacion_1_1_panel_dibujo.html#a0d00e7810215145e19971ed48d98051f" title="Método que pone el coche en movimiento. " alt="" coords="611,5,837,47"/>
+<area shape="rect" id="node19" href="$classpanelconfiguracion_1_1_circuito.html#a649d3bb7407c9e4707735dc572ecf674" title="Método para obtener el valor de la variable tiempoRecorrido. " alt="" coords="625,71,823,112"/>
+<area shape="rect" id="node20" href="$classrecursos_1_1_barra_proceso.html#a49b8132bfaee1dbb49b71e43d5ca11c6" title="Método para iniciar el proceso. " alt="" coords="627,137,821,163"/>
+<area shape="rect" id="node4" href="$classpanelconfiguracion_1_1_circuito.html#a1a498982586e4e851928d5afce301072" title="Método para determinar el valor de la variable distancia. " alt="" coords="885,123,1084,164"/>
+<area shape="rect" id="node5" href="$classpanelconfiguracion_1_1_circuito.html#aee9544c8ec5bb80d9ab5dca8105c2b25" title="Método para obtener el valor de la variable recta. " alt="" coords="885,188,1084,229"/>
+<area shape="rect" id="node6" href="$classpanelconfiguracion_1_1_circuito.html#a226fe2e1963addeb22ada3157f1fee4e" title="Método para obtener el valor de la variable radio. " alt="" coords="885,449,1084,491"/>
+<area shape="rect" id="node8" href="$classpanelconfiguracion_1_1_circuito.html#a618b13fcc9bad76c9a8da4d6738a45e5" title="Método para determinar el valor de la variable velocidadMaxima. " alt="" coords="885,645,1084,687"/>
+<area shape="rect" id="node9" href="$classpanelconfiguracion_1_1_circuito.html#a830a2cbd7009fa394f9edee9a57658f1" title="Método para obtener el valor de la variable fricción. " alt="" coords="885,580,1084,621"/>
+<area shape="rect" id="node11" href="$classpanelconfiguracion_1_1_coche.html#ae6b8dfd353e6cee3542bda2bc9cd236c" title="Método para determinar el valor de la variable numeroVueltasRecta. " alt="" coords="889,57,1081,99"/>
+<area shape="rect" id="node12" href="$classpanelconfiguracion_1_1_coche.html#a0308e451a69d379f019d9d96f210ba3c" title="Método para obtener el valor de la variable diametroRueda. " alt="" coords="889,384,1081,425"/>
+<area shape="rect" id="node14" href="$classpanelconfiguracion_1_1_coche.html#a5a1a8c30a22c4fc9577ea61ff44b4266" title="Método para determinar el valor de la variable numeroVueltasCurva. " alt="" coords="889,515,1081,556"/>
+<area shape="rect" id="node16" href="$classpanelconfiguracion_1_1_circuito.html#a29a70857b3b95d4e9c82b0fdcb93cef2" title="Método para determinar el valor de la variable tiempoRecorrido. " alt="" coords="885,253,1084,295"/>
+<area shape="rect" id="node17" href="$classpanelconfiguracion_1_1_circuito.html#ac14c83cca2ad9ae8bf80b3b7d8afdf4b" title="Método para obtener el valor de la variable velocidadMaxima. " alt="" coords="885,319,1084,360"/>
+<area shape="rect" id="node23" href="$classrecursos_1_1_barra_proceso.html#aa5b020b82dbdbb1d6974080f69573bc3" title="Método que permite notificar cambios a los observadores. " alt="" coords="629,640,819,681"/>
+<area shape="rect" id="node24" href="$interfaceinterfaces_1_1_observer.html#a8efd5b428244050d79aa7ef716242245" title="Método que se ejecuta tras observar un cambio en una clase observable. " alt="" coords="897,711,1073,738"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="recursos.BarraProceso.detener" name="recursos.BarraProceso.detener">
+<area shape="rect" id="node2" href="$classpanelsimulacion_1_1_panel_simulacion.html#aca5d8f68fc96167631e6988315674b12" title="Método que se ejecuta tras detectar un cambio en una clase observable. " alt="" coords="256,5,515,32"/>
+<area shape="rect" id="node3" href="$classrecursos_1_1_barra_proceso.html#aa11994c97ae5fd81160f6d4f48def1ff" title="Método para tratar las acciones a realizar cuando se activa el cronómetro. " alt="" coords="288,57,483,98"/>
+</map>

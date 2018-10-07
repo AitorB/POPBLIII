@@ -61,20 +61,6 @@ public class Usuario implements Serializable {
 	}
 	
 	/**
-	 * @brief Método para guardar usuarios
-	 * @return void
-	 */
-	public void guardarListaUsuarios(Map<String, Usuario> mapaUsuarios) {
-		try (ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(Main.FICHERO_ORIGINAL))) {
-			writer.writeObject(mapaUsuarios);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	/**
 	 * @brief Método para obtener el valor de la variable nombre
 	 * @return String
 	 */

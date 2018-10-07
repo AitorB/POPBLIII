@@ -1,0 +1,8 @@
+<map id="panelpractica.PanelPractica.setCircuito" name="panelpractica.PanelPractica.setCircuito">
+<area shape="rect" id="node2" href="$classpanelpractica_1_1_panel_datos_simulacion.html#a70ffcb3a8bc13d2aa03a10f382d13adc" title="Método para determinar el valor del objeto circuito. " alt="" coords="274,5,445,47"/>
+<area shape="rect" id="node3" href="$classpanelpractica_1_1_panel_datos_tabla.html#aa5a70b519c70c91fcf3bddbe23342ad2" title="Método para indicar al modelo la lista de prácticas a utilizar. " alt="" coords="274,71,445,112"/>
+<area shape="rect" id="node5" href="$classpanelconfiguracion_1_1_circuito.html#a3fe00a92ee1b3846085da3141916743b" title="Método para obtener el valor del ArrayList listaPracticas. " alt="" coords="260,136,459,177"/>
+<area shape="rect" id="node6" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#a585e3a8078600d33ca3fd49a45a28be8" title="Método para determinar el valor del objeto circuito. " alt="" coords="274,201,445,243"/>
+<area shape="rect" id="node7" href="$classpanelconfiguracion_1_1_circuito.html#ae508c9b00ab3074f0e2e7bea02f53bdd" title="Método para obtener el valor de la variable nombre. " alt="" coords="260,267,459,308"/>
+<area shape="rect" id="node4" href="$classpanelpractica_1_1_modelo_tabla.html#a16cbd04bf7a104003bfe8070de8ad9cf" title="Método para determinar el valor de la lista de prácticas. " alt="" coords="507,71,705,112"/>
+</map>

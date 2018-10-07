@@ -1,0 +1,5 @@
+<map id="panelpractica.ModeloTabla.setListaPracticas" name="panelpractica.ModeloTabla.setListaPracticas">
+<area shape="rect" id="node2" href="$classpanelpractica_1_1_panel_datos_tabla.html#aa5a70b519c70c91fcf3bddbe23342ad2" title="Método para indicar al modelo la lista de prácticas a utilizar. " alt="" coords="252,5,423,47"/>
+<area shape="rect" id="node3" href="$classpanelpractica_1_1_panel_practica.html#aa4a70508af28dc42d49f8ad4d014a66d" title="Método para determinar el valor del objeto circuito. " alt="" coords="471,5,677,47"/>
+<area shape="rect" id="node4" href="$classprincipal_1_1_ventana_principal.html#aeef630fd6145b86626799e9da6a68297" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="725,5,936,47"/>
+</map>

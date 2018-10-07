@@ -1,0 +1,5 @@
+<map id="panelpractica.PanelDatosTabla.actionPerformed" name="panelpractica.PanelDatosTabla.actionPerformed">
+<area shape="rect" id="node2" href="$classdialogos_1_1_dialogo_opciones_confirmar.html#a6d8fce6e7b870aa7746d97af73b35fc0" title="Método para obtener el valor de la variable aceptar. " alt="" coords="245,5,417,47"/>
+<area shape="rect" id="node3" href="$classpanelpractica_1_1_modelo_tabla.html#a208a781ffff52bcb5cfee8f1b7cf68d0" title="Método para borrar una fila de la tabla. " alt="" coords="224,71,437,98"/>
+<area shape="rect" id="node4" href="$classpanelpractica_1_1_modelo_tabla.html#ac895a33263a90153dabb6f4fecb4cdd2" title="Método para obtener el número de filas de la tabla. " alt="" coords="231,123,430,164"/>
+</map>

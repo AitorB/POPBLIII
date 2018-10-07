@@ -1,0 +1,8 @@
+<map id="panelpruebas.Pruebas" name="panelpruebas.Pruebas">
+<area shape="rect" id="node4" href="$classpanelpruebas_1_1_panel_derrape.html" title="Clase PanelDerrape. " alt="" coords="367,5,549,32"/>
+<area shape="rect" id="node5" href="$classpanelpruebas_1_1_panel_distancia.html" title="Clase PanelDistancia. " alt="" coords="363,56,553,83"/>
+<area shape="rect" id="node6" href="$classpanelpruebas_1_1_panel_freno.html" title="Clase PanelFreno. " alt="" coords="373,107,543,133"/>
+<area shape="rect" id="node7" href="$classpanelpruebas_1_1_panel_motor.html" title="Clase PanelMotor. " alt="" coords="373,157,543,184"/>
+<area shape="rect" id="node8" href="$classpanelpruebas_1_1_panel_movimiento.html" title="Clase PanelMovimiento. " alt="" coords="357,208,559,235"/>
+<area shape="rect" id="node9" href="$classpanelpruebas_1_1_panel_servo.html" title="Clase PanelServo. " alt="" coords="374,259,542,285"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="panelpractica.PanelDatosTiempoReal.update" name="panelpractica.PanelDatosTiempoReal.update">
+<area shape="rect" id="node2" href="$classrecursos_1_1_fisica.html#a6e09081173ed36d33721033bbf5f9144" title="Método estático de clase para calcular el número de vueltas de la rueda para recorrer todo el circuit..." alt="" coords="224,39,384,80"/>
+<area shape="rect" id="node3" href="$classpanelconfiguracion_1_1_coche.html#a69a3cc81865776848e7f629580704cf4" title="Método para obtener el valor de la variable numeroVueltasRecta. " alt="" coords="432,5,624,47"/>
+<area shape="rect" id="node4" href="$classpanelconfiguracion_1_1_coche.html#a34f6b4b86b75293110ea24902452b036" title="Método para obtener el valor de la variable numeroVueltasCurva. " alt="" coords="432,71,624,112"/>
+</map>

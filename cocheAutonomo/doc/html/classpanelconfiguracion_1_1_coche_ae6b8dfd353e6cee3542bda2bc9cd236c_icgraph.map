@@ -1,0 +1,5 @@
+<map id="panelconfiguracion.Coche.setNumeroVueltasRecta" name="panelconfiguracion.Coche.setNumeroVueltasRecta">
+<area shape="rect" id="node2" href="$classrecursos_1_1_fisica.html#a974e8174fda04cdbfea9b35c741957a1" title="Método estático de clase para calcular el número de vueltas de la rueda para completar la recta..." alt="" coords="245,5,405,47"/>
+<area shape="rect" id="node3" href="$classpanelsimulacion_1_1_panel_simulacion.html#a6c550af6896634f6396f98ad6cd9264d" title="Método para iniciar la simulación. " alt="" coords="453,5,708,47"/>
+<area shape="rect" id="node4" href="$classpanelsimulacion_1_1_panel_simulacion.html#a4554ec01342b28a730808d75619233ae" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="756,5,1011,47"/>
+</map>

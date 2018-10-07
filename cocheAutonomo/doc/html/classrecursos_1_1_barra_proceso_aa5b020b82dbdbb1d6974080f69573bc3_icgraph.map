@@ -1,0 +1,5 @@
+<map id="recursos.BarraProceso.notifyObservers" name="recursos.BarraProceso.notifyObservers">
+<area shape="rect" id="node2" href="$classrecursos_1_1_barra_proceso.html#ab56239e9cc0253648bf55b4ed16b11bc" title="Método para reiniciar el proceso. " alt="" coords="244,13,448,39"/>
+<area shape="rect" id="node4" href="$classrecursos_1_1_barra_proceso.html#aa11994c97ae5fd81160f6d4f48def1ff" title="Método para tratar las acciones a realizar cuando se activa el cronómetro. " alt="" coords="249,64,443,105"/>
+<area shape="rect" id="node3" href="$classpanelsimulacion_1_1_panel_simulacion.html#a4554ec01342b28a730808d75619233ae" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="496,5,751,47"/>
+</map>

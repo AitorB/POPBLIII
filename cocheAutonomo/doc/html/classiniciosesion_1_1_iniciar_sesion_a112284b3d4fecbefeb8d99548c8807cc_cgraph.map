@@ -1,0 +1,11 @@
+<map id="iniciosesion.IniciarSesion.IniciarSesion" name="iniciosesion.IniciarSesion.IniciarSesion">
+<area shape="rect" id="node2" href="$classiniciosesion_1_1_iniciar_sesion.html#a1dffb43e413fee680ce27b2f2f92653a" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="232,37,439,79"/>
+<area shape="rect" id="node5" href="$classdialogos_1_1_dialogo_anadir_usuario.html#a001a98382c9610563620ddbbaf3f7138" title="Método para obtener el valor de la variable nuevoUsuario. " alt="" coords="225,103,445,144"/>
+<area shape="rect" id="node6" href="$classiniciosesion_1_1_usuario.html#a096d3de6c9127519901da947246941b7" title="Método para obtener el valor de la variable nombre. " alt="" coords="255,168,415,209"/>
+<area shape="rect" id="node7" href="$classrecursos_1_1_reproductor.html#a2ffccd32e4e1b32604610772c57d6963" title="Método para abrir el fichero .mp3. " alt="" coords="247,233,424,275"/>
+<area shape="rect" id="node8" href="$classrecursos_1_1_reproductor.html#a92f31826088d3b9f3ea0476887903c5e" title="Método para reproducir el sonido. " alt="" coords="229,299,441,326"/>
+<area shape="rect" id="node9" href="$classrecursos_1_1_reproductor.html#a00bb64cc083b622914693440aedf2289" title="Método para parar el sonido. " alt="" coords="245,350,426,377"/>
+<area shape="rect" id="node10" href="$classiniciosesion_1_1_usuario.html#a86092b073f41ba637fa7b3fb80cd244b" title="Método para obtener el valor de la variable contraseña. " alt="" coords="255,401,415,443"/>
+<area shape="rect" id="node3" href="$classiniciosesion_1_1_iniciar_sesion.html#a9c63e61b6da8df259eeb89f3b9374402" title="Método para guardar usuarios. " alt="" coords="493,5,708,47"/>
+<area shape="rect" id="node4" href="$classdialogos_1_1_dialogo_opciones_confirmar.html#a6d8fce6e7b870aa7746d97af73b35fc0" title="Método para obtener el valor de la variable aceptar. " alt="" coords="515,71,687,112"/>
+</map>

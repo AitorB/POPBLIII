@@ -1,0 +1,8 @@
+<map id="dialogos.DialogoAnadirCoche.actionPerformed" name="dialogos.DialogoAnadirCoche.actionPerformed">
+<area shape="rect" id="node2" href="$classdialogos_1_1_dialogo_anadir_coche.html#acea2b843d382d8a8efb2b358f8f38d22" title="Método para comprobar que los campos están vacíos. " alt="" coords="284,136,525,177"/>
+<area shape="rect" id="node3" href="$classpanelconfiguracion_1_1_coche.html#a19c5f0b58d405b1ca1c1990564531943" title="Método para obtener el valor de la variable modelo. " alt="" coords="589,5,781,47"/>
+<area shape="rect" id="node4" href="$classpanelconfiguracion_1_1_coche.html#a7bc7bbe1d8498ff8aa086a648b1043f8" title="Método para obtener el valor de la variable longitud. " alt="" coords="589,71,781,112"/>
+<area shape="rect" id="node5" href="$classpanelconfiguracion_1_1_coche.html#ae79c6a48b14baf2eabecf8c4d5c689df" title="Método para obtener el valor de la variable distanciaEjes. " alt="" coords="589,136,781,177"/>
+<area shape="rect" id="node6" href="$classpanelconfiguracion_1_1_coche.html#a0308e451a69d379f019d9d96f210ba3c" title="Método para obtener el valor de la variable diametroRueda. " alt="" coords="589,201,781,243"/>
+<area shape="rect" id="node7" href="$classpanelconfiguracion_1_1_coche.html#a0520b15cc39c1c35e783767f1f12a9ee" title="Método para obtener el valor de la variable masa. " alt="" coords="573,267,797,294"/>
+</map>

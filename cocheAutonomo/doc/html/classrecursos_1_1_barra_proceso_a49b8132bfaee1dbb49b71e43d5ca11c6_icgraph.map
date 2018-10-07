@@ -1,0 +1,5 @@
+<map id="recursos.BarraProceso.iniciar" name="recursos.BarraProceso.iniciar">
+<area shape="rect" id="node2" href="$classbienvenida_1_1_bienvenida.html#a80869a8c9dbfdd5688efdb389a980e34" title="Constructor. " alt="" coords="267,5,481,32"/>
+<area shape="rect" id="node3" href="$classpanelsimulacion_1_1_panel_simulacion.html#a6c550af6896634f6396f98ad6cd9264d" title="Método para iniciar la simulación. " alt="" coords="247,57,501,98"/>
+<area shape="rect" id="node4" href="$classpanelsimulacion_1_1_panel_simulacion.html#a4554ec01342b28a730808d75619233ae" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="549,57,804,98"/>
+</map>

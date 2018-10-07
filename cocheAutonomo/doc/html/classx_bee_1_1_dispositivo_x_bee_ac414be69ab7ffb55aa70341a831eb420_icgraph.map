@@ -1,0 +1,13 @@
+<map id="xBee.DispositivoXBee.detenerXBee" name="xBee.DispositivoXBee.detenerXBee">
+<area shape="rect" id="node2" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#a02128ac59124b12e351d68bf4493c096" title="Constructor. " alt="" coords="279,5,508,47"/>
+<area shape="rect" id="node3" href="$classpanelpruebas_1_1_panel_derrape.html#a4c64f37b60f47e4efc87a6e1e0b88f59" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="568,16,788,57"/>
+<area shape="rect" id="node4" href="$classpanelpruebas_1_1_panel_distancia.html#a4666ed8f4f032c0f876f3bfd985c065c" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="563,81,793,123"/>
+<area shape="rect" id="node5" href="$classpanelpruebas_1_1_panel_freno.html#ad2a932da637923e4d44d285da52bc344" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="574,147,782,188"/>
+<area shape="rect" id="node6" href="$classpanelpruebas_1_1_panel_motor.html#a2eac3632a3d48d67483e8bbf90917c11" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="574,277,782,319"/>
+<area shape="rect" id="node7" href="$classpanelpruebas_1_1_panel_movimiento.html#a49852a33761510d90d5148f13dfef846" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="558,343,798,384"/>
+<area shape="rect" id="node8" href="$classpanelpruebas_1_1_panel_servo.html#a04ce1de09d870a97ee13683c98e36d75" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="575,408,781,449"/>
+<area shape="rect" id="node9" href="$classx_bee_1_1_dispositivo_x_bee.html#a0783c10cd606405f186b5c56beb25eca" title="Método para conectar la XBee al puerto COM asignado. " alt="" coords="287,453,499,495"/>
+<area shape="rect" id="node11" href="$classx_bee_1_1_dispositivo_x_bee.html#a01ba7d8176a9bea490c1ca28413c43e5" title="Método para iniciar la XBee. " alt="" coords="285,223,501,250"/>
+<area shape="rect" id="node10" href="$classx_bee_1_1_dispositivo_x_bee.html#a310aad7fa60d39e45e031e0b28755837" title="Constructor. " alt="" coords="556,474,800,501"/>
+<area shape="rect" id="node12" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#adb1da20de1d5c5848bce7800b3a6f078" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="584,212,772,253"/>
+</map>

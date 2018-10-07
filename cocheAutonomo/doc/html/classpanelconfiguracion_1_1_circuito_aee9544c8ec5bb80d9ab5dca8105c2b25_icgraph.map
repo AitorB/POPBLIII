@@ -1,0 +1,8 @@
+<map id="panelconfiguracion.Circuito.getRecta" name="panelconfiguracion.Circuito.getRecta">
+<area shape="rect" id="node2" href="$classpanelconfiguracion_1_1_panel_circuitos.html#a092f39b134e065d35dd0cf559afce04a" title="Método para detectar cambios en la selección de la lista de circuitos. " alt="" coords="252,5,419,47"/>
+<area shape="rect" id="node3" href="$classrecursos_1_1_fisica.html#a4d90322789cf69803cc004c068beeadf" title="Método estático de clase para la distancia total del recorrido. " alt="" coords="255,71,415,112"/>
+<area shape="rect" id="node6" href="$classrecursos_1_1_fisica.html#a974e8174fda04cdbfea9b35c741957a1" title="Método estático de clase para calcular el número de vueltas de la rueda para completar la recta..." alt="" coords="255,136,415,177"/>
+<area shape="rect" id="node7" href="$classrecursos_1_1_fisica.html#a2e07a57b0d08083c702673d7f7367212" title="Método estático de clase para calcular el tiempo en dar una vuelta al circuito. " alt="" coords="255,201,415,243"/>
+<area shape="rect" id="node4" href="$classpanelsimulacion_1_1_panel_simulacion.html#a6c550af6896634f6396f98ad6cd9264d" title="Método para iniciar la simulación. " alt="" coords="467,136,721,177"/>
+<area shape="rect" id="node5" href="$classpanelsimulacion_1_1_panel_simulacion.html#a4554ec01342b28a730808d75619233ae" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="769,136,1024,177"/>
+</map>

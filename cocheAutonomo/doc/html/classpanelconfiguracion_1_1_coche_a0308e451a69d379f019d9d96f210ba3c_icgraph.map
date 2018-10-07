@@ -1,0 +1,13 @@
+<map id="panelconfiguracion.Coche.getDiametroRueda" name="panelconfiguracion.Coche.getDiametroRueda">
+<area shape="rect" id="node2" href="$classdialogos_1_1_dialogo_anadir_coche.html#acea2b843d382d8a8efb2b358f8f38d22" title="Método para comprobar que los campos están vacíos. " alt="" coords="245,5,487,47"/>
+<area shape="rect" id="node5" href="$classpanelconfiguracion_1_1_panel_coche.html#af0daade8dc16f5a9fac433e2820fa411" title="Constructor. " alt="" coords="283,71,449,112"/>
+<area shape="rect" id="node6" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#a02128ac59124b12e351d68bf4493c096" title="Constructor. " alt="" coords="251,136,481,177"/>
+<area shape="rect" id="node7" href="$classrecursos_1_1_fisica.html#a974e8174fda04cdbfea9b35c741957a1" title="Método estático de clase para calcular el número de vueltas de la rueda para completar la recta..." alt="" coords="286,201,446,243"/>
+<area shape="rect" id="node10" href="$classrecursos_1_1_fisica.html#a3752cbaddcee4cf13df3d494a925e64e" title="Método estático de clase para calcular el número de vueltas de la rueda para completar la curva..." alt="" coords="286,267,446,308"/>
+<area shape="rect" id="node11" href="$classrecursos_1_1_fisica.html#a5a41365794eb26811dab5c5027f69c4a" title="Método estático de clase para calcular el número de vueltas de un tramo indicado. ..." alt="" coords="286,332,446,373"/>
+<area shape="rect" id="node3" href="$classdialogos_1_1_dialogo_anadir_coche.html#a053ede11c4834e614c6653892171adb2" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="547,5,777,47"/>
+<area shape="rect" id="node4" href="$classdialogos_1_1_dialogo_anadir_coche.html#a50ee4d3bca77f3f6b15838bd2883af0b" title="Método del panel datos: contiene los datos que el usuario debe introducir. " alt="" coords="853,5,1077,47"/>
+<area shape="rect" id="node8" href="$classpanelsimulacion_1_1_panel_simulacion.html#a6c550af6896634f6396f98ad6cd9264d" title="Método para iniciar la simulación. " alt="" coords="535,235,789,276"/>
+<area shape="rect" id="node9" href="$classpanelsimulacion_1_1_panel_simulacion.html#a4554ec01342b28a730808d75619233ae" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="837,235,1092,276"/>
+<area shape="rect" id="node12" href="$classpanelpruebas_1_1_panel_distancia.html#a4666ed8f4f032c0f876f3bfd985c065c" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="547,332,777,373"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="panelconfiguracion.PanelCoche.PanelCoche" name="panelconfiguracion.PanelCoche.PanelCoche">
+<area shape="rect" id="node2" href="$classpanelconfiguracion_1_1_coche.html#a19c5f0b58d405b1ca1c1990564531943" title="Método para obtener el valor de la variable modelo. " alt="" coords="236,5,428,47"/>
+<area shape="rect" id="node3" href="$classpanelconfiguracion_1_1_coche.html#a7bc7bbe1d8498ff8aa086a648b1043f8" title="Método para obtener el valor de la variable longitud. " alt="" coords="236,71,428,112"/>
+<area shape="rect" id="node4" href="$classpanelconfiguracion_1_1_coche.html#ae79c6a48b14baf2eabecf8c4d5c689df" title="Método para obtener el valor de la variable distanciaEjes. " alt="" coords="236,136,428,177"/>
+<area shape="rect" id="node5" href="$classpanelconfiguracion_1_1_coche.html#a0308e451a69d379f019d9d96f210ba3c" title="Método para obtener el valor de la variable diametroRueda. " alt="" coords="236,201,428,243"/>
+<area shape="rect" id="node6" href="$classpanelconfiguracion_1_1_coche.html#a0520b15cc39c1c35e783767f1f12a9ee" title="Método para obtener el valor de la variable masa. " alt="" coords="220,267,444,294"/>
+<area shape="rect" id="node7" href="$classdialogos_1_1_dialogo_anadir_coche.html#a58e684fdff768cd7b74174fafcb9cdce" title="Método para obtener el valor de la variable nuevoCoche. " alt="" coords="225,319,439,360"/>
+<area shape="rect" id="node8" href="$classiniciosesion_1_1_usuario.html#a18c0c81e4eb15d70e564d0f9e3712111" title="Método para obtener el valor del objeto coche. " alt="" coords="252,384,412,425"/>
+</map>

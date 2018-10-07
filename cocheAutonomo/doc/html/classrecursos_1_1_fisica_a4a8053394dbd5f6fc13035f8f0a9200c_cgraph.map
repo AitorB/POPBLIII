@@ -1,0 +1,5 @@
+<map id="recursos.Fisica.calcularVelocidadMaxima" name="recursos.Fisica.calcularVelocidadMaxima">
+<area shape="rect" id="node2" href="$classpanelconfiguracion_1_1_circuito.html#a618b13fcc9bad76c9a8da4d6738a45e5" title="Método para determinar el valor de la variable velocidadMaxima. " alt="" coords="213,5,412,47"/>
+<area shape="rect" id="node3" href="$classpanelconfiguracion_1_1_circuito.html#a226fe2e1963addeb22ada3157f1fee4e" title="Método para obtener el valor de la variable radio. " alt="" coords="213,71,412,112"/>
+<area shape="rect" id="node4" href="$classpanelconfiguracion_1_1_circuito.html#a830a2cbd7009fa394f9edee9a57658f1" title="Método para obtener el valor de la variable fricción. " alt="" coords="213,136,412,177"/>
+</map>

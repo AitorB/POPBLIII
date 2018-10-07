@@ -1,0 +1,8 @@
+<map id="panelconfiguracion.Circuito.getVelocidadMaxima" name="panelconfiguracion.Circuito.getVelocidadMaxima">
+<area shape="rect" id="node2" href="$classpanelpractica_1_1_panel_datos_simulacion.html#aa310359d9905eafa9885cbc82514ae72" title="Método para mostrar los datos de la simulación si esta se ha realizado. " alt="" coords="256,5,463,47"/>
+<area shape="rect" id="node4" href="$classpanelsimulacion_1_1_panel_resultado.html#a84a1f2138113bafc7647405b0cd9ad24" title="Constructor. " alt="" coords="252,71,467,112"/>
+<area shape="rect" id="node5" href="$classrecursos_1_1_fisica.html#a2e07a57b0d08083c702673d7f7367212" title="Método estático de clase para calcular el tiempo en dar una vuelta al circuito. " alt="" coords="279,136,439,177"/>
+<area shape="rect" id="node3" href="$classprincipal_1_1_ventana_principal.html#aeef630fd6145b86626799e9da6a68297" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="537,5,747,47"/>
+<area shape="rect" id="node6" href="$classpanelsimulacion_1_1_panel_simulacion.html#a6c550af6896634f6396f98ad6cd9264d" title="Método para iniciar la simulación. " alt="" coords="515,136,769,177"/>
+<area shape="rect" id="node7" href="$classpanelsimulacion_1_1_panel_simulacion.html#a4554ec01342b28a730808d75619233ae" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="817,136,1072,177"/>
+</map>

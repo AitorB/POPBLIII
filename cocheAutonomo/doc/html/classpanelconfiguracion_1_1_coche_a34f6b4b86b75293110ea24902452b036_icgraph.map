@@ -1,0 +1,8 @@
+<map id="panelconfiguracion.Coche.getNumeroVueltasCurva" name="panelconfiguracion.Coche.getNumeroVueltasCurva">
+<area shape="rect" id="node2" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#a02128ac59124b12e351d68bf4493c096" title="Constructor. " alt="" coords="481,5,711,47"/>
+<area shape="rect" id="node3" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#adb1da20de1d5c5848bce7800b3a6f078" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="245,49,433,91"/>
+<area shape="rect" id="node4" href="$classrecursos_1_1_fisica.html#a6e09081173ed36d33721033bbf5f9144" title="Método estático de clase para calcular el número de vueltas de la rueda para recorrer todo el circuit..." alt="" coords="259,115,419,156"/>
+<area shape="rect" id="node5" href="$classpanelpractica_1_1_panel_datos_simulacion.html#aa310359d9905eafa9885cbc82514ae72" title="Método para mostrar los datos de la simulación si esta se ha realizado. " alt="" coords="493,100,699,141"/>
+<area shape="rect" id="node7" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#abc6313e3d0e8555926b4ed148a7c354e" title="Método que se ejecuta tras detectar un cambio en una clase observable. " alt="" coords="511,165,681,207"/>
+<area shape="rect" id="node6" href="$classprincipal_1_1_ventana_principal.html#aeef630fd6145b86626799e9da6a68297" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="759,100,969,141"/>
+</map>

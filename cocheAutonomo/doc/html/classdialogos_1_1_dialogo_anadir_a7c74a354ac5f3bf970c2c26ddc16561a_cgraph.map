@@ -1,0 +1,5 @@
+<map id="dialogos.DialogoAnadir.DialogoAnadir" name="dialogos.DialogoAnadir.DialogoAnadir">
+<area shape="rect" id="node2" href="$classdialogos_1_1_dialogo_anadir.html#aac394e5cd7aadef4390c3e562758681b" title="Método del panel principal: contiene el resto de paneles. " alt="" coords="255,39,441,80"/>
+<area shape="rect" id="node3" href="$classdialogos_1_1_dialogo_anadir.html#ab7ef9b15bda2f34b5a6528bc70314f55" title="Método del panel datos: contiene los datos que el usuario debe introducir. " alt="" coords="498,5,685,47"/>
+<area shape="rect" id="node4" href="$classdialogos_1_1_dialogo_anadir.html#a0ed97d9a72f3ce92ab62a8cd895eefda" title="Método para comprobar si los campos están vacíos. " alt="" coords="489,71,693,112"/>
+</map>

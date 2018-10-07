@@ -1,0 +1,4 @@
+<map id="recursos.BarraProceso.reiniciar" name="recursos.BarraProceso.reiniciar">
+<area shape="rect" id="node2" href="$classrecursos_1_1_barra_proceso.html#aa5b020b82dbdbb1d6974080f69573bc3" title="Método que permite notificar cambios a los observadores. " alt="" coords="257,5,448,47"/>
+<area shape="rect" id="node3" href="$interfaceinterfaces_1_1_observer.html#a8efd5b428244050d79aa7ef716242245" title="Método que se ejecuta tras observar un cambio en una clase observable. " alt="" coords="496,13,672,39"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="panelsimulacion.PanelResultado.PanelResultado" name="panelsimulacion.PanelResultado.PanelResultado">
+<area shape="rect" id="node2" href="$classpanelconfiguracion_1_1_circuito.html#adcb9ead1262016f8e3d8e1eb93d5ed35" title="Método para obtener el valor de la variable distancia. " alt="" coords="268,5,467,47"/>
+<area shape="rect" id="node3" href="$classpanelconfiguracion_1_1_circuito.html#ac14c83cca2ad9ae8bf80b3b7d8afdf4b" title="Método para obtener el valor de la variable velocidadMaxima. " alt="" coords="268,71,467,112"/>
+<area shape="rect" id="node4" href="$classpanelconfiguracion_1_1_circuito.html#a649d3bb7407c9e4707735dc572ecf674" title="Método para obtener el valor de la variable tiempoRecorrido. " alt="" coords="268,136,467,177"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="panelconfiguracion.Coche.getLongitud" name="panelconfiguracion.Coche.getLongitud">
+<area shape="rect" id="node2" href="$classdialogos_1_1_dialogo_anadir_coche.html#acea2b843d382d8a8efb2b358f8f38d22" title="Método para comprobar que los campos están vacíos. " alt="" coords="245,5,487,47"/>
+<area shape="rect" id="node5" href="$classpanelconfiguracion_1_1_panel_coche.html#af0daade8dc16f5a9fac433e2820fa411" title="Constructor. " alt="" coords="283,71,449,112"/>
+<area shape="rect" id="node3" href="$classdialogos_1_1_dialogo_anadir_coche.html#a053ede11c4834e614c6653892171adb2" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="535,5,765,47"/>
+<area shape="rect" id="node4" href="$classdialogos_1_1_dialogo_anadir_coche.html#a50ee4d3bca77f3f6b15838bd2883af0b" title="Método del panel datos: contiene los datos que el usuario debe introducir. " alt="" coords="813,5,1037,47"/>
+</map>

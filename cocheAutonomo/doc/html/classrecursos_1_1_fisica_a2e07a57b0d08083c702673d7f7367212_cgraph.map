@@ -1,0 +1,6 @@
+<map id="recursos.Fisica.calcularTiempo" name="recursos.Fisica.calcularTiempo">
+<area shape="rect" id="node2" href="$classpanelconfiguracion_1_1_circuito.html#a29a70857b3b95d4e9c82b0fdcb93cef2" title="Método para determinar el valor de la variable tiempoRecorrido. " alt="" coords="213,5,412,47"/>
+<area shape="rect" id="node3" href="$classpanelconfiguracion_1_1_circuito.html#aee9544c8ec5bb80d9ab5dca8105c2b25" title="Método para obtener el valor de la variable recta. " alt="" coords="213,71,412,112"/>
+<area shape="rect" id="node4" href="$classpanelconfiguracion_1_1_circuito.html#a226fe2e1963addeb22ada3157f1fee4e" title="Método para obtener el valor de la variable radio. " alt="" coords="213,136,412,177"/>
+<area shape="rect" id="node5" href="$classpanelconfiguracion_1_1_circuito.html#ac14c83cca2ad9ae8bf80b3b7d8afdf4b" title="Método para obtener el valor de la variable velocidadMaxima. " alt="" coords="213,201,412,243"/>
+</map>

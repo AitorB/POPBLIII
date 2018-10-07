@@ -1,0 +1,5 @@
+<map id="recursos.Fisica.calcularVueltasRecta" name="recursos.Fisica.calcularVueltasRecta">
+<area shape="rect" id="node2" href="$classpanelconfiguracion_1_1_coche.html#ae6b8dfd353e6cee3542bda2bc9cd236c" title="Método para determinar el valor de la variable numeroVueltasRecta. " alt="" coords="217,5,409,47"/>
+<area shape="rect" id="node3" href="$classpanelconfiguracion_1_1_circuito.html#aee9544c8ec5bb80d9ab5dca8105c2b25" title="Método para obtener el valor de la variable recta. " alt="" coords="213,71,412,112"/>
+<area shape="rect" id="node4" href="$classpanelconfiguracion_1_1_coche.html#a0308e451a69d379f019d9d96f210ba3c" title="Método para obtener el valor de la variable diametroRueda. " alt="" coords="217,136,409,177"/>
+</map>

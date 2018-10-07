@@ -1,0 +1,6 @@
+<map id="panelconfiguracion.PanelCircuitos.PanelCircuitos" name="panelconfiguracion.PanelCircuitos.PanelCircuitos">
+<area shape="rect" id="node2" href="$classiniciosesion_1_1_usuario.html#a18c0c81e4eb15d70e564d0f9e3712111" title="Método para obtener el valor del objeto coche. " alt="" coords="250,5,410,47"/>
+<area shape="rect" id="node3" href="$classdialogos_1_1_dialogo_anadir_circuito.html#abbc4fa7240b1cfec23e9057892f78573" title="Método para obtener el valor de la variable nuevoCircuito. " alt="" coords="220,71,440,112"/>
+<area shape="rect" id="node4" href="$classdialogos_1_1_dialogo_opciones_confirmar.html#a6d8fce6e7b870aa7746d97af73b35fc0" title="Método para obtener el valor de la variable aceptar. " alt="" coords="244,136,416,177"/>
+<area shape="rect" id="node5" href="$classiniciosesion_1_1_usuario.html#ad0cbe50f6180f20fc887a3366328ff59" title="Método para obtener el valor de la variable listaCircuitos. " alt="" coords="250,201,410,243"/>
+</map>

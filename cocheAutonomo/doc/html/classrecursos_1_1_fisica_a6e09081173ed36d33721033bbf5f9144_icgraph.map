@@ -1,0 +1,6 @@
+<map id="recursos.Fisica.calcularVueltasTotal" name="recursos.Fisica.calcularVueltasTotal">
+<area shape="rect" id="node2" href="$classpanelpractica_1_1_panel_datos_simulacion.html#aa310359d9905eafa9885cbc82514ae72" title="Método para mostrar los datos de la simulación si esta se ha realizado. " alt="" coords="225,5,431,47"/>
+<area shape="rect" id="node4" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#a02128ac59124b12e351d68bf4493c096" title="Constructor. " alt="" coords="213,71,443,112"/>
+<area shape="rect" id="node5" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#abc6313e3d0e8555926b4ed148a7c354e" title="Método que se ejecuta tras detectar un cambio en una clase observable. " alt="" coords="243,136,413,177"/>
+<area shape="rect" id="node3" href="$classprincipal_1_1_ventana_principal.html#aeef630fd6145b86626799e9da6a68297" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="491,5,701,47"/>
+</map>

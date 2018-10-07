@@ -1,0 +1,4 @@
+<map id="xBee.XDataListener.dataReceived" name="xBee.XDataListener.dataReceived">
+<area shape="rect" id="node2" href="$classx_bee_1_1_x_data_listener.html#ac0ca984d7d1f67064ee9f2e403b3ffca" title="Método que permite notificar cambios a los observadores. " alt="" coords="271,5,441,47"/>
+<area shape="rect" id="node3" href="$interfaceinterfaces_1_1_observer.html#a8efd5b428244050d79aa7ef716242245" title="Método que se ejecuta tras observar un cambio en una clase observable. " alt="" coords="489,13,665,39"/>
+</map>

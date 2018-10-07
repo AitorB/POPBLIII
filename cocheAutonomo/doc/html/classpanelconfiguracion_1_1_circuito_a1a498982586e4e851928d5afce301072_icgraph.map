@@ -1,0 +1,5 @@
+<map id="panelconfiguracion.Circuito.setDistancia" name="panelconfiguracion.Circuito.setDistancia">
+<area shape="rect" id="node2" href="$classrecursos_1_1_fisica.html#a4d90322789cf69803cc004c068beeadf" title="Método estático de clase para la distancia total del recorrido. " alt="" coords="252,5,412,47"/>
+<area shape="rect" id="node3" href="$classpanelsimulacion_1_1_panel_simulacion.html#a6c550af6896634f6396f98ad6cd9264d" title="Método para iniciar la simulación. " alt="" coords="460,5,715,47"/>
+<area shape="rect" id="node4" href="$classpanelsimulacion_1_1_panel_simulacion.html#a4554ec01342b28a730808d75619233ae" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="763,5,1017,47"/>
+</map>

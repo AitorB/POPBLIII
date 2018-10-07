@@ -1,0 +1,5 @@
+<map id="recursos.Fisica.calcularVueltasCurva" name="recursos.Fisica.calcularVueltasCurva">
+<area shape="rect" id="node2" href="$classpanelconfiguracion_1_1_coche.html#a5a1a8c30a22c4fc9577ea61ff44b4266" title="Método para determinar el valor de la variable numeroVueltasCurva. " alt="" coords="217,5,409,47"/>
+<area shape="rect" id="node3" href="$classpanelconfiguracion_1_1_circuito.html#a226fe2e1963addeb22ada3157f1fee4e" title="Método para obtener el valor de la variable radio. " alt="" coords="213,71,412,112"/>
+<area shape="rect" id="node4" href="$classpanelconfiguracion_1_1_coche.html#a0308e451a69d379f019d9d96f210ba3c" title="Método para obtener el valor de la variable diametroRueda. " alt="" coords="217,136,409,177"/>
+</map>

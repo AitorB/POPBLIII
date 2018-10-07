@@ -1,0 +1,6 @@
+<map id="panelconfiguracion.Circuito.getNombre" name="panelconfiguracion.Circuito.getNombre">
+<area shape="rect" id="node2" href="$classpanelconfiguracion_1_1_adaptador_circuitos.html#af37922b232ca1d3464349ab5717b6449" title="Método para gestionar la visualización de la lista. " alt="" coords="252,5,508,47"/>
+<area shape="rect" id="node3" href="$classpanelpractica_1_1_panel_practica.html#aa4a70508af28dc42d49f8ad4d014a66d" title="Método para determinar el valor del objeto circuito. " alt="" coords="277,71,483,112"/>
+<area shape="rect" id="node5" href="$classpanelsimulacion_1_1_panel_simulacion.html#a58db09772a652dc51275daa9de184389" title="Método para determinar el valor de la variable circuito. " alt="" coords="261,136,499,177"/>
+<area shape="rect" id="node4" href="$classprincipal_1_1_ventana_principal.html#aeef630fd6145b86626799e9da6a68297" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="556,104,767,145"/>
+</map>

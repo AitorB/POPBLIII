@@ -1,0 +1,9 @@
+<map id="xBee.DispositivoXBee.iniciarXBee" name="xBee.DispositivoXBee.iniciarXBee">
+<area shape="rect" id="node2" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#adb1da20de1d5c5848bce7800b3a6f078" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="295,5,483,47"/>
+<area shape="rect" id="node3" href="$classpanelpruebas_1_1_panel_derrape.html#a4c64f37b60f47e4efc87a6e1e0b88f59" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="279,71,499,112"/>
+<area shape="rect" id="node4" href="$classpanelpruebas_1_1_panel_distancia.html#a4666ed8f4f032c0f876f3bfd985c065c" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="275,136,504,177"/>
+<area shape="rect" id="node5" href="$classpanelpruebas_1_1_panel_freno.html#ad2a932da637923e4d44d285da52bc344" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="285,201,493,243"/>
+<area shape="rect" id="node6" href="$classpanelpruebas_1_1_panel_motor.html#a2eac3632a3d48d67483e8bbf90917c11" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="285,267,493,308"/>
+<area shape="rect" id="node7" href="$classpanelpruebas_1_1_panel_movimiento.html#a49852a33761510d90d5148f13dfef846" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="269,332,509,373"/>
+<area shape="rect" id="node8" href="$classpanelpruebas_1_1_panel_servo.html#a04ce1de09d870a97ee13683c98e36d75" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="286,397,493,439"/>
+</map>

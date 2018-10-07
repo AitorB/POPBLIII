@@ -1,0 +1,6 @@
+<map id="panelconfiguracion.Circuito.getFriccion" name="panelconfiguracion.Circuito.getFriccion">
+<area shape="rect" id="node2" href="$classpanelconfiguracion_1_1_panel_circuitos.html#a092f39b134e065d35dd0cf559afce04a" title="Método para detectar cambios en la selección de la lista de circuitos. " alt="" coords="252,5,419,47"/>
+<area shape="rect" id="node3" href="$classrecursos_1_1_fisica.html#a4a8053394dbd5f6fc13035f8f0a9200c" title="Método estático de clase para calcular la velocidad del coche en km/h. " alt="" coords="255,71,415,112"/>
+<area shape="rect" id="node4" href="$classpanelsimulacion_1_1_panel_simulacion.html#a6c550af6896634f6396f98ad6cd9264d" title="Método para iniciar la simulación. " alt="" coords="467,71,721,112"/>
+<area shape="rect" id="node5" href="$classpanelsimulacion_1_1_panel_simulacion.html#a4554ec01342b28a730808d75619233ae" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="769,71,1024,112"/>
+</map>

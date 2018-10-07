@@ -1,0 +1,9 @@
+<map id="panelconfiguracion.Coche.getDistanciaEjes" name="panelconfiguracion.Coche.getDistanciaEjes">
+<area shape="rect" id="node2" href="$classdialogos_1_1_dialogo_anadir_coche.html#acea2b843d382d8a8efb2b358f8f38d22" title="Método para comprobar que los campos están vacíos. " alt="" coords="245,5,487,47"/>
+<area shape="rect" id="node5" href="$classpanelconfiguracion_1_1_panel_coche.html#af0daade8dc16f5a9fac433e2820fa411" title="Constructor. " alt="" coords="283,71,449,112"/>
+<area shape="rect" id="node6" href="$classrecursos_1_1_fisica.html#ada91445721a5e25b3760dfec35968a28" title="Método estático de clase para calcular el movimiento del servo según el ángulo de giro de las ruedas ..." alt="" coords="286,136,446,177"/>
+<area shape="rect" id="node3" href="$classdialogos_1_1_dialogo_anadir_coche.html#a053ede11c4834e614c6653892171adb2" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="535,5,765,47"/>
+<area shape="rect" id="node4" href="$classdialogos_1_1_dialogo_anadir_coche.html#a50ee4d3bca77f3f6b15838bd2883af0b" title="Método del panel datos: contiene los datos que el usuario debe introducir. " alt="" coords="813,5,1037,47"/>
+<area shape="rect" id="node7" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#a02128ac59124b12e351d68bf4493c096" title="Constructor. " alt="" coords="535,103,765,144"/>
+<area shape="rect" id="node8" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#adb1da20de1d5c5848bce7800b3a6f078" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="556,168,744,209"/>
+</map>

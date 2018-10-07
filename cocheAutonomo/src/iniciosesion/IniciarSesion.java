@@ -32,8 +32,10 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -362,6 +364,20 @@ public class IniciarSesion extends JDialog implements ActionListener {
 
 		return camposVacios;
 	}
+	
+	/**
+	 * @brief Método para guardar usuarios
+	 * @return void
+	 */
+	public void guardarListaUsuarios(Map<String, Usuario> mapaUsuarios) {
+		try (ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(Main.FICHERO_ORIGINAL))) {
+			writer.writeObject(mapaUsuarios);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	/**
 	 * @brief Método para tratar las acciones realizadas por el usuario
@@ -374,7 +390,7 @@ public class IniciarSesion extends JDialog implements ActionListener {
 			if (!camposVacios()) {
 				if (comprobarUsuario(nombre.getText(), contrasena.getPassword())) {
 					usuarioValido = true;
-					usuario.guardarListaUsuarios(mapaUsuarios);
+					guardarListaUsuarios(mapaUsuarios);
 					pararMusica();
 					this.dispose();
 				} else {
@@ -391,7 +407,7 @@ public class IniciarSesion extends JDialog implements ActionListener {
 		} else if (e.getActionCommand().equals("apagar")) {
 			DialogoOpcionesConfirmar dialogo = new DialogoOpcionesConfirmar(this, "¿Desea cerrar la aplicación?", "PREGUNTA");
 			if (dialogo.getAceptar()) {
-				usuario.guardarListaUsuarios(mapaUsuarios);
+				guardarListaUsuarios(mapaUsuarios);
 				pararMusica();
 				this.dispose();
 			} else {

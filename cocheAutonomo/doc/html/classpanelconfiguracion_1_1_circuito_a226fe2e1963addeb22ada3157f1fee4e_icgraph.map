@@ -1,0 +1,12 @@
+<map id="panelconfiguracion.Circuito.getRadio" name="panelconfiguracion.Circuito.getRadio">
+<area shape="rect" id="node2" href="$classpanelconfiguracion_1_1_panel_circuitos.html#a092f39b134e065d35dd0cf559afce04a" title="Método para detectar cambios en la selección de la lista de circuitos. " alt="" coords="252,5,419,47"/>
+<area shape="rect" id="node3" href="$classrecursos_1_1_fisica.html#a4d90322789cf69803cc004c068beeadf" title="Método estático de clase para la distancia total del recorrido. " alt="" coords="255,71,415,112"/>
+<area shape="rect" id="node6" href="$classrecursos_1_1_fisica.html#a4a8053394dbd5f6fc13035f8f0a9200c" title="Método estático de clase para calcular la velocidad del coche en km/h. " alt="" coords="255,136,415,177"/>
+<area shape="rect" id="node7" href="$classrecursos_1_1_fisica.html#a3752cbaddcee4cf13df3d494a925e64e" title="Método estático de clase para calcular el número de vueltas de la rueda para completar la curva..." alt="" coords="255,201,415,243"/>
+<area shape="rect" id="node8" href="$classrecursos_1_1_fisica.html#a2e07a57b0d08083c702673d7f7367212" title="Método estático de clase para calcular el tiempo en dar una vuelta al circuito. " alt="" coords="255,267,415,308"/>
+<area shape="rect" id="node9" href="$classrecursos_1_1_fisica.html#ada91445721a5e25b3760dfec35968a28" title="Método estático de clase para calcular el movimiento del servo según el ángulo de giro de las ruedas ..." alt="" coords="255,332,415,373"/>
+<area shape="rect" id="node4" href="$classpanelsimulacion_1_1_panel_simulacion.html#a6c550af6896634f6396f98ad6cd9264d" title="Método para iniciar la simulación. " alt="" coords="467,169,721,211"/>
+<area shape="rect" id="node5" href="$classpanelsimulacion_1_1_panel_simulacion.html#a4554ec01342b28a730808d75619233ae" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="769,169,1024,211"/>
+<area shape="rect" id="node10" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#a02128ac59124b12e351d68bf4493c096" title="Constructor. " alt="" coords="479,299,709,340"/>
+<area shape="rect" id="node11" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#adb1da20de1d5c5848bce7800b3a6f078" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="500,364,688,405"/>
+</map>
