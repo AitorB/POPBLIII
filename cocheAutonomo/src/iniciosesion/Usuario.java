@@ -14,22 +14,11 @@
  */
 package iniciosesion;
 
-/** @brief Librerías
- */
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
-
 import panelconfiguracion.Circuito;
 import panelconfiguracion.Coche;
-import main.Main;
 
 /**
  * @brief Clase Usuario
