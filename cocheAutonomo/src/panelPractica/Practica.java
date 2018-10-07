@@ -58,7 +58,7 @@ public class Practica implements Serializable {
 		this.vueltasRueda = vueltasRueda;
 		this.revolucionesMotor = revolucionesMotor;
 		this.obstaculo = obstaculo;
-		this.observaciones = new String();
+		this.observaciones = "";
 	}
 
 	/**
@@ -87,13 +87,13 @@ public class Practica implements Serializable {
 	 */
 	public Object getFieldAt(int columna) {
 		switch (columna){
-		case 0: return new Integer(porcentaje);
-		case 1: return new Double(distanciaRecorrida);
+		case 0: return Integer.valueOf(porcentaje);
+		case 1: return Double.valueOf(distanciaRecorrida);
 		case 2: return tiempo;
-		case 3: return new Double(velocidadMedia);
-		case 4: return new Integer(vueltasRueda);
-		case 5: return new Integer(revolucionesMotor);
-		case 6: return new Boolean(obstaculo);
+		case 3: return Double.valueOf(velocidadMedia);
+		case 4: return Integer.valueOf(vueltasRueda);
+		case 5: return Integer.valueOf(revolucionesMotor);
+		case 6: return Boolean.valueOf(obstaculo);
 		case 7: return observaciones;
 		default: return null; 
 		}

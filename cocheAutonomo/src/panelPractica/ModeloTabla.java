@@ -33,7 +33,7 @@ public class ModeloTabla extends AbstractTableModel {
 	/**
 	 * @brief Atributos
 	 */
-	private final static int COLUMNA_OBSERVACIONES = 7;
+	private static final int COLUMNA_OBSERVACIONES = 7;
 
 	private ModeloColumnasTabla modeloColumnas;
 	private List<Practica> listaPracticas;
