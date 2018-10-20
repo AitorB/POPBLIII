@@ -22,7 +22,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -45,9 +44,9 @@ public class DialogoDatosPractica extends DialogoAnadir {
 	/**
 	 * @brief Atributos
 	 */
+	private static final String ERROR = "ERROR";
 	private JTextField textoRevoluciones;
 	private JRadioButton botonIzquierda;
-	private JRadioButton botonDerecha;
 	private boolean iniciarPractica;
 	
 	private static final String FONT_TYPE = "Arial";
@@ -86,10 +85,10 @@ public class DialogoDatosPractica extends DialogoAnadir {
 	 */
 	private Component crearPanelRadioButton() {
 		JPanel panel = new JPanel(new GridLayout(1, 3, 10, 0));
-
+		JRadioButton botonDerecha;
+		JLabel texto = new JLabel("Sentido del circuito:");
 		ButtonGroup grupo = new ButtonGroup();
 
-		JLabel texto = new JLabel("Sentido del circuito:");
 		texto.setFont(new Font(FONT_TYPE, Font.BOLD, 13));
 		texto.setHorizontalAlignment(JLabel.LEFT);
 		
@@ -129,12 +128,7 @@ public class DialogoDatosPractica extends DialogoAnadir {
 		textoRevoluciones.setPreferredSize(new Dimension(120, 40));
 		textoRevoluciones.setHorizontalAlignment(JTextField.CENTER);
 		textoRevoluciones.setBorder(null);
-		textoRevoluciones.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				aceptar.requestFocusInWindow();
-			}
-		});
+		textoRevoluciones.addActionListener(e -> aceptar.requestFocusInWindow());
 		
 		panel.add(mensaje, BorderLayout.CENTER);
 		panel.add(textoRevoluciones, BorderLayout.EAST);
@@ -166,13 +160,13 @@ public class DialogoDatosPractica extends DialogoAnadir {
 		try {
 			if (Double.parseDouble(textoRevoluciones.getText()) < 15 || Double.parseDouble(textoRevoluciones.getText()) > 100) {
 				datosValidos = false;
-				new DialogoOpcionesAlerta(this, "¡Datos incorrectos! Revoluciones del motor: entre 15% y 100%", "ERROR");
+				new DialogoOpcionesAlerta(this, "¡Datos incorrectos! Revoluciones del motor: entre 15% y 100%", ERROR);
 				textoRevoluciones.setText(null);
 				textoRevoluciones.requestFocusInWindow();
 			}
 		} catch (NumberFormatException e) {
 			datosValidos = false;
-			new DialogoOpcionesAlerta(this, "¡Formato de datos no válido!", "ERROR");
+			new DialogoOpcionesAlerta(this, "¡Formato de datos no válido!", ERROR);
 			textoRevoluciones.setText(null);
 			textoRevoluciones.requestFocusInWindow();
 		}
@@ -194,7 +188,7 @@ public class DialogoDatosPractica extends DialogoAnadir {
 					this.dispose();
 				}
 			} else {
-				new DialogoOpcionesAlerta(this, "Rellena todos los campos", "ERROR");
+				new DialogoOpcionesAlerta(this, "Rellena todos los campos", ERROR);
 				textoRevoluciones.selectAll();
 				textoRevoluciones.requestFocusInWindow();
 			}

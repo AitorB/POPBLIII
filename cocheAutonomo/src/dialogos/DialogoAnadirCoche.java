@@ -17,7 +17,6 @@ package dialogos;
 import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
@@ -39,6 +38,7 @@ public class DialogoAnadirCoche extends DialogoAnadir {
 	/**
 	 * @brief Atributos
 	 */
+	private static final String ERROR = "ERROR";
 	private Coche coche;
 	private Coche nuevoCoche;
 	private JTextField modelo;
@@ -91,12 +91,7 @@ public class DialogoAnadirCoche extends DialogoAnadir {
 
 		masa = new JTextField();
 		masa.setHorizontalAlignment(JTextField.RIGHT);
-		masa.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				aceptar.requestFocusInWindow();
-			}
-		});
+		masa.addActionListener(e -> aceptar.requestFocusInWindow());
 		
 		panel.add(new JLabel("Modelo:"));
 		panel.add(modelo);
@@ -138,34 +133,32 @@ public class DialogoAnadirCoche extends DialogoAnadir {
 			if (Double.parseDouble(longitud.getText()) < 15 || Double.parseDouble(longitud.getText()) > 100) {
 				datosValidos = false;
 				new DialogoOpcionesAlerta(this,
-						"¡Datos incorrectos! Valor longitud: mayor a 15 centimetros y menor a 100 centimetros",
-						"ERROR");
+						"¡Datos incorrectos! Valor longitud: mayor a 15 centimetros y menor a 100 centimetros", ERROR);
 				longitud.setText(null);
 				longitud.requestFocusInWindow();
 
 			} else if (Double.parseDouble(distanciaEjes.getText()) < 10 || Double.parseDouble(distanciaEjes.getText()) > 50) {
 				datosValidos = false;
 				new DialogoOpcionesAlerta(this,
-						"¡Datos incorrectos! Valor distancia entre ejes: mayor a 10 centimetros y menor a 50 centimetros", "ERROR");
+						"¡Datos incorrectos! Valor distancia entre ejes: mayor a 10 centimetros y menor a 50 centimetros", ERROR);
 				distanciaEjes.setText(null);
 				distanciaEjes.requestFocusInWindow();
 
 			} else if (Double.parseDouble(diametroRueda.getText()) < 2 || Double.parseDouble(diametroRueda.getText()) > 20) {
 				datosValidos = false;
 				new DialogoOpcionesAlerta(this,
-						"¡Datos incorrectos! Valor diámetro de rueda: mayor a 2 centimetros y menor a 20 centimetros",
-						"ERROR");
+						"¡Datos incorrectos! Valor diámetro de rueda: mayor a 2 centimetros y menor a 20 centimetros", ERROR);
 				diametroRueda.setText(null);
 				diametroRueda.requestFocusInWindow();
 			} else if (Double.parseDouble(masa.getText()) < 100 || Double.parseDouble(masa.getText()) > 10000) {
 				datosValidos = false;
-				new DialogoOpcionesAlerta(this, "¡Datos incorrectos! Valor masa: mayor a 100 g y menor a 10000 g", "ERROR");
+				new DialogoOpcionesAlerta(this, "¡Datos incorrectos! Valor masa: mayor a 100 g y menor a 10000 g", ERROR);
 				masa.setText(null);
 				masa.requestFocusInWindow();
 			}
 		} catch (NumberFormatException e) {
 			datosValidos = false;
-			new DialogoOpcionesAlerta(this, "¡Formato de datos no válido!", "ERROR");
+			new DialogoOpcionesAlerta(this, "¡Formato de datos no válido!", ERROR);
 			longitud.setText(null);
 			distanciaEjes.setText(null);
 			diametroRueda.setText(null);
@@ -211,7 +204,7 @@ public class DialogoAnadirCoche extends DialogoAnadir {
 					this.dispose();
 				}
 			} else {
-				new DialogoOpcionesAlerta(this, "Rellena todos los campos", "ERROR");
+				new DialogoOpcionesAlerta(this, "Rellena todos los campos", ERROR);
 				modelo.selectAll();
 				modelo.requestFocusInWindow();
 			}

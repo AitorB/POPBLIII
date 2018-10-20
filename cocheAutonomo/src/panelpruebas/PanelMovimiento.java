@@ -41,7 +41,15 @@ public class PanelMovimiento extends Pruebas {
 	/**
 	 * @brief Atributos
 	 */
-	private JButton izquierda, centro, derecha;
+	private static final String ARIAL = "Arial";
+	private static final String IZQUIERDA = "izquierda";
+	private static final String CENTRO = "centro";
+	private static final String DERECHA = "derecha";
+	private static final String INICIAR = "iniciar";
+	private static final String DETENER = "detener";
+	private JButton izquierdaBtn;
+	private JButton centroBtn;
+	private JButton derechaBtn;
 
 	/**
 	 * @brief Constructor
@@ -59,33 +67,33 @@ public class PanelMovimiento extends Pruebas {
 		JPanel panel = new JPanel(new GridLayout(1, 3, 15, 0));
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
 
-		izquierda = new JButton(" IZQUIERDA", new ImageIcon("iconos\\izquierda.png"));
-		izquierda.setFont(new Font("Arial", Font.BOLD, 12));
-		izquierda.setPreferredSize(new Dimension(180, 0));
-		izquierda.setMnemonic(KeyEvent.VK_I);
-		izquierda.setActionCommand("izquierda");
-		izquierda.addActionListener(this);
-		izquierda.setEnabled(false);
+		izquierdaBtn = new JButton(" IZQUIERDA", new ImageIcon("iconos\\izquierda.png"));
+		izquierdaBtn.setFont(new Font(ARIAL, Font.BOLD, 12));
+		izquierdaBtn.setPreferredSize(new Dimension(180, 0));
+		izquierdaBtn.setMnemonic(KeyEvent.VK_I);
+		izquierdaBtn.setActionCommand(IZQUIERDA);
+		izquierdaBtn.addActionListener(this);
+		izquierdaBtn.setEnabled(false);
 
-		centro = new JButton(" CENTRO", new ImageIcon("iconos\\centro.png"));
-		centro.setFont(new Font("Arial", Font.BOLD, 12));
-		centro.setPreferredSize(new Dimension(180, 0));
-		centro.setMnemonic(KeyEvent.VK_D);
-		centro.setActionCommand("centro");
-		centro.addActionListener(this);
-		centro.setEnabled(false);
+		centroBtn = new JButton(" CENTRO", new ImageIcon("iconos\\centro.png"));
+		centroBtn.setFont(new Font(ARIAL, Font.BOLD, 12));
+		centroBtn.setPreferredSize(new Dimension(180, 0));
+		centroBtn.setMnemonic(KeyEvent.VK_D);
+		centroBtn.setActionCommand(CENTRO);
+		centroBtn.addActionListener(this);
+		centroBtn.setEnabled(false);
 
-		derecha = new JButton(" DERECHA", new ImageIcon("iconos\\derecha.png"));
-		derecha.setFont(new Font("Arial", Font.BOLD, 12));
-		derecha.setPreferredSize(new Dimension(180, 0));
-		derecha.setMnemonic(KeyEvent.VK_D);
-		derecha.setActionCommand("derecha");
-		derecha.addActionListener(this);
-		derecha.setEnabled(false);
+		derechaBtn = new JButton(" DERECHA", new ImageIcon("iconos\\derecha.png"));
+		derechaBtn.setFont(new Font(ARIAL, Font.BOLD, 12));
+		derechaBtn.setPreferredSize(new Dimension(180, 0));
+		derechaBtn.setMnemonic(KeyEvent.VK_D);
+		derechaBtn.setActionCommand(DERECHA);
+		derechaBtn.addActionListener(this);
+		derechaBtn.setEnabled(false);
 
-		panel.add(izquierda);
-		panel.add(centro);
-		panel.add(derecha);
+		panel.add(izquierdaBtn);
+		panel.add(centroBtn);
+		panel.add(derechaBtn);
 
 		return panel;
 	}
@@ -96,39 +104,40 @@ public class PanelMovimiento extends Pruebas {
 	 */
 	private void comprobarEstadoBotones(String accion) {
 		switch (accion) {
-		case "iniciar":
-			izquierda.setEnabled(true);
-			centro.setEnabled(false);
-			derecha.setEnabled(true);
+		case INICIAR:
+			izquierdaBtn.setEnabled(true);
+			centroBtn.setEnabled(false);
+			derechaBtn.setEnabled(true);
 			iniciar.setEnabled(false);
 			detener.setEnabled(true);
 			break;
 			
-		case "detener":
-			izquierda.setEnabled(false);
-			centro.setEnabled(false);
-			derecha.setEnabled(false);
+		case DETENER:
+			izquierdaBtn.setEnabled(false);
+			centroBtn.setEnabled(false);
+			derechaBtn.setEnabled(false);
 			iniciar.setEnabled(true);
 			detener.setEnabled(false);
 			break;
 			
-		case "izquierda":
-			izquierda.setEnabled(false);
-			centro.setEnabled(true);
-			derecha.setEnabled(true);
+		case IZQUIERDA:
+			izquierdaBtn.setEnabled(false);
+			centroBtn.setEnabled(true);
+			derechaBtn.setEnabled(true);
 			break;
 			
-		case "centro":
-			centro.setEnabled(false);
-			izquierda.setEnabled(true);
-			derecha.setEnabled(true);
+		case CENTRO:
+			centroBtn.setEnabled(false);
+			izquierdaBtn.setEnabled(true);
+			derechaBtn.setEnabled(true);
 			break;
 			
-		case "derecha":
-			derecha.setEnabled(false);
-			izquierda.setEnabled(true);
-			centro.setEnabled(true);
+		case DERECHA:
+			derechaBtn.setEnabled(false);
+			izquierdaBtn.setEnabled(true);
+			centroBtn.setEnabled(true);
 			break;
+		default: break;
 		}
 	}
 
@@ -140,9 +149,9 @@ public class PanelMovimiento extends Pruebas {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (dispositivoXBee != null) {
-			if (e.getActionCommand().equals("iniciar")) {
+			if (e.getActionCommand().equals(INICIAR)) {
 				if(!dispositivoXBee.comprobarEstado()) {
-					comprobarEstadoBotones("iniciar");
+					comprobarEstadoBotones(INICIAR);
 	
 					dispositivoXBee.iniciarXBee();
 					dispositivoXBee.enviarDatosPrueba(DispositivoXBee.MOVIMIENTO, DispositivoXBee.ADELANTE,
@@ -151,24 +160,24 @@ public class PanelMovimiento extends Pruebas {
 					new DialogoOpcionesAlerta(ventana, "¡Ya hay una prueba en curso!", "ERROR");
 				}
 				
-			} else if (e.getActionCommand().equals("detener")) {
-				comprobarEstadoBotones("detener");
+			} else if (e.getActionCommand().equals(DETENER)) {
+				comprobarEstadoBotones(DETENER);
 				dispositivoXBee.enviarDatosPrueba(DispositivoXBee.MOVIMIENTO, DispositivoXBee.DETENER,
 						DispositivoXBee.DETENER, DispositivoXBee.DETENER);
 				
 				dispositivoXBee.detenerXBee();
-			} else if (e.getActionCommand().equals("izquierda")) {
-				comprobarEstadoBotones("izquierda");
+			} else if (e.getActionCommand().equals(IZQUIERDA)) {
+				comprobarEstadoBotones(IZQUIERDA);
 				dispositivoXBee.enviarDatosPrueba(DispositivoXBee.MOVIMIENTO, DispositivoXBee.IZQUIERDA,
 						DispositivoXBee.INICIAR, 100);
 				
-			} else if (e.getActionCommand().equals("centro")) {
-				comprobarEstadoBotones("centro");
+			} else if (e.getActionCommand().equals(CENTRO)) {
+				comprobarEstadoBotones(CENTRO);
 				dispositivoXBee.enviarDatosPrueba(DispositivoXBee.MOVIMIENTO, DispositivoXBee.ADELANTE,
 						DispositivoXBee.INICIAR, DispositivoXBee.ADELANTE);
 				
-			} else if (e.getActionCommand().equals("derecha")) {
-				comprobarEstadoBotones("derecha");
+			} else if (e.getActionCommand().equals(DERECHA)) {
+				comprobarEstadoBotones(DERECHA);
 				dispositivoXBee.enviarDatosPrueba(DispositivoXBee.MOVIMIENTO, DispositivoXBee.DERECHA,
 						DispositivoXBee.INICIAR, 100);
 			}

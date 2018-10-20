@@ -50,8 +50,10 @@ public class PanelDibujo extends JPanel implements ActionListener {
 	private Timer cronometro;
 	private double velocidadX;
 	private double angulo;
-	private double coordenadaX, coordenadaY;
-	private boolean recta, curvaDerecha;
+	private double coordenadaX;
+	private double coordenadaY;
+	private boolean enRecta;
+	private boolean curvaDerecha;
 	private double centrarY = ANCHO_COCHE /(double)2;
 	
 
@@ -69,7 +71,7 @@ public class PanelDibujo extends JPanel implements ActionListener {
 	private void posicionInicial() {
 		this.centrarY = Math.abs(centrarY);
 		this.velocidadX = CENTESIMA_PARTE;
-		this.recta = true;
+		this.enRecta = true;
 		this.curvaDerecha = true;
 		this.angulo = -Math.PI / 2;
 		this.coordenadaX = MARGEN_IZQUIERDA + RADIO_EXTERIOR + (RECTA / (double)2) - CENTRAR_X;
@@ -138,46 +140,33 @@ public class PanelDibujo extends JPanel implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (recta) {
+		if (enRecta) {
 			coordenadaX += velocidadX;
 		} else {
-			angulo += CENTESIMA_PARTE / RADIO;
-			
-			if (angulo >= Math.PI / 2) {
-				angulo = -Math.PI / 2;
-			} else if (angulo <= 0.065 && angulo >= -0.065){
-				centrarY = -centrarY;
-			}
-			if (curvaDerecha) {
-				coordenadaX = MARGEN_IZQUIERDA + RADIO_EXTERIOR + RECTA + (double)Math.round(Math.cos(angulo) * (RADIO-CENTRAR_X));
-				coordenadaY = MARGEN_ARRIBA + RADIO_EXTERIOR - (double)Math.round(Math.sin(angulo) * (RADIO - centrarY));	
-			} else {
-				coordenadaX = MARGEN_IZQUIERDA + RADIO_EXTERIOR - (double)Math.round(Math.cos(angulo) *(RADIO+CENTRAR_X));
-				coordenadaY = MARGEN_ARRIBA + RADIO_EXTERIOR + (double)Math.round(Math.sin(angulo) * (RADIO -centrarY));
-			}
+			enCurva();
 		}
 		if (coordenadaX >= MARGEN_IZQUIERDA + RADIO_EXTERIOR + RECTA
 				&& coordenadaX <= MARGEN_IZQUIERDA + RADIO_EXTERIOR + RECTA + CENTESIMA_PARTE
 				&& coordenadaY == MARGEN_ARRIBA + (2 * RADIO_EXTERIOR) - (ANCHO_CARRETERA /(double) 2) - (centrarY)) {
-			recta = false;
+			enRecta = false;
 			curvaDerecha = true;
-		}else if (coordenadaX >= MARGEN_IZQUIERDA + RADIO_EXTERIOR + RECTA
+		} else if (coordenadaX >= MARGEN_IZQUIERDA + RADIO_EXTERIOR + RECTA
 				&& coordenadaX <= MARGEN_IZQUIERDA + RADIO_EXTERIOR + RECTA + CENTESIMA_PARTE
 				&& coordenadaY == MARGEN_ARRIBA + (ANCHO_CARRETERA / (double)2) + (centrarY)) {
-			recta = true;
+			enRecta = true;
 			curvaDerecha = false;
 			velocidadX = -velocidadX;
-		}else if (coordenadaX >= MARGEN_IZQUIERDA + RADIO_EXTERIOR
+		} else if (coordenadaX >= MARGEN_IZQUIERDA + RADIO_EXTERIOR
 				&& coordenadaX <= MARGEN_IZQUIERDA + RADIO_EXTERIOR + CENTESIMA_PARTE
 				&& coordenadaY == MARGEN_ARRIBA + (ANCHO_CARRETERA /(double) 2)+(centrarY)) {
-			recta = false;
-		}else if (coordenadaX >= MARGEN_IZQUIERDA + RADIO_EXTERIOR - CENTESIMA_PARTE
+			enRecta = false;
+		} else if (coordenadaX >= MARGEN_IZQUIERDA + RADIO_EXTERIOR - CENTESIMA_PARTE
 				&& coordenadaX <= MARGEN_IZQUIERDA + RADIO_EXTERIOR 
 				&& coordenadaY == MARGEN_ARRIBA + (2 * RADIO_EXTERIOR) - (ANCHO_CARRETERA /(double) 2)-(centrarY)) {
-			recta = true;
+			enRecta = true;
 			curvaDerecha = true;
 			velocidadX = -velocidadX;
-		}else if (coordenadaX >= MARGEN_IZQUIERDA + RADIO_EXTERIOR + (RECTA /(double) 2) - CENTESIMA_PARTE
+		} else if (coordenadaX >= MARGEN_IZQUIERDA + RADIO_EXTERIOR + (RECTA /(double) 2) - CENTESIMA_PARTE
 				&& coordenadaX <= MARGEN_IZQUIERDA + RADIO_EXTERIOR + (RECTA / 2)
 				&& coordenadaY >= MARGEN_ARRIBA + (2 * RADIO_EXTERIOR) - (ANCHO_CARRETERA /(double) 2) -(centrarY)) {
 			cronometro.stop();
@@ -185,4 +174,20 @@ public class PanelDibujo extends JPanel implements ActionListener {
 		this.repaint();
 	}
 
+	public void enCurva() {
+		angulo += CENTESIMA_PARTE / RADIO;
+		
+		if (angulo >= Math.PI / 2) {
+			angulo = -Math.PI / 2;
+		} else if (angulo <= 0.065 && angulo >= -0.065){
+			centrarY = -centrarY;
+		}
+		if (curvaDerecha) {
+			coordenadaX = MARGEN_IZQUIERDA + RADIO_EXTERIOR + RECTA + (double)Math.round(Math.cos(angulo) * (RADIO - CENTRAR_X));
+			coordenadaY = MARGEN_ARRIBA + RADIO_EXTERIOR - (double)Math.round(Math.sin(angulo) * (RADIO - centrarY));	
+		} else {
+			coordenadaX = MARGEN_IZQUIERDA + RADIO_EXTERIOR - (double)Math.round(Math.cos(angulo) * (RADIO + CENTRAR_X));
+			coordenadaY = MARGEN_ARRIBA + RADIO_EXTERIOR + (double)Math.round(Math.sin(angulo) * (RADIO - centrarY));
+		}
+	}
 }

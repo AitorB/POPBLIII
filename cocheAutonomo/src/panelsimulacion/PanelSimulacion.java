@@ -53,12 +53,15 @@ public class PanelSimulacion extends JPanel implements ActionListener, Observer 
 	/**
 	 * @brief Atributos
 	 */
+	private static final String ARIAL = "Arial";
 	private JFrame ventana;
 	private Circuito circuito;
 	private Coche coche;
 	private PanelDibujo panelDibujo;
-	private JButton iniciar, detener;
-	private JLabel nombreCircuito, estado;
+	private JButton iniciar;
+	private JButton detener;
+	private JLabel nombreCircuito;
+	private JLabel estado;
 	private BarraProceso barraProceso;
 
 	/**
@@ -83,7 +86,7 @@ public class PanelSimulacion extends JPanel implements ActionListener, Observer 
 		panel.setBorder(BorderFactory.createEtchedBorder());
 
 		nombreCircuito = new JLabel();
-		nombreCircuito.setFont(new Font("Arial", Font.BOLD, 20));
+		nombreCircuito.setFont(new Font(ARIAL, Font.BOLD, 20));
 
 		panel.add(nombreCircuito);
 
@@ -131,7 +134,7 @@ public class PanelSimulacion extends JPanel implements ActionListener, Observer 
 
 		estado = new JLabel();
 		estado.setText("0 % COMPLETADO");
-		estado.setFont(new Font("Arial", Font.BOLD, 15));
+		estado.setFont(new Font(ARIAL, Font.BOLD, 15));
 
 		panel.add(estado);
 
@@ -162,13 +165,13 @@ public class PanelSimulacion extends JPanel implements ActionListener, Observer 
 		panel.setPreferredSize(new Dimension(0, 50));
 		
 		iniciar = new JButton("  INICIAR", new ImageIcon("iconos\\iniciar.png"));
-		iniciar.setFont(new Font("Arial", Font.BOLD, 20));
+		iniciar.setFont(new Font(ARIAL, Font.BOLD, 20));
 		iniciar.setMnemonic(KeyEvent.VK_I);
 		iniciar.setActionCommand("iniciar");
 		iniciar.addActionListener(this);
 
 		detener = new JButton("  DETENER", new ImageIcon("iconos\\detener.png"));
-		detener.setFont(new Font("Arial", Font.BOLD, 20));
+		detener.setFont(new Font(ARIAL, Font.BOLD, 20));
 		detener.setMnemonic(KeyEvent.VK_D);
 		detener.setActionCommand("detener");
 		detener.addActionListener(this);

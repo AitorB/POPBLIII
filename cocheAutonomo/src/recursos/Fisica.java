@@ -24,12 +24,12 @@ public class Fisica {
 	/**
 	 * @brief Atributos
 	 */
-	private final static double GRAVEDAD = 9.8;
+	private static final double GRAVEDAD = 9.8;
 
 	/**
 	 * @brief Constructor
 	 */
-	public Fisica() {}
+	private Fisica() {}
 
 	/**
 	 * @brief Método estático de clase para la distancia total del recorrido
@@ -75,7 +75,7 @@ public class Fisica {
 	 * @param coche Coche seleccionado por el usuario
 	 * @return int
 	 */
-	public static int calcularVueltasTotal(Circuito circuito, Coche coche) {
+	public static int calcularVueltasTotal(Coche coche) {
 		return ((coche.getNumeroVueltasRecta() * 2) + (coche.getNumeroVueltasCurva() * 2));
 	}
 	

@@ -575,32 +575,39 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 		if (e.getActionCommand().equals("iniciar")) {
 			if (dispositivoXBee != null) {
 				if (!dispositivoXBee.comprobarEstado()) {
-					DialogoDatosPractica dialogo = new DialogoDatosPractica(ventana, 450, 200, "INICIAR PRACTICA");
-					if (dialogo.getIniciarPractica()) {
-						iniciarPractica(dialogo);
-
-						dispositivoXBee.iniciarXBee();
-						dispositivoXBee.enviarDimensionesCircuito(DispositivoXBee.RECTA, coche.getNumeroVueltasRecta());
-						dispositivoXBee.enviarDimensionesCircuito(DispositivoXBee.CURVA, coche.getNumeroVueltasCurva());
-						dispositivoXBee.enviarDatosCircuito(DispositivoXBee.MOTOR, DispositivoXBee.ADELANTE,
-								DispositivoXBee.INICIAR, revolucionesMotor);
-						dispositivoXBee.setErrorEnvio(true);
-						dispositivoXBee.enviarDatosCircuito(DispositivoXBee.SERVO,
-								(dialogo.getBotonIzquierda().isSelected() ? DispositivoXBee.IZQUIERDA : DispositivoXBee.DERECHA),
-								DispositivoXBee.INICIAR, Fisica.calcularAnguloGiro(circuito, coche));
-					}
+					crearDialogoDatosPractica();
 				} else {
 					new DialogoOpcionesAlerta(ventana, "¡Ya hay una prueba en curso!", ERROR);
 				}
 			} else {
 				new DialogoOpcionesAlerta(ventana, "¡Dispositivo XBee no conectado!", ERROR);
 			}
-
 		} else if (e.getActionCommand().equals("detener")) {
 			dispositivoXBee.enviarDatosCircuito(DispositivoXBee.MOTOR, DispositivoXBee.DETENER, DispositivoXBee.DETENER,
 					DispositivoXBee.DETENER);
 			
 			detenerPractica();
+		}
+	}
+
+	/**
+	 * @brief Método que se ejecuta para crear un DialogoDatosPractica
+	 * @return void
+	 */
+	public void crearDialogoDatosPractica() {
+		DialogoDatosPractica dialogo = new DialogoDatosPractica(ventana, 450, 200, "INICIAR PRACTICA");
+		if (dialogo.getIniciarPractica()) {
+			iniciarPractica(dialogo);
+
+			dispositivoXBee.iniciarXBee();
+			dispositivoXBee.enviarDimensionesCircuito(DispositivoXBee.RECTA, coche.getNumeroVueltasRecta());
+			dispositivoXBee.enviarDimensionesCircuito(DispositivoXBee.CURVA, coche.getNumeroVueltasCurva());
+			dispositivoXBee.enviarDatosCircuito(DispositivoXBee.MOTOR, DispositivoXBee.ADELANTE,
+					DispositivoXBee.INICIAR, revolucionesMotor);
+			dispositivoXBee.setErrorEnvio(true);
+			dispositivoXBee.enviarDatosCircuito(DispositivoXBee.SERVO,
+					(dialogo.getBotonIzquierda().isSelected() ? DispositivoXBee.IZQUIERDA : DispositivoXBee.DERECHA),
+					DispositivoXBee.INICIAR, Fisica.calcularAnguloGiro(circuito, coche));
 		}
 	}
 

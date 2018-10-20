@@ -19,7 +19,6 @@ package dialogos;
 import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
@@ -92,12 +91,7 @@ public class DialogoAnadirCircuito extends DialogoAnadir {
 
 		friccion = new JTextField();
 		friccion.setHorizontalAlignment(JTextField.RIGHT);
-		friccion.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				aceptar.requestFocusInWindow();
-			}
-		});
+		friccion.addActionListener(e -> aceptar.requestFocusInWindow());
 
 		panel.add(new JLabel("Nombre:"));
 		panel.add(nombre);

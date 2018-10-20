@@ -3,6 +3,7 @@
 
 # Log file
 *.log
+*.logListModel
 
 # BlueJ files
 *.ctxt
@@ -11,6 +12,7 @@
 .mtj.tmp/
 
 # Package Files #
+*.jar
 *.war
 *.nar
 *.ear
@@ -20,20 +22,22 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-<<<<<<< HEAD
 
+# Intellij
+.idea/
+*.iml
+*.iws
 
-=======
-/.metadata/
+# Mac
+.DS_Store
 
-cocheAutonomo/.metadata/
+# Maven
+logListModel/
+target/
 
-*metadata
->>>>>>> master
 # Created by https://www.gitignore.io/api/eclipse
 
-### Eclipse ###
-
+# Eclipse
 .metadata
 bin/
 tmp/

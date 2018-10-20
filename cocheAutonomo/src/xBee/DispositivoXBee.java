@@ -64,7 +64,8 @@ public class DispositivoXBee implements Observable, Observer {
 	private XDataListener listener;
 	private RemoteXBeeDevice dispositivoRemoto;
 	private XBeeMessage mensajeXBee;
-	private boolean activado, errorEnvio;
+	private boolean activado;
+	private boolean errorEnvio;
 	
 	private Observer observer;
 
@@ -165,8 +166,7 @@ public class DispositivoXBee implements Observable, Observer {
 		try {
 			dispositivoLocal.sendData(dispositivoRemoto, trama.getDatos());
 		} catch (XBeeException e) {
-			//e.printStackTrace();
-			if(!errorEnvio) {
+			if (!errorEnvio) {
 				new DialogoOpcionesAlerta(ventana, "¡ERROR: No ha sido posible conectar con el dispositivo XBee remoto!", "ERROR");
 				errorEnvio = true;
 			}		
@@ -226,13 +226,7 @@ public class DispositivoXBee implements Observable, Observer {
 	 * @return boolean
 	 */
 	public boolean comprobarEstado() {
-		boolean activado = false;
-		
-		if (dispositivoLocal.isOpen()) {
-			activado = true;
-		}
-		
-		return activado;
+		return dispositivoLocal.isOpen();
 	}
 	
 	/**

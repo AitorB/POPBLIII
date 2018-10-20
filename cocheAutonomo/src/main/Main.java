@@ -33,13 +33,13 @@ public class Main {
 	public static final int ALTO_VENTANA = 720;
 
 	/**
-	 * @brief Función principal del programa que ejecuta todo el código
+	 * @brief Función principal del programa que ejecuta el código
 	 */
 	public static void main(String[] args) {
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.log("context", e);
 		}
 
 		new VentanaPrincipal(true);

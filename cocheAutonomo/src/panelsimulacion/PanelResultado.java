@@ -51,8 +51,8 @@ public class PanelResultado extends JDialog implements ActionListener {
 	/**
 	 * @brief Atributos
 	 */
+	private static final String ARIAL = "Arial";
 	private Circuito circuito;
-	private JButton cerrar;
 
 	/**
 	 * @brief Constructor
@@ -110,7 +110,7 @@ public class PanelResultado extends JDialog implements ActionListener {
 		panel.setBorder(BorderFactory.createMatteBorder(0, 0, 5, 0, Color.WHITE));
 
 		JLabel texto = new JLabel("¡ SIMULACIÓN COMPLETADA !");
-		texto.setFont(new Font("Arial", Font.BOLD, 15));
+		texto.setFont(new Font(ARIAL, Font.BOLD, 15));
 
 		panel.add(texto);
 
@@ -143,11 +143,11 @@ public class PanelResultado extends JDialog implements ActionListener {
 		panel.setPreferredSize(new Dimension(180, 60));
 
 		JLabel texto = new JLabel(dato + ":");
-		texto.setFont(new Font("Arial", Font.BOLD, 12));
+		texto.setFont(new Font(ARIAL, Font.BOLD, 12));
 		texto.setHorizontalAlignment(JLabel.CENTER);
 
 		JTextField valor = new JTextField();
-		valor.setFont(new Font("Arial", Font.BOLD, 15));
+		valor.setFont(new Font(ARIAL, Font.BOLD, 15));
 		valor.setHorizontalAlignment(JTextField.CENTER);
 		valor.setBorder(null);
 		valor.setEditable(false);
@@ -164,6 +164,7 @@ public class PanelResultado extends JDialog implements ActionListener {
 		case "TIEMPO":
 			valor.setText(String.format("%.2f", circuito.getTiempoRecorrido()) + " s");
 			break;
+		default: break;
 		}
 
 		panel.add(texto);
@@ -178,10 +179,12 @@ public class PanelResultado extends JDialog implements ActionListener {
 	 */
 	private Component crearPanelBoton() {
 		JPanel panel = new JPanel(new BorderLayout());
+		JButton cerrar;
+
 		panel.setBorder(BorderFactory.createMatteBorder(5, 0, 5, 0, Color.WHITE));
 		
 		cerrar = new JButton("CERRAR");
-		cerrar.setFont(new Font("Arial", Font.BOLD, 12));
+		cerrar.setFont(new Font(ARIAL, Font.BOLD, 12));
 		cerrar.setActionCommand("cerrar");
 		cerrar.addActionListener(this);
 		this.getRootPane().setDefaultButton(cerrar);

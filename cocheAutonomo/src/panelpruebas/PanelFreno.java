@@ -40,6 +40,7 @@ public class PanelFreno extends Pruebas {
 	/**
 	 * @brief Atributos
 	 */
+	private static final String ERROR = "ERROR";
 	private JFrame ventana;
 	private JTextField revoluciones;
 
@@ -100,14 +101,13 @@ public class PanelFreno extends Pruebas {
 		try {
 			if (Double.parseDouble(revoluciones.getText()) < 15 || Double.parseDouble(revoluciones.getText()) > 100) {
 				datosValidos = false;
-				new DialogoOpcionesAlerta(ventana, "¡Datos incorrectos! Revoluciones del motor: entre 15% y 100%",
-						"ERROR");
+				new DialogoOpcionesAlerta(ventana, "¡Datos incorrectos! Revoluciones del motor: entre 15% y 100%", ERROR);
 				revoluciones.setText(null);
 				revoluciones.requestFocusInWindow();
 			}
 		} catch (NumberFormatException e) {
 			datosValidos = false;
-			new DialogoOpcionesAlerta(ventana, "¡Formato de datos no válido!", "ERROR");
+			new DialogoOpcionesAlerta(ventana, "¡Formato de datos no válido!", ERROR);
 			revoluciones.setText(null);
 			revoluciones.requestFocusInWindow();
 		}
@@ -125,33 +125,44 @@ public class PanelFreno extends Pruebas {
 		if (e.getActionCommand().equals("iniciar")) {
 			if (!camposVacios()) {
 				if (comprobarDatos()) {
-					if (dispositivoXBee != null) {
-						if(!dispositivoXBee.comprobarEstado()) {
-							iniciar.setEnabled(false);
-							detener.setEnabled(true);
-	
-							dispositivoXBee.iniciarXBee();
-							dispositivoXBee.enviarDatosPrueba(DispositivoXBee.FRENOS, DispositivoXBee.ADELANTE,
-									DispositivoXBee.INICIAR, Integer.valueOf(revoluciones.getText()));
-						} else {
-							new DialogoOpcionesAlerta(ventana, "¡Ya hay una prueba en curso!", "ERROR");
-						}
-					} else {
-						new DialogoOpcionesAlerta(ventana, "¡Dispositivo XBee no conectado!", "ERROR");
-					}
+					comprobarXBee();
 				}
 			} else {
-				new DialogoOpcionesAlerta(ventana, "Introduce un valor", "ERROR");
+				new DialogoOpcionesAlerta(ventana, "Introduce un valor", ERROR);
 				revoluciones.requestFocusInWindow();
 			}
 		} else if (e.getActionCommand().equals("detener")) {
-			iniciar.setEnabled(true);
-			detener.setEnabled(false);
-
-			dispositivoXBee.enviarDatosPrueba(DispositivoXBee.FRENOS, DispositivoXBee.DETENER, DispositivoXBee.DETENER,
-					DispositivoXBee.DETENER);
-			dispositivoXBee.detenerXBee();
+			detenerAction();
 		}
 	}
 
+	public void comprobarXBee() {
+		if (dispositivoXBee != null) {
+			if(!dispositivoXBee.comprobarEstado()) {
+				iniciarAction();
+			} else {
+				new DialogoOpcionesAlerta(ventana, "¡Ya hay una prueba en curso!", ERROR);
+			}
+		} else {
+			new DialogoOpcionesAlerta(ventana, "¡Dispositivo XBee no conectado!", ERROR);
+		}
+	}
+
+	public void iniciarAction() {
+		iniciar.setEnabled(false);
+		detener.setEnabled(true);
+
+		dispositivoXBee.iniciarXBee();
+		dispositivoXBee.enviarDatosPrueba(DispositivoXBee.FRENOS, DispositivoXBee.ADELANTE,
+				DispositivoXBee.INICIAR, Integer.valueOf(revoluciones.getText()));
+	}
+
+	public void detenerAction() {
+		iniciar.setEnabled(true);
+		detener.setEnabled(false);
+
+		dispositivoXBee.enviarDatosPrueba(DispositivoXBee.FRENOS, DispositivoXBee.DETENER, DispositivoXBee.DETENER,
+				DispositivoXBee.DETENER);
+		dispositivoXBee.detenerXBee();
+	}
 }

@@ -72,17 +72,17 @@ public class DialogoOpcionesConfirmar extends DialogoOpciones {
 	protected Component crearPanelBotones() {
 		JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
-		JButton aceptar = new JButton("Aceptar");
-		aceptar.setMnemonic(KeyEvent.VK_A);
-		aceptar.setActionCommand("aceptar");
-		aceptar.addActionListener(this);
+		JButton aceptarBtn = new JButton("Aceptar");
+		aceptarBtn.setMnemonic(KeyEvent.VK_A);
+		aceptarBtn.setActionCommand("aceptar");
+		aceptarBtn.addActionListener(this);
 
 		JButton cancelar = new JButton("Cancelar");
 		cancelar.setMnemonic(KeyEvent.VK_C);
 		cancelar.setActionCommand("cancelar");
 		cancelar.addActionListener(this);
 
-		panel.add(aceptar);
+		panel.add(aceptarBtn);
 		panel.add(Box.createRigidArea(new Dimension(15, 0)));
 		panel.add(cancelar);
 

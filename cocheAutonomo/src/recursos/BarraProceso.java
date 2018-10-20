@@ -42,7 +42,7 @@ public class BarraProceso extends JPanel implements ActionListener, Observable {
 	/**
 	 * @brief Atributos
 	 */
-	private JProgressBar barraProceso;
+	private JProgressBar progressBar;
 	private Timer cronometro;
 	private int porcentaje = 0;
 	private boolean random;
@@ -61,25 +61,17 @@ public class BarraProceso extends JPanel implements ActionListener, Observable {
 	public BarraProceso(int anchura, int altura, String orientacion, Color color, boolean mostrarPorcentaje,
 			boolean random) {
 		this.setLayout(new BorderLayout());
-		barraProceso = new JProgressBar();
+		progressBar = new JProgressBar();
 
-		barraProceso.setPreferredSize(new Dimension(anchura, altura));
-
-		switch (orientacion) {
-		case "HORIZONTAL":
-			barraProceso.setOrientation(JProgressBar.HORIZONTAL);
-			break;
-		case "VERTICAL":
-			barraProceso.setOrientation(JProgressBar.VERTICAL);
-			break;
-		}
+		progressBar.setPreferredSize(new Dimension(anchura, altura));
+		progressBar.setOrientation((orientacion.equals("HORIZONTAL")) ? JProgressBar.HORIZONTAL : JProgressBar.VERTICAL);
 
 		this.random = random;
 
-		barraProceso.setStringPainted(mostrarPorcentaje);
-		barraProceso.setForeground(color);
+		progressBar.setStringPainted(mostrarPorcentaje);
+		progressBar.setForeground(color);
 
-		this.add(barraProceso, BorderLayout.CENTER);
+		this.add(progressBar, BorderLayout.CENTER);
 	}
 
 	/**
@@ -111,7 +103,7 @@ public class BarraProceso extends JPanel implements ActionListener, Observable {
 	public void reiniciar() {
 		cronometro.stop();
 		porcentaje = 0;
-		barraProceso.setValue(porcentaje);
+		progressBar.setValue(porcentaje);
 		this.notifyObservers();
 	}
 
@@ -123,7 +115,7 @@ public class BarraProceso extends JPanel implements ActionListener, Observable {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Random r = new Random();
-		barraProceso.setValue(porcentaje);
+		progressBar.setValue(porcentaje);
 
 		if (!random) {
 			this.notifyObservers();
@@ -173,7 +165,7 @@ public class BarraProceso extends JPanel implements ActionListener, Observable {
 	 * @return void
 	 */
 	public void setPorcentaje(int porcentaje) {
-		this.barraProceso.setValue(porcentaje);
+		this.progressBar.setValue(porcentaje);
 	}
 
 	/**

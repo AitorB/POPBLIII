@@ -43,8 +43,9 @@ public class PanelMotor extends Pruebas {
 	/**
 	 * @brief Atributos
 	 */
+	private static final String ARIAL = "Arial";
+	private static final String ERROR = "ERROR";
 	private JFrame ventana;
-	private JRadioButton adelante, atras;
 	private JTextField revoluciones;
 
 	/**
@@ -77,18 +78,19 @@ public class PanelMotor extends Pruebas {
 	 */
 	private Component crearPanelRadioButton() {
 		JPanel panel = new JPanel(new GridLayout(1, 2, 10, 0));
-
+		JRadioButton adelante;
+		JRadioButton atras;
 		ButtonGroup grupo = new ButtonGroup();
 
 		adelante = new JRadioButton("  ADELANTE");
-		adelante.setFont(new Font("Arial", Font.BOLD, 12));
+		adelante.setFont(new Font(ARIAL, Font.BOLD, 12));
 		adelante.setVerticalAlignment(JButton.CENTER);
 		adelante.setSelected(true);
 		adelante.addActionListener(this);
 
 		atras = new JRadioButton("  ATRÁS");
 		atras.setVerticalAlignment(JButton.CENTER);
-		atras.setFont(new Font("Arial", Font.BOLD, 12));
+		atras.setFont(new Font(ARIAL, Font.BOLD, 12));
 		atras.addActionListener(this);
 
 		grupo.add(adelante);
@@ -109,10 +111,10 @@ public class PanelMotor extends Pruebas {
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
 
 		JLabel texto = new JLabel("RPM (%):");
-		texto.setFont(new Font("Arial", Font.BOLD, 12));
+		texto.setFont(new Font(ARIAL, Font.BOLD, 12));
 
 		revoluciones = new JTextField();
-		revoluciones.setFont(new Font("Arial", Font.BOLD, 17));
+		revoluciones.setFont(new Font(ARIAL, Font.BOLD, 17));
 		revoluciones.setHorizontalAlignment(JTextField.CENTER);
 		revoluciones.setBorder(null);
 
@@ -146,14 +148,13 @@ public class PanelMotor extends Pruebas {
 		try {
 			if (Double.parseDouble(revoluciones.getText()) < 15 || Double.parseDouble(revoluciones.getText()) > 100) {
 				datosValidos = false;
-				new DialogoOpcionesAlerta(ventana, "¡Datos incorrectos! Revoluciones del motor: entre 15% y 100%",
-						"ERROR");
+				new DialogoOpcionesAlerta(ventana, "¡Datos incorrectos! Revoluciones del motor: entre 15% y 100%", ERROR);
 				revoluciones.setText(null);
 				revoluciones.requestFocusInWindow();
 			}
 		} catch (NumberFormatException e) {
 			datosValidos = false;
-			new DialogoOpcionesAlerta(ventana, "¡Formato de datos no válido!", "ERROR");
+			new DialogoOpcionesAlerta(ventana, "¡Formato de datos no válido!", ERROR);
 			revoluciones.setText(null);
 			revoluciones.requestFocusInWindow();
 		}
@@ -171,24 +172,10 @@ public class PanelMotor extends Pruebas {
 		if (e.getActionCommand().equals("iniciar")) {
 			if (!camposVacios()) {
 				if (comprobarDatos()) {
-					if (dispositivoXBee != null) {
-						if(!dispositivoXBee.comprobarEstado()) {
-							iniciar.setEnabled(false);
-							detener.setEnabled(true);
-	
-							dispositivoXBee.iniciarXBee();
-							dispositivoXBee.enviarDatosPrueba(DispositivoXBee.MOTOR,
-									(adelante.isSelected() ? DispositivoXBee.ADELANTE : DispositivoXBee.ATRAS),
-									DispositivoXBee.INICIAR, Integer.valueOf(revoluciones.getText()));
-						} else {
-							new DialogoOpcionesAlerta(ventana, "¡Ya hay una prueba en curso!", "ERROR");
-						}
-					} else {
-						new DialogoOpcionesAlerta(ventana, "¡Dispositivo XBee no conectado!", "ERROR");
-					}
+					comprobarXBee();
 				}
 			} else {
-				new DialogoOpcionesAlerta(ventana, "Introduce un valor", "ERROR");
+				new DialogoOpcionesAlerta(ventana, "Introduce un valor", ERROR);
 				revoluciones.requestFocusInWindow();
 			}
 		} else if (e.getActionCommand().equals("detener")) {
@@ -201,4 +188,33 @@ public class PanelMotor extends Pruebas {
 		}
 	}
 
+	public void comprobarXBee() {
+		if (dispositivoXBee != null) {
+			if(!dispositivoXBee.comprobarEstado()) {
+				iniciarAction();
+			} else {
+				new DialogoOpcionesAlerta(ventana, "¡Ya hay una prueba en curso!", ERROR);
+			}
+		} else {
+			new DialogoOpcionesAlerta(ventana, "¡Dispositivo XBee no conectado!", ERROR);
+		}
+	}
+
+	public void iniciarAction() {
+		iniciar.setEnabled(false);
+		detener.setEnabled(true);
+
+		dispositivoXBee.iniciarXBee();
+		dispositivoXBee.enviarDatosPrueba(DispositivoXBee.FRENOS, DispositivoXBee.ADELANTE,
+				DispositivoXBee.INICIAR, Integer.valueOf(revoluciones.getText()));
+	}
+
+	public void detenerAction() {
+		iniciar.setEnabled(true);
+		detener.setEnabled(false);
+
+		dispositivoXBee.enviarDatosPrueba(DispositivoXBee.FRENOS, DispositivoXBee.DETENER, DispositivoXBee.DETENER,
+				DispositivoXBee.DETENER);
+		dispositivoXBee.detenerXBee();
+	}
 }

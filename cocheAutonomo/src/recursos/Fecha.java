@@ -39,7 +39,7 @@ public class Fecha extends JPanel implements ActionListener {
 
 	/** @brief Atributos
 	 */
-	private Locale locale;
+	private Locale localizacion;
 	private JLabel textoFecha;
 
 	/** 
@@ -52,7 +52,7 @@ public class Fecha extends JPanel implements ActionListener {
 		this.setLayout(new BorderLayout());
 		this.setBackground(colorFondo);
 		
-		locale = Locale.getDefault();
+		localizacion = Locale.getDefault();
 		
 		textoFecha = new JLabel();
 		textoFecha.setHorizontalAlignment(JLabel.CENTER);
@@ -68,10 +68,10 @@ public class Fecha extends JPanel implements ActionListener {
 	 *  @return void
 	 */
 	private void iniciar() { 
-		Timer cronometro = new Timer(1000, this);
+		Timer timer = new Timer(1000, this);
 
-		cronometro.setInitialDelay(0);
-		cronometro.start();
+		timer.setInitialDelay(0);
+		timer.start();
 	}
 		
 	/** @brief Método para tratar las acciones a realizar cuando se activa el cronómetro
@@ -82,14 +82,13 @@ public class Fecha extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		LocalDate fechaActual = LocalDate.now();
 
-		String diaSemana = fechaActual.getDayOfWeek().getDisplayName(TextStyle.FULL, locale).substring(0, 1).toUpperCase()
-				+ fechaActual.getDayOfWeek().getDisplayName(TextStyle.FULL, locale).substring(1);
+		String diaSemana = fechaActual.getDayOfWeek().getDisplayName(TextStyle.FULL, localizacion).substring(0, 1).toUpperCase()
+				+ fechaActual.getDayOfWeek().getDisplayName(TextStyle.FULL, localizacion).substring(1);
 		int diaMes = fechaActual.getDayOfMonth();
-		String mes = fechaActual.getMonth().getDisplayName(TextStyle.FULL, locale).substring(0, 1).toUpperCase()
-				+ fechaActual.getMonth().getDisplayName(TextStyle.FULL, locale).substring(1);
+		String mes = fechaActual.getMonth().getDisplayName(TextStyle.FULL, localizacion).substring(0, 1).toUpperCase()
+				+ fechaActual.getMonth().getDisplayName(TextStyle.FULL, localizacion).substring(1);
 		int anio = fechaActual.getYear();
 		
 		textoFecha.setText(diaSemana + ", " + diaMes + " de " + mes + " de " + anio);
 	}
-	
 }

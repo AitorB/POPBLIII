@@ -173,7 +173,7 @@ public class Bienvenida extends JDialog implements Observer {
 						}
 					}
 				} catch (IOException e) {
-					e.printStackTrace();
+					LOGGER.log("context", e);
 				}
 			}
 		}
@@ -192,7 +192,7 @@ public class Bienvenida extends JDialog implements Observer {
 				valorOpacidad -= 0.1;
 			} while (valorOpacidad > 0);
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.log("context", e);
 		} finally {
 			this.dispose();
 		}

@@ -21,7 +21,7 @@ public class XBeeByte {
 	/**
 	 * @brief Atributos
 	 */
-	byte datos[];
+	byte[] datos;
 
 	/**
 	 * @brief Constructor

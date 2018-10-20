@@ -39,8 +39,10 @@ public class Cronometro extends JPanel implements ActionListener {
 	 * @brief Atributos
 	 */
 	private JLabel textoCronometro;
-	private Timer cronometro;
-	private int minuto, segundo, milesima;
+	private Timer timer;
+	private int minuto;
+	private int segundo;
+	private int milesima;
 
 	/**
 	 * @brief Constructor de la clase
@@ -57,7 +59,7 @@ public class Cronometro extends JPanel implements ActionListener {
 		textoCronometro.setFont(letra);
 		textoCronometro.setHorizontalAlignment(JLabel.CENTER);
 
-		cronometro = new Timer(10, this);
+		timer = new Timer(10, this);
 
 		this.add(textoCronometro, BorderLayout.CENTER);
 	}
@@ -71,8 +73,8 @@ public class Cronometro extends JPanel implements ActionListener {
 		segundo = 0;
 		milesima = 0;
 		
-		cronometro.setInitialDelay(0);
-		cronometro.start();
+		timer.setInitialDelay(0);
+		timer.start();
 	}
 
 	/**
@@ -80,7 +82,7 @@ public class Cronometro extends JPanel implements ActionListener {
 	 * @return void
 	 */
 	public void detener() {
-		cronometro.stop();
+		timer.stop();
 	}
 
 	/**

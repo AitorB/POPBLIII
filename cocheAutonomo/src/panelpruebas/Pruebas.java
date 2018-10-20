@@ -48,11 +48,13 @@ public abstract class Pruebas extends JPanel implements ActionListener {
 	 */
 	protected DispositivoXBee dispositivoXBee;
 	
+	private static final String ARIAL = "Arial";
 	private static final int ANCHO_TITULO = 350;
 	protected static final int ANCHO_BOTON = 180;
 	
 	protected JFrame ventana;
-	protected JButton iniciar, detener;
+	protected JButton iniciar;
+	protected JButton detener;
 	private String titulo;
 	protected String tipoPrueba;
 	
@@ -97,7 +99,7 @@ public abstract class Pruebas extends JPanel implements ActionListener {
 				BorderFactory.createEtchedBorder()));
 
 		JLabel texto = new JLabel(titulo);
-		texto.setFont(new Font("Arial", Font.BOLD, 20));
+		texto.setFont(new Font(ARIAL, Font.BOLD, 20));
 		texto.setHorizontalAlignment(JLabel.CENTER);
 		texto.setPreferredSize(new Dimension(ANCHO_TITULO, 0));
 
@@ -121,14 +123,14 @@ public abstract class Pruebas extends JPanel implements ActionListener {
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
 
 		iniciar = new JButton("  INICIAR", new ImageIcon("iconos\\iniciar.png"));
-		iniciar.setFont(new Font("Arial", Font.BOLD, 20));
+		iniciar.setFont(new Font(ARIAL, Font.BOLD, 20));
 		iniciar.setMnemonic(KeyEvent.VK_I);
 		iniciar.setPreferredSize(new Dimension(180, 0));
 		iniciar.setActionCommand("iniciar");
 		iniciar.addActionListener(this);
 
 		detener = new JButton("  DETENER", new ImageIcon("iconos\\detener.png"));
-		detener.setFont(new Font("Arial", Font.BOLD, 20));
+		detener.setFont(new Font(ARIAL, Font.BOLD, 20));
 		detener.setMnemonic(KeyEvent.VK_D);
 		detener.setPreferredSize(new Dimension(180, 0));
 		detener.setActionCommand("detener");

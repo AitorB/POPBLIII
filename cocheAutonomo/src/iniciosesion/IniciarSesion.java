@@ -31,15 +31,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -73,13 +70,15 @@ public class IniciarSesion extends JDialog implements ActionListener {
 	/**
 	 * @brief Atributos
 	 */
+	private static final String CONTEXT = "context";
+	private static final String ARIAL = "Arial";
 	private static final String FONDO_PANTALLA = "imagenes\\iniciar_sesion.jpg";
 	private static final String SONIDO = "sonidos\\bienvenida.mp3";
 
 	private JTextField nombre;
 	private JPasswordField contrasena;
 	private JButton iniciar;
-	private Map<String, Usuario> mapaUsuarios;
+	private HashMap<String, Usuario> mapaUsuarios;
 	private Usuario usuario;
 	private Reproductor reproductor;
 	private boolean usuarioValido = false;
@@ -124,7 +123,7 @@ public class IniciarSesion extends JDialog implements ActionListener {
 	 * @return Component
 	 */
 	private Component crearPanelNorte() {
-		Hora reloj = new Hora(Color.WHITE, new Font("Arial", Font.BOLD, 15), Color.WHITE);
+		Hora reloj = new Hora(Color.WHITE, new Font(ARIAL, Font.BOLD, 15), Color.WHITE);
 
 		reloj.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		reloj.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 20));
@@ -159,15 +158,10 @@ public class IniciarSesion extends JDialog implements ActionListener {
 		panel.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
 
 		nombre = new JTextField();
-		nombre.setFont(new Font("Arial", Font.BOLD, 15));
+		nombre.setFont(new Font(ARIAL, Font.BOLD, 15));
 		nombre.setPreferredSize(new Dimension(195, 20));
 
-		nombre.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				contrasena.requestFocusInWindow();
-			}
-		});
+		nombre.addActionListener(e -> contrasena.requestFocusInWindow());
 
 		nombre.setOpaque(false);
 		nombre.setBorder(null);
@@ -188,15 +182,10 @@ public class IniciarSesion extends JDialog implements ActionListener {
 		panel.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
 
 		contrasena = new JPasswordField();
-		contrasena.setFont(new Font("Arial", Font.BOLD, 15));
+		contrasena.setFont(new Font(ARIAL, Font.BOLD, 15));
 		contrasena.setPreferredSize(new Dimension(195, 20));
 
-		contrasena.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				iniciar.requestFocusInWindow();
-			}
-		});
+		contrasena.addActionListener(e -> iniciar.requestFocusInWindow());
 
 		contrasena.setOpaque(false);
 		contrasena.setBorder(null);
@@ -216,10 +205,10 @@ public class IniciarSesion extends JDialog implements ActionListener {
 		JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
 		JLabel texto = new JLabel("¿Todavía no tienes cuenta?");
-		texto.setFont(new Font("Arial", Font.BOLD, 12));
+		texto.setFont(new Font(ARIAL, Font.BOLD, 12));
 
 		JButton registro = new JButton("registrate");
-		registro.setFont(new Font("Arial", Font.BOLD, 13));
+		registro.setFont(new Font(ARIAL, Font.BOLD, 13));
 		registro.setMnemonic(KeyEvent.VK_R);
 		registro.setActionCommand("registro");
 		registro.addActionListener(this);
@@ -270,21 +259,15 @@ public class IniciarSesion extends JDialog implements ActionListener {
 	@SuppressWarnings("unchecked")
 	private void cargarListaUsuarios() {
 		mapaUsuarios = new HashMap<>();
+		File archivo = new File(Main.FICHERO_ORIGINAL);
 
-		try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(Main.FICHERO_ORIGINAL))) {
-			mapaUsuarios = (Map<String, Usuario>) reader.readObject();
-		} catch (FileNotFoundException e) {
-			File archivo = new File(Main.FICHERO_ORIGINAL);
-			try {
-				archivo.createNewFile();
-			} catch (IOException ex) {
-				ex.printStackTrace();
+		if (!archivo.createNewFile()) {
+			try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(archivo))) {
+				mapaUsuarios = (HashMap<String, Usuario>) reader.readObject();
 			}
-			// e.printStackTrace();
-		} catch (IOException e) {
-			// e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			catch (Exception e) {
+				LOGGER.log(CONTEXT, e);
+			}
 		}
 	}
 
@@ -295,10 +278,10 @@ public class IniciarSesion extends JDialog implements ActionListener {
 	private void dialogoAnadirUsuario() {
 		DialogoAnadirUsuario dialogo = new DialogoAnadirUsuario(this, 300, 200, "NUEVO USUARIO", mapaUsuarios);
 
-		Usuario usuario = dialogo.getNuevoUsuario();
+		Usuario nuevoUsuario = dialogo.getNuevoUsuario();
 
-		if (usuario != null) {
-			mapaUsuarios.put(usuario.getNombre().toLowerCase(), usuario);
+		if (nuevoUsuario != null) {
+			mapaUsuarios.put(nuevoUsuario.getNombre().toLowerCase(), nuevoUsuario);
 		}
 	}
 
@@ -312,7 +295,7 @@ public class IniciarSesion extends JDialog implements ActionListener {
 			reproductor.AbrirFichero(SONIDO);
 			reproductor.Reproducir();
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			LOGGER.log(CONTEXT, e);
 		}
 	}
 
@@ -324,7 +307,7 @@ public class IniciarSesion extends JDialog implements ActionListener {
 		try {
 			reproductor.Parar();
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			LOGGER.log(CONTEXT, e);
 		}
 	}
 
@@ -335,20 +318,16 @@ public class IniciarSesion extends JDialog implements ActionListener {
 	 * @return boolean
 	 */
 	private boolean comprobarUsuario(String nombre, char[] contrasena) {
-		boolean usuarioValido = false;
-
 		Iterator<String> iterator = mapaUsuarios.keySet().iterator();
 
-		while (iterator.hasNext() && usuarioValido == false) {
+		while (iterator.hasNext() && !usuarioValido) {
 			String clave = iterator.next();
 			Usuario valor = mapaUsuarios.get(clave);
-			if (clave.equals(nombre.toLowerCase()) && Arrays.equals(valor.getContrasena(), contrasena)) {
+			if (clave.equalsIgnoreCase(nombre) && Arrays.equals(valor.getContrasena(), contrasena)) {
 				usuario = valor;
 				usuarioValido = true;
 			}
 		}
-
-		return usuarioValido;
 	}
 
 	/**
@@ -372,10 +351,8 @@ public class IniciarSesion extends JDialog implements ActionListener {
 	public void guardarListaUsuarios(Map<String, Usuario> mapaUsuarios) {
 		try (ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(Main.FICHERO_ORIGINAL))) {
 			writer.writeObject(mapaUsuarios);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			LOGGER.log(CONTEXT, e);
 		}
 	}
 
@@ -388,8 +365,8 @@ public class IniciarSesion extends JDialog implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("iniciar")) {
 			if (!camposVacios()) {
-				if (comprobarUsuario(nombre.getText(), contrasena.getPassword())) {
-					usuarioValido = true;
+				comprobarUsuario(nombre.getText(), contrasena.getPassword());
+				if (usuarioValido) {
 					guardarListaUsuarios(mapaUsuarios);
 					pararMusica();
 					this.dispose();

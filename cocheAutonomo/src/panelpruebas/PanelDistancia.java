@@ -45,9 +45,11 @@ public class PanelDistancia extends Pruebas {
 	/**
 	 * @brief Atributos
 	 */
+	private static final String ARIAL = "Arial";
+	private static final String ERROR = "ERROR";
 	private JFrame ventana;
 	private Coche coche;
-	private JRadioButton adelante, atras;
+	private JRadioButton adelante;
 	private JTextField distancia;
 
 	/**
@@ -80,18 +82,18 @@ public class PanelDistancia extends Pruebas {
 	 */
 	private Component crearPanelRadioButton() {
 		JPanel panel = new JPanel(new GridLayout(1, 2, 10, 0));
-
+		JRadioButton atras;
 		ButtonGroup grupo = new ButtonGroup();
 
 		adelante = new JRadioButton("  ADELANTE");
-		adelante.setFont(new Font("Arial", Font.BOLD, 12));
+		adelante.setFont(new Font(ARIAL, Font.BOLD, 12));
 		adelante.setVerticalAlignment(JButton.CENTER);
 		adelante.setSelected(true);
 		adelante.addActionListener(this);
 
 		atras = new JRadioButton("  ATRÁS");
 		atras.setVerticalAlignment(JButton.CENTER);
-		atras.setFont(new Font("Arial", Font.BOLD, 12));
+		atras.setFont(new Font(ARIAL, Font.BOLD, 12));
 		atras.addActionListener(this);
 
 		grupo.add(adelante);
@@ -112,10 +114,10 @@ public class PanelDistancia extends Pruebas {
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
 
 		JLabel texto = new JLabel("DISTANCIA (m):");
-		texto.setFont(new Font("Arial", Font.BOLD, 12));
+		texto.setFont(new Font(ARIAL, Font.BOLD, 12));
 
 		distancia = new JTextField();
-		distancia.setFont(new Font("Arial", Font.BOLD, 17));
+		distancia.setFont(new Font(ARIAL, Font.BOLD, 17));
 		distancia.setHorizontalAlignment(JTextField.CENTER);
 		distancia.setBorder(null);
 
@@ -149,14 +151,13 @@ public class PanelDistancia extends Pruebas {
 		try {
 			if (Double.parseDouble(distancia.getText()) < 1 || Double.parseDouble(distancia.getText()) > 30) {
 				datosValidos = false;
-				new DialogoOpcionesAlerta(ventana, "¡Datos incorrectos! Distancia: mayor a 1 metro y menor a 30 metros",
-						"ERROR");
+				new DialogoOpcionesAlerta(ventana, "¡Datos incorrectos! Distancia: mayor a 1 metro y menor a 30 metros", ERROR);
 				distancia.setText(null);
 				distancia.requestFocusInWindow();
 			}
 		} catch (NumberFormatException e) {
 			datosValidos = false;
-			new DialogoOpcionesAlerta(ventana, "¡Formato de datos no válido!", "ERROR");
+			new DialogoOpcionesAlerta(ventana, "¡Formato de datos no válido!", ERROR);
 			distancia.setText(null);
 			distancia.requestFocusInWindow();
 		}
@@ -174,34 +175,46 @@ public class PanelDistancia extends Pruebas {
 		if (e.getActionCommand().equals("iniciar")) {
 			if (!camposVacios()) {
 				if (comprobarDatos()) {
-					if (dispositivoXBee != null) {
-						if(!dispositivoXBee.comprobarEstado()) {
-							iniciar.setEnabled(false);
-							detener.setEnabled(true);
-	
-							dispositivoXBee.iniciarXBee();
-							dispositivoXBee.enviarDatosPrueba(DispositivoXBee.DISTANCIA,
-									(adelante.isSelected() ? DispositivoXBee.ADELANTE : DispositivoXBee.ATRAS),
-									DispositivoXBee.INICIAR, Fisica.calcularVueltasTramo(Integer.valueOf(distancia.getText()), coche));
-						} else {
-							new DialogoOpcionesAlerta(ventana, "¡Ya hay una prueba en curso!", "ERROR");
-						}
-					} else {
-						new DialogoOpcionesAlerta(ventana, "¡Dispositivo XBee no conectado!", "ERROR");
-					}
+					comprobarXBee();
 				}
 			} else {
-				new DialogoOpcionesAlerta(ventana, "Introduce un valor", "ERROR");
+				new DialogoOpcionesAlerta(ventana, "Introduce un valor", ERROR);
 				distancia.requestFocusInWindow();
 			}
 		} else if (e.getActionCommand().equals("detener")) {
-			iniciar.setEnabled(true);
-			detener.setEnabled(false);
-
-			dispositivoXBee.enviarDatosPrueba(DispositivoXBee.DISTANCIA, DispositivoXBee.DETENER,
-					DispositivoXBee.DETENER, DispositivoXBee.DETENER);
-			dispositivoXBee.detenerXBee();
+			detenerAction();
 		}
+	}
+
+	public void comprobarXBee() {
+		if (dispositivoXBee != null) {
+			if(!dispositivoXBee.comprobarEstado()) {
+				iniciarAction();
+			} else {
+				new DialogoOpcionesAlerta(ventana, "¡Ya hay una prueba en curso!", ERROR);
+			}
+		} else {
+			new DialogoOpcionesAlerta(ventana, "¡Dispositivo XBee no conectado!", ERROR);
+		}
+	}
+
+	public void iniciarAction() {
+		iniciar.setEnabled(false);
+		detener.setEnabled(true);
+
+		dispositivoXBee.iniciarXBee();
+		dispositivoXBee.enviarDatosPrueba(DispositivoXBee.DISTANCIA,
+				(adelante.isSelected() ? DispositivoXBee.ADELANTE : DispositivoXBee.ATRAS),
+				DispositivoXBee.INICIAR, Fisica.calcularVueltasTramo(Integer.valueOf(distancia.getText()), coche));
+	}
+
+	public void detenerAction() {
+		iniciar.setEnabled(true);
+		detener.setEnabled(false);
+
+		dispositivoXBee.enviarDatosPrueba(DispositivoXBee.DISTANCIA, DispositivoXBee.DETENER,
+				DispositivoXBee.DETENER, DispositivoXBee.DETENER);
+		dispositivoXBee.detenerXBee();
 	}
 
 	/**

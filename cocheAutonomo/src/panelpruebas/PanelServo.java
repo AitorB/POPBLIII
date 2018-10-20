@@ -43,8 +43,9 @@ public class PanelServo extends Pruebas {
 	/**
 	 * @brief Atributos
 	 */
+	private static final String ARIAL = "Arial";
+	private static final String ERROR = "ERROR";
 	private JFrame ventana;
-	private JRadioButton izquierda, derecha;
 	private JTextField porcentajeGiro;
 
 	/**
@@ -78,18 +79,19 @@ public class PanelServo extends Pruebas {
 	 */
 	private Component crearPanelRadioButton() {
 		JPanel panel = new JPanel(new GridLayout(1, 2, 10, 0));
-
+		JRadioButton izquierda;
+		JRadioButton derecha;
 		ButtonGroup grupo = new ButtonGroup();
 
 		izquierda = new JRadioButton("  IZQUIERDA");
-		izquierda.setFont(new Font("Arial", Font.BOLD, 12));
+		izquierda.setFont(new Font(ARIAL, Font.BOLD, 12));
 		izquierda.setVerticalAlignment(JButton.CENTER);
 		izquierda.setSelected(true);
 		izquierda.addActionListener(this);
 
 		derecha = new JRadioButton("  DERECHA");
 		derecha.setVerticalAlignment(JButton.CENTER);
-		derecha.setFont(new Font("Arial", Font.BOLD, 12));
+		derecha.setFont(new Font(ARIAL, Font.BOLD, 12));
 		derecha.addActionListener(this);
 
 		grupo.add(izquierda);
@@ -110,10 +112,10 @@ public class PanelServo extends Pruebas {
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
 
 		JLabel texto = new JLabel("GIRO (%):");
-		texto.setFont(new Font("Arial", Font.BOLD, 12));
+		texto.setFont(new Font(ARIAL, Font.BOLD, 12));
 
 		porcentajeGiro = new JTextField();
-		porcentajeGiro.setFont(new Font("Arial", Font.BOLD, 17));
+		porcentajeGiro.setFont(new Font(ARIAL, Font.BOLD, 17));
 		porcentajeGiro.setHorizontalAlignment(JTextField.CENTER);
 		porcentajeGiro.setBorder(null);
 
@@ -148,13 +150,13 @@ public class PanelServo extends Pruebas {
 			if (Double.parseDouble(porcentajeGiro.getText()) < 0
 					|| Double.parseDouble(porcentajeGiro.getText()) > 100) {
 				datosValidos = false;
-				new DialogoOpcionesAlerta(ventana, "¡Datos incorrectos! Valor servo: entre 0% y 100%", "ERROR");
+				new DialogoOpcionesAlerta(ventana, "¡Datos incorrectos! Valor servo: entre 0% y 100%", ERROR);
 				porcentajeGiro.setText(null);
 				porcentajeGiro.requestFocusInWindow();
 			}
 		} catch (NumberFormatException e) {
 			datosValidos = false;
-			new DialogoOpcionesAlerta(ventana, "¡Formato de datos no válido!", "ERROR");
+			new DialogoOpcionesAlerta(ventana, "¡Formato de datos no válido!", ERROR);
 			porcentajeGiro.setText(null);
 			porcentajeGiro.requestFocusInWindow();
 		}
@@ -172,34 +174,44 @@ public class PanelServo extends Pruebas {
 		if (e.getActionCommand().equals("iniciar")) {
 			if (!camposVacios()) {
 				if (comprobarDatos()) {
-					if (dispositivoXBee != null) {
-						if(!dispositivoXBee.comprobarEstado()) {
-							iniciar.setEnabled(false);
-							detener.setEnabled(true);
-							
-							dispositivoXBee.iniciarXBee();
-							dispositivoXBee.enviarDatosPrueba(DispositivoXBee.SERVO,
-									(derecha.isSelected() ? DispositivoXBee.DERECHA : DispositivoXBee.IZQUIERDA),
-									DispositivoXBee.INICIAR, Integer.valueOf(porcentajeGiro.getText()));
-						} else {
-							new DialogoOpcionesAlerta(ventana, "¡Ya hay una prueba en curso!", "ERROR");
-						}
-					} else {
-						new DialogoOpcionesAlerta(ventana, "¡Dispositivo XBee no conectado!", "ERROR");
-					}	
+					comprobarXBee();
 				}
 			} else {
-				new DialogoOpcionesAlerta(ventana, "Introduce un valor", "ERROR");
+				new DialogoOpcionesAlerta(ventana, "Introduce un valor", ERROR);
 				porcentajeGiro.requestFocusInWindow();
 			}
 		} else if (e.getActionCommand().equals("detener")) {
-			iniciar.setEnabled(true);
-			detener.setEnabled(false);
-
-			dispositivoXBee.enviarDatosPrueba(DispositivoXBee.SERVO, DispositivoXBee.DETENER, DispositivoXBee.DETENER,
-					DispositivoXBee.DETENER);
-			dispositivoXBee.detenerXBee();
+			detenerAction();
 		}
 	}
 
+	public void comprobarXBee() {
+		if (dispositivoXBee != null) {
+			if(!dispositivoXBee.comprobarEstado()) {
+				iniciarAction();
+			} else {
+				new DialogoOpcionesAlerta(ventana, "¡Ya hay una prueba en curso!", ERROR);
+			}
+		} else {
+			new DialogoOpcionesAlerta(ventana, "¡Dispositivo XBee no conectado!", ERROR);
+		}
+	}
+
+	public void iniciarAction() {
+		iniciar.setEnabled(false);
+		detener.setEnabled(true);
+
+		dispositivoXBee.iniciarXBee();
+		dispositivoXBee.enviarDatosPrueba(DispositivoXBee.FRENOS, DispositivoXBee.ADELANTE,
+				DispositivoXBee.INICIAR, Integer.valueOf(revoluciones.getText()));
+	}
+
+	public void detenerAction() {
+		iniciar.setEnabled(true);
+		detener.setEnabled(false);
+
+		dispositivoXBee.enviarDatosPrueba(DispositivoXBee.FRENOS, DispositivoXBee.DETENER, DispositivoXBee.DETENER,
+				DispositivoXBee.DETENER);
+		dispositivoXBee.detenerXBee();
+	}
 }

@@ -30,7 +30,7 @@ public class FondoJPanel extends JPanel {
 	
 	/** @brief Atributos
 	 */
-	private Image imagen;
+	private transient Image imagen;
 
 	/** @brief Constructor de la clase
 	 *  @param imagen Imagen que se muestra en el fondo

@@ -31,13 +31,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.HashMap;
-import java.util.Map;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -75,12 +72,11 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 	/**
 	 * @brief Atributos
 	 */
+	private static final String ARIAL = "Arial";
 	private static final String PANEL_UNO = "panel configuración";
 	private static final String PANEL_DOS = "panel simulación";
 	private static final String PANEL_TRES = "panel estadísticas";
 	private static final String PANEL_CUATRO = "panel pruebas";
-	
-	private DispositivoXBee dispositivoXBee;
 	
 	private JPanel panelCentro;
 	private PanelConfiguracion panelConfiguracion;
@@ -88,7 +84,9 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 	private PanelPractica panelPractica;
 	private PanelPruebas panelPruebas;
 	private Usuario usuario;
-	private JButton simulacion, practica, pruebas, activarXBee;
+	private JButton simulacion;
+	private JButton practica;
+	private JButton activarXBee;
 
 	/**
 	 * @brief Constructor
@@ -165,6 +163,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 	 */
 	private Component crearPanelMenu() {
 		JToolBar toolBar = new JToolBar();
+		JButton pruebas;
+
 		toolBar.setLayout(new BoxLayout(toolBar, BoxLayout.X_AXIS));
 		toolBar.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(8, 8, 0, 8),
 				BorderFactory.createRaisedBevelBorder()));
@@ -191,7 +191,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 		pruebas.setMnemonic(KeyEvent.VK_P);
 		pruebas.setActionCommand("pruebas");
 		pruebas.addActionListener(this);
-		pruebas.setEnabled((usuario.getNombre().equalsIgnoreCase("PRUEBAS")) ? true : false);
+		pruebas.setEnabled(usuario.getNombre().equalsIgnoreCase("PRUEBAS"));
 	
 		JButton cerrarSesion = new JButton("Cerrar Sesión", new ImageIcon("iconos\\cerrar_sesion.png"));
 		cerrarSesion.setMnemonic(KeyEvent.VK_R);
@@ -262,8 +262,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 		panel.setBackground(Color.LIGHT_GRAY);
 
 		panel.add(crearPanelUsuario());
-		panel.add(new Fecha(Color.BLACK, new Font("Arial", Font.BOLD, 13), new Color(248, 248, 248)));
-		panel.add(new Hora(Color.BLACK, new Font("Arial", Font.BOLD, 13), new Color(248, 248, 248)));
+		panel.add(new Fecha(Color.BLACK, new Font(ARIAL, Font.BOLD, 13), new Color(248, 248, 248)));
+		panel.add(new Hora(Color.BLACK, new Font(ARIAL, Font.BOLD, 13), new Color(248, 248, 248)));
 
 		return panel;
 	}
@@ -278,17 +278,18 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 		panel.setBorder(BorderFactory.createEmptyBorder(3, 0, 0, 0));
 		
 		JLabel texto = new JLabel("Usuario: ");
-		texto.setFont(new Font("Arial", Font.BOLD, 13));
+		texto.setFont(new Font(ARIAL, Font.BOLD, 13));
 
 		JLabel nombreUsuario = new JLabel(usuario.getNombre());
 		nombreUsuario.setForeground(Color.RED);
-		nombreUsuario.setFont(new Font("Arial", Font.BOLD, 13));
+		nombreUsuario.setFont(new Font(ARIAL, Font.BOLD, 13));
 
 		panel.add(texto);
 		panel.add(nombreUsuario);
 
 		return panel;
-	}
+	}
+
 	/**
 	 * @brief Método del panel información: muestra una barra de estado con información de la aplicación
 	 * @return Component
@@ -298,7 +299,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 		panel.setBorder(BorderFactory.createMatteBorder(5, 5, 0, 0, Color.lightGray));
 		
 		activarXBee = new JButton("XBee");
-		activarXBee.setFont(new Font("Arial", Font.BOLD, 18));
+		activarXBee.setFont(new Font(ARIAL, Font.BOLD, 18));
 		activarXBee.setForeground(Color.WHITE);
 		activarXBee.setBackground(new Color(255, 107, 107));
 		activarXBee.setContentAreaFilled(false);
@@ -318,7 +319,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 	 * @return void
 	 */
 	private void iniciarXBee() {
-		dispositivoXBee = new DispositivoXBee(this);
+		DispositivoXBee dispositivoXBee = new DispositivoXBee(this);
 		
 		if(dispositivoXBee.getActivado()) {
 			new DialogoOpcionesAlerta(this, "Dispositivo XBee activado", "INFORMACION");
@@ -338,24 +339,33 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 	 */
 	@SuppressWarnings("unchecked")
 	public void actualizarUsuario(PanelConfiguracion panelConfiguracion, Usuario usuario) {
-		Map<String, Usuario> mapaUsuarios = new HashMap<>();
+		HashMap<String, Usuario> mapaUsuarios = new HashMap<>();
 
 		try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(Main.FICHERO_ORIGINAL))) {
-			mapaUsuarios = (Map<String, Usuario>) reader.readObject();
+			mapaUsuarios = (HashMap<String, Usuario>) reader.readObject();
 
 			usuario.setListaCircuitos(panelConfiguracion.getPanelCircuitos().getListaCircuitos());
 			usuario.setCoche(panelConfiguracion.getPanelCoche().getCoche());
 			mapaUsuarios.put(usuario.getNombre().toLowerCase(), usuario);
 
-			try (ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(Main.FICHERO_ORIGINAL))) {
-				writer.writeObject(mapaUsuarios);
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			// e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			writeMap(mapaUsuarios);
+		}
+		catch (Exception e) {
+			LOGGER.log("context", e);
+		}
+	}
+
+	/**
+	 * @brief Método para escribir el mapa de usuarios en el fichero
+	 * @param mapaUsuarios Mapa con los usuarios
+	 * @return void
+	 */
+	public void writeMap(Map<String, Usuario> mapaUsuarios) {
+		try (ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(Main.FICHERO_ORIGINAL))) {
+			writer.writeObject(mapaUsuarios);
+		}
+		catch (Exception e) {
+			LOGGER.log("context", e);
 		}
 	}
 

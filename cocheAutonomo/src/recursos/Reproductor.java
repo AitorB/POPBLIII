@@ -35,7 +35,7 @@ public class Reproductor {
 	/** @brief Método para reproducir el sonido
 	 *  @return void
 	 */
-	public void Reproducir() throws Exception {
+	public void Reproducir() throws BasicPlayerException {
 		player.play();
 	}
 
@@ -43,28 +43,28 @@ public class Reproductor {
 	 * 	@param ruta Nombre de la ruta del fichero
 	 *  @return void
 	 */
-	public void AbrirFichero(String ruta) throws Exception {
+	public void AbrirFichero(String ruta) throws BasicPlayerException {
 		player.open(new File(ruta));
 	}
 
 	/** @brief Método para pausar el sonido
 	 *  @return void
 	 */
-	public void Pausar() throws Exception {
+	public void Pausar() throws BasicPlayerException {
 		player.pause();
 	}
 
 	/** @brief Método para continuar reproduciendo el sonido
 	 *  @return void
 	 */
-	public void Continuar() throws Exception {
+	public void Continuar() throws BasicPlayerException {
 		player.resume();
 	}
 
 	/** @brief Método para parar el sonido
 	 *  @return void
 	 */
-	public void Parar() throws Exception {
+	public void Parar() throws BasicPlayerException {
 		player.stop();
 	}
 	

@@ -140,7 +140,7 @@ public abstract class DialogoOpciones extends JDialog implements ActionListener 
 				valorOpacidad -= 0.1;
 			} while (valorOpacidad > 0);
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.log("context", e);
 		} finally {
 			this.dispose();
 		}
