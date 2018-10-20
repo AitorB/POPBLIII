@@ -1,5 +1,5 @@
 /** @file XBeeByte.java
- *  @brief Clase que transforma un número decimal en un array de Bytes
+ *  @brief Clase que transforma un nï¿½mero decimal en un array de Bytes
  *  @authors
  *  Nombre        | Apellido       | Email                                |
  *  ------------- | -------------- | ------------------------------------ |
@@ -10,9 +10,9 @@
  *  @date 23/01/2017
  */
 
-/** @brief Paquete xBee
+/** @brief Paquete xbee
  */
-package xBee;
+package xbee;
 
 /**
  * @brief Clase XBeeByte
@@ -25,7 +25,7 @@ public class XBeeByte {
 
 	/**
 	 * @brief Constructor
-	 * @param numero Número decimal (0-255) que se desea convertir a binario
+	 * @param numero Nï¿½mero decimal (0-255) que se desea convertir a binario
 	 */
 	public XBeeByte(int numero) {
 		this.datos = new byte[1];
@@ -33,7 +33,7 @@ public class XBeeByte {
 	}
 
 	/**
-	 * @brief Método para obtener el valor de la variable datos
+	 * @brief Mï¿½todo para obtener el valor de la variable datos
 	 * @return byte[]
 	 */
 	public byte[] getDatos() {

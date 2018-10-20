@@ -11,7 +11,7 @@ var searchData=
   ['setdistancia',['setDistancia',['../classpanelconfiguracion_1_1_circuito.html#a1a498982586e4e851928d5afce301072',1,'panelconfiguracion::Circuito']]],
   ['setdistanciaejes',['setDistanciaEjes',['../classpanelconfiguracion_1_1_coche.html#aad0997da3350905074c9e740439be2de',1,'panelconfiguracion::Coche']]],
   ['setdistanciarecorrida',['setDistanciaRecorrida',['../classpanelpractica_1_1_practica.html#ab8cf40aa964ab5f98e372be5584319f7',1,'panelpractica::Practica']]],
-  ['seterrorenvio',['setErrorEnvio',['../classx_bee_1_1_dispositivo_x_bee.html#a149247f44e2df2d3acd97e1b385de310',1,'xBee::DispositivoXBee']]],
+  ['seterrorenvio',['setErrorEnvio',['../classx_bee_1_1_dispositivo_x_bee.html#a149247f44e2df2d3acd97e1b385de310',1,'xbee::DispositivoXBee']]],
   ['setfriccion',['setFriccion',['../classpanelconfiguracion_1_1_circuito.html#aa03a677270dd1046d4dcc3f5cbf047f2',1,'panelconfiguracion::Circuito']]],
   ['setimagen',['setImagen',['../classrecursos_1_1_fondo_j_panel.html#a3613a812187a541d92be3b43ce3c92a3',1,'recursos::FondoJPanel']]],
   ['setlistacircuitos',['setListaCircuitos',['../classiniciosesion_1_1_usuario.html#aab9e54b3414b3ad65afad2316a85fc99',1,'iniciosesion::Usuario']]],

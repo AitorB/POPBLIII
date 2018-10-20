@@ -18,6 +18,7 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.util.logging.Logger;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -29,7 +30,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import dialogos.DialogoOpcionesAlerta;
-import xBee.DispositivoXBee;
+import xbee.DispositivoXBee;
 
 /**
  * @brief Clase PanelServo
@@ -43,6 +44,7 @@ public class PanelServo extends Pruebas {
 	/**
 	 * @brief Atributos
 	 */
+	private static final Logger LOGGER = Logger.getLogger( PanelServo.class.getName() );
 	private static final String ARIAL = "Arial";
 	private static final String ERROR = "ERROR";
 	private JFrame ventana;
@@ -203,7 +205,7 @@ public class PanelServo extends Pruebas {
 
 		dispositivoXBee.iniciarXBee();
 		dispositivoXBee.enviarDatosPrueba(DispositivoXBee.FRENOS, DispositivoXBee.ADELANTE,
-				DispositivoXBee.INICIAR, Integer.valueOf(revoluciones.getText()));
+				DispositivoXBee.INICIAR, Integer.valueOf(porcentajeGiro.getText()));
 	}
 
 	public void detenerAction() {

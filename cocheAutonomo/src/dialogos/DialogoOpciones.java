@@ -23,6 +23,8 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -44,6 +46,7 @@ public abstract class DialogoOpciones extends JDialog implements ActionListener 
 	/**
 	 * @brief Atributos
 	 */
+	private static final Logger LOGGER = Logger.getLogger( DialogoOpciones.class.getName() );
 	private String imagen;
 	private String texto;
 
@@ -140,7 +143,7 @@ public abstract class DialogoOpciones extends JDialog implements ActionListener 
 				valorOpacidad -= 0.1;
 			} while (valorOpacidad > 0);
 		} catch (Exception e) {
-			LOGGER.log("context", e);
+			LOGGER.log(Level.SEVERE, e.toString(), e);
 		} finally {
 			this.dispose();
 		}

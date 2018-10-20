@@ -1,7 +1,7 @@
 var searchData=
 [
   ['getaceptar',['getAceptar',['../classdialogos_1_1_dialogo_opciones_confirmar.html#a6d8fce6e7b870aa7746d97af73b35fc0',1,'dialogos::DialogoOpcionesConfirmar']]],
-  ['getactivado',['getActivado',['../classx_bee_1_1_dispositivo_x_bee.html#a7ee845c07251873924a184142aec94bd',1,'xBee::DispositivoXBee']]],
+  ['getactivado',['getActivado',['../classx_bee_1_1_dispositivo_x_bee.html#a7ee845c07251873924a184142aec94bd',1,'xbee::DispositivoXBee']]],
   ['getanchocarretera',['getAnchoCarretera',['../classpanelconfiguracion_1_1_circuito.html#adb3d5f00bbeb9306b25bc6c892d5399a',1,'panelconfiguracion::Circuito']]],
   ['getbotonizquierda',['getBotonIzquierda',['../classdialogos_1_1_dialogo_datos_practica.html#a7dd7e40d54a7d2a1060f3da06464f635',1,'dialogos::DialogoDatosPractica']]],
   ['getbotonpractica',['getBotonPractica',['../classprincipal_1_1_ventana_principal.html#a55fa83a8f96f97fd612cbf89e60c7ab8',1,'principal::VentanaPrincipal']]],
@@ -11,9 +11,9 @@ var searchData=
   ['getcolumnclass',['getColumnClass',['../classpanelpractica_1_1_modelo_tabla.html#a77b46d88564fc8d5da49e3b1c66bc15b',1,'panelpractica::ModeloTabla']]],
   ['getcolumncount',['getColumnCount',['../classpanelpractica_1_1_modelo_tabla.html#a200a18461b6df4837d7d042a50177e25',1,'panelpractica::ModeloTabla']]],
   ['getcontrasena',['getContrasena',['../classiniciosesion_1_1_usuario.html#a86092b073f41ba637fa7b3fb80cd244b',1,'iniciosesion::Usuario']]],
-  ['getdatos',['getDatos',['../classx_bee_1_1_x_bee_byte.html#ac4299093a5157cfc9bd9770100f8b2db',1,'xBee::XBeeByte']]],
+  ['getdatos',['getDatos',['../classx_bee_1_1_x_bee_byte.html#ac4299093a5157cfc9bd9770100f8b2db',1,'xbee::XBeeByte']]],
   ['getdiametrorueda',['getDiametroRueda',['../classpanelconfiguracion_1_1_coche.html#a0308e451a69d379f019d9d96f210ba3c',1,'panelconfiguracion::Coche']]],
-  ['getdispositivolocal',['getDispositivoLocal',['../classx_bee_1_1_dispositivo_x_bee.html#aefe0a49ab16b9eb8483324b3ae9349a8',1,'xBee::DispositivoXBee']]],
+  ['getdispositivolocal',['getDispositivoLocal',['../classx_bee_1_1_dispositivo_x_bee.html#aefe0a49ab16b9eb8483324b3ae9349a8',1,'xbee::DispositivoXBee']]],
   ['getdistancia',['getDistancia',['../classpanelconfiguracion_1_1_circuito.html#adcb9ead1262016f8e3d8e1eb93d5ed35',1,'panelconfiguracion::Circuito']]],
   ['getdistanciaejes',['getDistanciaEjes',['../classpanelconfiguracion_1_1_coche.html#ae79c6a48b14baf2eabecf8c4d5c689df',1,'panelconfiguracion::Coche']]],
   ['getdistanciarecorrida',['getDistanciaRecorrida',['../classpanelpractica_1_1_practica.html#ae638712d9230678491cc73adcf6f631e',1,'panelpractica::Practica']]],

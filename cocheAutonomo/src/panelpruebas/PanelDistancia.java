@@ -31,7 +31,7 @@ import javax.swing.JTextField;
 import dialogos.DialogoOpcionesAlerta;
 import panelconfiguracion.Coche;
 import recursos.Fisica;
-import xBee.DispositivoXBee;
+import xbee.DispositivoXBee;
 
 /**
  * @brief Clase PanelDistancia

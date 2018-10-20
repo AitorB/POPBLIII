@@ -46,7 +46,7 @@ import panelconfiguracion.Coche;
 import recursos.BarraProceso;
 import recursos.Cronometro;
 import recursos.Fisica;
-import xBee.DispositivoXBee;
+import xbee.DispositivoXBee;
 
 /**
  * @brief Clase PanelDatosTiempoReal
@@ -520,12 +520,12 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 	 * @return void
 	 */
 	private void establecerPorcentaje() {
-		double porcentajeVueltas = Fisica.calcularVueltasTotal(circuito, coche) * 0.01;
+		double porcentajeVueltas = Fisica.calcularVueltasTotal(coche) * 0.01;
 		double sumaPorcentaje = 1 / porcentajeVueltas;
 
 		porcentaje += sumaPorcentaje;
 
-		if (vueltasRueda == Fisica.calcularVueltasTotal(circuito, coche)) {
+		if (vueltasRueda == Fisica.calcularVueltasTotal(coche)) {
 			porcentaje = 100;
 		}
 
@@ -547,7 +547,7 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 		} else if ((vueltasRueda > ((coche.getNumeroVueltasRecta() * 2) + coche.getNumeroVueltasCurva()))
 				&& (vueltasRueda < ((coche.getNumeroVueltasRecta() * 2) + (coche.getNumeroVueltasCurva() * 2)))) {
 			textoPosicionServo.setText(String.valueOf(Fisica.calcularAnguloGiro(circuito, coche)) + " %");
-		} else if (vueltasRueda == Fisica.calcularVueltasTotal(circuito, coche)) {
+		} else if (vueltasRueda == Fisica.calcularVueltasTotal(coche)) {
 			textoPosicionServo.setText("0 %");
 		}
 	}
@@ -621,7 +621,7 @@ public class PanelDatosTiempoReal extends JPanel implements ActionListener, Obse
 	public void update(Observable observable, Object objeto) {
 		leerMensajeXBee((XBeeMessage) objeto);
 
-		if (vueltasRueda == Fisica.calcularVueltasTotal(circuito, coche)) {
+		if (vueltasRueda == Fisica.calcularVueltasTotal(coche)) {
 			detenerPractica();
 		}
 	}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component jdk="JavaSE-1.8">
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="basicplayer3.0.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/reproductor/basicplayer3.0.jar!/"/>
+	</lib>
+	<lib name="commons-logging-api.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/reproductor/commons-logging-api.jar!/"/>
+	</lib>
+	<lib name="jl1.0.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/reproductor/jl1.0.jar!/"/>
+	</lib>
+	<lib name="jogg-0.0.7.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/reproductor/jogg-0.0.7.jar!/"/>
+	</lib>
+	<lib name="jorbis-0.0.15.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/reproductor/jorbis-0.0.15.jar!/"/>
+	</lib>
+	<lib name="jspeex0.9.7.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/reproductor/jspeex0.9.7.jar!/"/>
+	</lib>
+	<lib name="mp3spi1.9.4.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/reproductor/mp3spi1.9.4.jar!/"/>
+	</lib>
+	<lib name="tritonus_share.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/reproductor/tritonus_share.jar!/"/>
+	</lib>
+	<lib name="vorbisspi1.0.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/reproductor/vorbisspi1.0.2.jar!/"/>
+	</lib>
+	<lib name="rxtx-2.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/xbee/rxtx-2.2.jar!/"/>
+	</lib>
+	<lib name="slf4j-api-1.7.12.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/xbee/slf4j-api-1.7.12.jar!/"/>
+	</lib>
+	<lib name="slf4j-jdk14-1.7.12.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/xbee/slf4j-jdk14-1.7.12.jar!/"/>
+	</lib>
+	<lib name="slf4j-nop-1.7.12.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/xbee/slf4j-nop-1.7.12.jar!/"/>
+	</lib>
+	<lib name="slf4j-simple-1.7.12.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/xbee/slf4j-simple-1.7.12.jar!/"/>
+	</lib>
+	<lib name="xbjlib-1.1.1.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/xbee/xbjlib-1.1.1.jar!/"/>
+	</lib>
+</component>

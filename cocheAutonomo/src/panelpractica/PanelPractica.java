@@ -14,7 +14,7 @@
  */
 package panelpractica;
 
-/** @brief Librerías
+/** @brief Librerï¿½as
  */
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -28,14 +28,14 @@ import javax.swing.JPanel;
 
 import panelconfiguracion.Circuito;
 import panelconfiguracion.Coche;
-import xBee.DispositivoXBee;
+import xbee.DispositivoXBee;
 
 /**
  * @brief Clase PanelPractica
  */
 public class PanelPractica extends JPanel {
 	/**
-	 * @brief Número de versión de la clase
+	 * @brief Nï¿½mero de versiï¿½n de la clase
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -50,7 +50,7 @@ public class PanelPractica extends JPanel {
 
 	/**
 	 * @brief Constructor
-	 * @param ventana Referencia a la ventana de la que se lanza el diálogo
+	 * @param ventana Referencia a la ventana de la que se lanza el diï¿½logo
 	 */
 	public PanelPractica(JFrame ventana) {
 		super(new BorderLayout(0, 10));
@@ -61,7 +61,7 @@ public class PanelPractica extends JPanel {
 	}
 
 	/**
-	 * @brief Método del panel título: contiene un título
+	 * @brief Mï¿½todo del panel tï¿½tulo: contiene un tï¿½tulo
 	 * @return Component
 	 */
 	private Component crearPanelTitulo() {
@@ -77,7 +77,7 @@ public class PanelPractica extends JPanel {
 	}
 
 	/**
-	 * @brief Método del panel datos: muestra una tabla con información de los circuitos
+	 * @brief Mï¿½todo del panel datos: muestra una tabla con informaciï¿½n de los circuitos
 	 * @return Component
 	 */
 	private Component crearPanelDatos() {
@@ -95,7 +95,7 @@ public class PanelPractica extends JPanel {
 	}
 
 	/**
-	 * @brief Método para determinar el valor del objeto coche
+	 * @brief Mï¿½todo para determinar el valor del objeto coche
 	 * @param coche Datos del coche a utilizar por el usuario
 	 * @return void
 	 */
@@ -105,7 +105,7 @@ public class PanelPractica extends JPanel {
 	}
 
 	/**
-	 * @brief Método para determinar el valor del objeto circuito
+	 * @brief Mï¿½todo para determinar el valor del objeto circuito
 	 * @param circuito Datos del circuito seleccionado
 	 * @return void
 	 */
@@ -114,11 +114,11 @@ public class PanelPractica extends JPanel {
 		panelDatosTabla.setListaModelo(circuito.getListaPracticas());
 		panelDatosTiempoReal.setCircuito(circuito);
 		
-		nombreCircuito.setText("Práctica real del circuito: " + circuito.getNombre());
+		nombreCircuito.setText("Prï¿½ctica real del circuito: " + circuito.getNombre());
 	}
 
 	/**
-	 * @brief Método para obtener el valor del panelDatosSimulacion
+	 * @brief Mï¿½todo para obtener el valor del panelDatosSimulacion
 	 * @return PanelDatosSimulacion
 	 */
 	public PanelDatosSimulacion getPanelDatosSimulacion() {
@@ -126,8 +126,8 @@ public class PanelPractica extends JPanel {
 	}
 	
 	/**
-	 * @brief Método para determinar el valor de la variable dispositivoXBee
-	 * @param dispositivoXBee Dispositivo XBee utilizando para realizar la comunicación con el coche
+	 * @brief Mï¿½todo para determinar el valor de la variable dispositivoXBee
+	 * @param dispositivoXBee Dispositivo XBee utilizando para realizar la comunicaciï¿½n con el coche
 	 * @return void
 	 */
 	public void setDispositivoXBee(DispositivoXBee dispositivoXBee) {

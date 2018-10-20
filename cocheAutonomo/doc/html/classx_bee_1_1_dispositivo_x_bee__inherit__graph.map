@@ -1,4 +1,4 @@
-<map id="xBee.DispositivoXBee" name="xBee.DispositivoXBee">
+<map id="xbee.DispositivoXBee" name="xbee.DispositivoXBee">
 <area shape="rect" id="node2" href="$interfaceinterfaces_1_1_observable.html" title="Clase Observable. " alt="" coords="5,5,152,32"/>
 <area shape="rect" id="node3" href="$interfaceinterfaces_1_1_observer.html" title="Clase Observer. " alt="" coords="176,5,309,32"/>
 </map>

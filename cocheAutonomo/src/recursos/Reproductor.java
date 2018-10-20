@@ -18,6 +18,7 @@ package recursos;
  */
 import java.io.File;
 import javazoom.jlgui.basicplayer.BasicPlayer;
+import javazoom.jlgui.basicplayer.BasicPlayerException;
 
 /** @brief Clase Reproductor
  */
@@ -35,7 +36,7 @@ public class Reproductor {
 	/** @brief Método para reproducir el sonido
 	 *  @return void
 	 */
-	public void Reproducir() throws BasicPlayerException {
+	public void reproducir() throws BasicPlayerException {
 		player.play();
 	}
 
@@ -43,28 +44,28 @@ public class Reproductor {
 	 * 	@param ruta Nombre de la ruta del fichero
 	 *  @return void
 	 */
-	public void AbrirFichero(String ruta) throws BasicPlayerException {
+	public void abrirFichero(String ruta) throws BasicPlayerException {
 		player.open(new File(ruta));
 	}
 
 	/** @brief Método para pausar el sonido
 	 *  @return void
 	 */
-	public void Pausar() throws BasicPlayerException {
+	public void pausar() throws BasicPlayerException {
 		player.pause();
 	}
 
 	/** @brief Método para continuar reproduciendo el sonido
 	 *  @return void
 	 */
-	public void Continuar() throws BasicPlayerException {
+	public void continuar() throws BasicPlayerException {
 		player.resume();
 	}
 
 	/** @brief Método para parar el sonido
 	 *  @return void
 	 */
-	public void Parar() throws BasicPlayerException {
+	public void parar() throws BasicPlayerException {
 		player.stop();
 	}
 	

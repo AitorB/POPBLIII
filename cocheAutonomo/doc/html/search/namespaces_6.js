@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xbee',['xBee',['../namespacex_bee.html',1,'']]]
+  ['xbee',['xbee',['../namespacex_bee.html',1,'']]]
 ];

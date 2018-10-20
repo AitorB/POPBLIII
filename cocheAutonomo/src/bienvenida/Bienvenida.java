@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.BorderFactory;
 import javax.swing.JDialog;
@@ -57,6 +59,7 @@ public class Bienvenida extends JDialog implements Observer {
 	/**
 	 * @brief Atributos
 	 */
+	private static final Logger LOGGER = Logger.getLogger( Bienvenida.class.getName() );
 	private static final int DIA_COPIA_SEGURIDAD = 5;
 	private static final String FONDO_BIENVENIDA = "imagenes\\bienvenida.jpg";
 
@@ -173,7 +176,7 @@ public class Bienvenida extends JDialog implements Observer {
 						}
 					}
 				} catch (IOException e) {
-					LOGGER.log("context", e);
+					LOGGER.log(Level.SEVERE, e.toString(), e);
 				}
 			}
 		}
@@ -192,7 +195,7 @@ public class Bienvenida extends JDialog implements Observer {
 				valorOpacidad -= 0.1;
 			} while (valorOpacidad > 0);
 		} catch (Exception e) {
-			LOGGER.log("context", e);
+			LOGGER.log(Level.SEVERE, e.toString(), e);
 		} finally {
 			this.dispose();
 		}

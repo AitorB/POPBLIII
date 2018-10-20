@@ -26,7 +26,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import dialogos.DialogoOpcionesAlerta;
-import xBee.DispositivoXBee;
+import xbee.DispositivoXBee;
 
 /**
  * @brief Clase PanelFreno

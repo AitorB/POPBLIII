@@ -1,5 +1,5 @@
 /** @file DispositivoXBee.java
- *  @brief Clase para gestionar el funcionamiento del módulo XBee
+ *  @brief Clase para gestionar el funcionamiento del mï¿½dulo XBee
  *  @authors
  *  Nombre        | Apellido       | Email                                |
  *  ------------- | -------------- | ------------------------------------ |
@@ -10,9 +10,9 @@
  *  @date 23/01/2017
  */
 
-/** @brief Paquete xBee
+/** @brief Paquete xbee
  */
-package xBee;
+package xbee;
 
 import javax.swing.JFrame;
 
@@ -81,7 +81,7 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 
 	/**
-	 * @brief Método para conectar la XBee al puerto COM asignado
+	 * @brief Mï¿½todo para conectar la XBee al puerto COM asignado
 	 * @return void
 	 */
 	public void establecerPuerto() {
@@ -107,7 +107,7 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 
 	/**
-	 * @brief Método para añadir un listener al dispositivo XBee
+	 * @brief Mï¿½todo para aï¿½adir un listener al dispositivo XBee
 	 * @return void
 	 */
 	private void anadirListener() {
@@ -117,7 +117,7 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 	
 	/**
-	 * @brief Método para iniciar la XBee
+	 * @brief Mï¿½todo para iniciar la XBee
 	 * @return void
 	 */
 	public void iniciarXBee() {
@@ -135,7 +135,7 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 
 	/**
-	 * @brief Método para detener la XBee
+	 * @brief Mï¿½todo para detener la XBee
 	 * @return void
 	 */
 	public void detenerXBee() {
@@ -146,8 +146,8 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 
 	/**
-	 * @brief Método para transfomar un número decimal
-	 * @param numero Número decimal (0-255) que se desea convertir a binario
+	 * @brief Mï¿½todo para transfomar un nï¿½mero decimal
+	 * @param numero Nï¿½mero decimal (0-255) que se desea convertir a binario
 	 * @return void
 	 */
 	public XBeeByte transformarNumero(int numero) {
@@ -158,7 +158,7 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 
 	/**
-	 * @brief Método para enviar una trama de datos binarios
+	 * @brief Mï¿½todo para enviar una trama de datos binarios
 	 * @param trama Trama de datos en binario
 	 * @return void
 	 */
@@ -167,16 +167,16 @@ public class DispositivoXBee implements Observable, Observer {
 			dispositivoLocal.sendData(dispositivoRemoto, trama.getDatos());
 		} catch (XBeeException e) {
 			if (!errorEnvio) {
-				new DialogoOpcionesAlerta(ventana, "¡ERROR: No ha sido posible conectar con el dispositivo XBee remoto!", "ERROR");
+				new DialogoOpcionesAlerta(ventana, "ï¿½ERROR: No ha sido posible conectar con el dispositivo XBee remoto!", "ERROR");
 				errorEnvio = true;
 			}		
 		}
 	}
 
 	/**
-	 * @brief Método para enviar al coche las dimensiones del circuito
+	 * @brief Mï¿½todo para enviar al coche las dimensiones del circuito
 	 * @param tipoRecorrido Indica si es una recta o una curva
-	 * @param numeroVueltasRueda Número de vueltas que tiene que dar la rueda para recorrer la recta o la curva
+	 * @param numeroVueltasRueda Nï¿½mero de vueltas que tiene que dar la rueda para recorrer la recta o la curva
 	 * @return void
 	 */
 	public void enviarDimensionesCircuito(int tipoRecorrido, int numeroVueltasRueda) {
@@ -192,9 +192,9 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 
 	/**
-	 * @brief Método para enviar al coche los datos para realizar el circuito
+	 * @brief Mï¿½todo para enviar al coche los datos para realizar el circuito
 	 * @param tipoAccion Indica si mover el servo o el motor
-	 * @param direccion Indica la dirección en la que se va a mover el servo o el motor
+	 * @param direccion Indica la direcciï¿½n en la que se va a mover el servo o el motor
 	 * @param estado Iniciar o detener el movimiento
 	 * @param porcentaje Valor porcentual para mover el servo o el motor
 	 * @return void
@@ -207,11 +207,11 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 	
 	/**
-	 * @brief Método para enviar al coche los datos para realizar las diferentes pruebas
+	 * @brief Mï¿½todo para enviar al coche los datos para realizar las diferentes pruebas
 	 * @param tipoPrueba Indica que tipo de prueba se va a realizar
-	 * @param direccion Indica la dirección en la que se va a mover el servo o el motor
+	 * @param direccion Indica la direcciï¿½n en la que se va a mover el servo o el motor
 	 * @param estado Iniciar o detener el movimiento
-	 * @param valor Valor que varía en función del tipo de prueba
+	 * @param valor Valor que varï¿½a en funciï¿½n del tipo de prueba
 	 * @return void
 	 */
 	public void enviarDatosPrueba( int tipoPrueba, int direccion, int estado, int valor) {
@@ -222,7 +222,7 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 
 	/**
-	 * @brief Método para comprobar si el dispositivo local está activo
+	 * @brief Mï¿½todo para comprobar si el dispositivo local estï¿½ activo
 	 * @return boolean
 	 */
 	public boolean comprobarEstado() {
@@ -230,7 +230,7 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 	
 	/**
-	 * @brief Método para detectar los datos enviados por el coche
+	 * @brief Mï¿½todo para detectar los datos enviados por el coche
 	 * @param observable Referencia a XDataListener del dispositivo XBee
 	 * @param objeto Mensaje XBee recibido
 	 * @return void
@@ -242,7 +242,7 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 	
 	/**
-	 * @brief Método que permite añadir un observador
+	 * @brief Mï¿½todo que permite aï¿½adir un observador
 	 * @param observer Clase que observa si hay cambios
 	 * @return void
 	 */
@@ -252,7 +252,7 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 
 	/**
-	 * @brief Método que permite borrar un observador
+	 * @brief Mï¿½todo que permite borrar un observador
 	 * @param observer Clase que observa si hay cambios
 	 * @return void
 	 */
@@ -262,7 +262,7 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 
 	/**
-	 * @brief Método que permite notificar cambios a los observadores
+	 * @brief Mï¿½todo que permite notificar cambios a los observadores
 	 * @return void
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 
 	/**
-	 * @brief Método para obtener el valor del objeto dispositivoLocal
+	 * @brief Mï¿½todo para obtener el valor del objeto dispositivoLocal
 	 * @return XBeeDevice
 	 */
 	public XBeeDevice getDispositivoLocal() {
@@ -279,7 +279,7 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 
 	/**
-	 * @brief Método para obtener el valor de la variable activado
+	 * @brief Mï¿½todo para obtener el valor de la variable activado
 	 * @return boolean
 	 */
 	public boolean getActivado() {
@@ -287,7 +287,7 @@ public class DispositivoXBee implements Observable, Observer {
 	}
 	
 	/**
-	 * @brief Método para establecer el valor de la variable errorEnvio
+	 * @brief Mï¿½todo para establecer el valor de la variable errorEnvio
 	 * @return void
 	 */
 	public void setErrorEnvio(boolean estado) {

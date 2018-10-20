@@ -14,7 +14,7 @@
  */
 package panelconfiguracion;
 
-/** @brief Librerías
+/** @brief Librerias
  */
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -52,7 +52,7 @@ import principal.VentanaPrincipal;
  */
 public class PanelCircuitos extends JPanel implements ActionListener, ListSelectionListener {
 	/**
-	 * @brief Número de versión de la clase
+	 * @brief Numero de version de la clase
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -72,8 +72,8 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	private static final String FONT ="Arial";
 	/**
 	 * @brief Constructor
-	 * @param ventana Referencia a la ventana de la que se lanza el diálogo
-	 * @param usuario Usuario con el que se ha iniciado sesión
+	 * @param ventana Referencia a la ventana de la que se lanza el dialogo
+	 * @param usuario Usuario con el que se ha iniciado sesion
 	 */
 	public PanelCircuitos(JFrame ventana, Usuario usuario) {
 		super(new BorderLayout(0, 10));
@@ -88,14 +88,14 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	}
 
 	/**
-	 * @brief Método del panel título: contiene un título
+	 * @brief Metodo del panel titulo: contiene un titulo
 	 * @return Component
 	 */
 	private Component crearPanelTitulo() {
 		JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		panel.setBorder(BorderFactory.createEtchedBorder());
 
-		JLabel titulo = new JLabel("Configuración de circuitos");
+		JLabel titulo = new JLabel("Configuracion de circuitos");
 		titulo.setFont(new Font(FONT, Font.BOLD, 20));
 
 		panel.add(titulo);
@@ -104,7 +104,7 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	}
 
 	/**
-	 * @brief Método del panel datos: contiene los paneles para mostrar los circuitos y su información
+	 * @brief Metodo del panel datos: contiene los paneles para mostrar los circuitos y su informacion
 	 * @return Component
 	 */
 	private Component crearPanelDatos() {
@@ -117,7 +117,7 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	}
 
 	/**
-	 * @brief Método del panel lista circuitos: muestra la lista de circuitos del usuario
+	 * @brief Metodo del panel lista circuitos: muestra la lista de circuitos del usuario
 	 * @return Component
 	 */
 	private Component crearPanelListaCircuitos() {
@@ -145,7 +145,7 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	}
 
 	/**
-	 * @brief Método del panel información circuitos: muestra información del circuito seleccionado en la lista
+	 * @brief Metodo del panel informacion circuitos: muestra informacion del circuito seleccionado en la lista
 	 * @return Component
 	 */
 	private Component crearPanelInfoCircuitos() {
@@ -173,7 +173,7 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 		valorRadio.setEditable(false);
 		valorRadio.setBackground(Color.WHITE);
 
-		JLabel textoFriccion = new JLabel("Coeficiente de fricción:");
+		JLabel textoFriccion = new JLabel("Coeficiente de friccion:");
 		textoFriccion.setFont(new Font(FONT, Font.BOLD, 15));
 
 		valorFriccion = new JTextField();
@@ -196,13 +196,13 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	}
 
 	/**
-	 * @brief Método del panel botones: contiene los botones añadir y borrar circuito
+	 * @brief Metodo del panel botones: contiene los botones anadir y borrar circuito
 	 * @return Component
 	 */
 	private Component crearPanelBotones() {
 		JPanel panel = new JPanel(new GridLayout(1, 2, 10, 0));
 
-		anadir = new JButton("  AÑADIR", new ImageIcon("iconos\\anadir.png"));
+		anadir = new JButton("  ANADIR", new ImageIcon("iconos\\anadir.png"));
 		anadir.setFont(new Font(FONT, Font.BOLD, 20));
 		anadir.setMnemonic(KeyEvent.VK_A);
 		anadir.setPreferredSize(new Dimension(0, 50));
@@ -228,7 +228,7 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	}
 
 	/**
-	 * @brief Método para crear un diálogo que permite añadir un nuevo circuito
+	 * @brief Metodo para crear un dialogo que permite anadir un nuevo circuito
 	 * @return void
 	 */
 	private void anadirCircuito() {
@@ -245,11 +245,11 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	}
 
 	/**
-	 * @brief Método para borrar un circuito
+	 * @brief Metodo para borrar un circuito
 	 * @return void
 	 */
 	private void borrarCircuito() {
-		DialogoOpcionesConfirmar dialogo = new DialogoOpcionesConfirmar(ventana, "¿Desea borrar el circuito seleccionado?",
+		DialogoOpcionesConfirmar dialogo = new DialogoOpcionesConfirmar(ventana, "Â¿Desea borrar el circuito seleccionado?",
 				"PREGUNTA");
 		if (dialogo.getAceptar()) {
 			modeloCircuitos.removeElement(listaCircuitos.getSelectedValue());
@@ -260,7 +260,7 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	}
 
 	/**
-	 * @brief Método para cargar la lista de circuitos del usuario y añadirlos al modelo
+	 * @brief Metodo para cargar la lista de circuitos del usuario y anadirlos al modelo
 	 * @return void
 	 */
 	private void cargarCircuitosUsuario() {
@@ -270,8 +270,8 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	}
 
 	/**
-	 * @brief Método para detectar cambios en la selección de la lista de circuitos
-	 * @param e Acción realizada por el usuario
+	 * @brief Metodo para detectar cambios en la seleccion de la lista de circuitos
+	 * @param e Accion realizada por el usuario
 	 * @return void
 	 */
 	@Override
@@ -293,8 +293,8 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	}
 
 	/**
-	 * @brief Método para tratar las acciones realizadas por el usuario
-	 * @param e Acción realizada por el usuario
+	 * @brief Metodo para tratar las acciones realizadas por el usuario
+	 * @param e Accion realizada por el usuario
 	 * @return void
 	 */
 	@Override
@@ -309,7 +309,7 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	}
 
 	/**
-	 * @brief Método para obtener el valor de la variable listaCircuitos
+	 * @brief Metodo para obtener el valor de la variable listaCircuitos
 	 * @return List<Circuito>
 	 */
 	public List<Circuito> getListaCircuitos() {
@@ -323,7 +323,7 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	}
 
 	/**
-	 * @brief Método para obtener el valor de la variable circuito
+	 * @brief Metodo para obtener el valor de la variable circuito
 	 * @return Circuito
 	 */
 	public Circuito getCircuito() {
@@ -331,7 +331,7 @@ public class PanelCircuitos extends JPanel implements ActionListener, ListSelect
 	}
 	
 	/**
-	 * @brief Método para determinar el estado del botón añadir
+	 * @brief Metodo para determinar el estado del boton anadir
 	 * @return void
 	 */
 	public void setBotonAnadir(boolean estado) {

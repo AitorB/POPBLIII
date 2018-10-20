@@ -1,4 +1,4 @@
-<map id="xBee.DispositivoXBee.detenerXBee" name="xBee.DispositivoXBee.detenerXBee">
+<map id="xbee.DispositivoXBee.detenerXBee" name="xbee.DispositivoXBee.detenerXBee">
 <area shape="rect" id="node2" href="$classpanelpractica_1_1_panel_datos_tiempo_real.html#a02128ac59124b12e351d68bf4493c096" title="Constructor. " alt="" coords="279,5,508,47"/>
 <area shape="rect" id="node3" href="$classpanelpruebas_1_1_panel_derrape.html#a4c64f37b60f47e4efc87a6e1e0b88f59" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="568,16,788,57"/>
 <area shape="rect" id="node4" href="$classpanelpruebas_1_1_panel_distancia.html#a4666ed8f4f032c0f876f3bfd985c065c" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="563,81,793,123"/>

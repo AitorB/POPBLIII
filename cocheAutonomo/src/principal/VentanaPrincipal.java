@@ -35,6 +35,9 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -58,7 +61,7 @@ import panelpruebas.PanelPruebas;
 import panelsimulacion.PanelSimulacion;
 import recursos.Fecha;
 import recursos.Hora;
-import xBee.DispositivoXBee;
+import xbee.DispositivoXBee;
 
 /**
  * @brief Clase VentanaPrincipal
@@ -72,6 +75,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 	/**
 	 * @brief Atributos
 	 */
+	private static final Logger LOGGER = Logger.getLogger( VentanaPrincipal.class.getName() );
 	private static final String ARIAL = "Arial";
 	private static final String PANEL_UNO = "panel configuración";
 	private static final String PANEL_DOS = "panel simulación";
@@ -351,7 +355,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 			writeMap(mapaUsuarios);
 		}
 		catch (Exception e) {
-			LOGGER.log("context", e);
+			LOGGER.log(Level.SEVERE, e.toString(), e);
 		}
 	}
 
@@ -365,7 +369,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 			writer.writeObject(mapaUsuarios);
 		}
 		catch (Exception e) {
-			LOGGER.log("context", e);
+			LOGGER.log(Level.SEVERE, e.toString(), e);
 		}
 	}
 

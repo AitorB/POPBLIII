@@ -27,7 +27,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import dialogos.DialogoOpcionesAlerta;
-import xBee.DispositivoXBee;
+import xbee.DispositivoXBee;
 
 /**
  * @brief Clase PanelMovimiento

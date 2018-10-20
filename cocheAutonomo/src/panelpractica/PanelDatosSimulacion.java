@@ -1,5 +1,5 @@
 /** @file PanelDatosSimulacion.java
- *  @brief Clase para crear un panel que muestra los datos de la simulación realizada
+ *  @brief Clase para crear un panel que muestra los datos de la simulacion realizada
  *  @authors
  *  Nombre        | Apellido       | Email                                |
  *  ------------- | -------------- | ------------------------------------ |
@@ -14,7 +14,7 @@
  */
 package panelpractica;
 
-/** @brief Librerías
+/** @brief Librerias
  */
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -37,7 +37,7 @@ import recursos.Fisica;
  */
 public class PanelDatosSimulacion extends JPanel {
 	/**
-	 * @brief Número de versión de la clase
+	 * @brief Numero de version de la clase
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -66,7 +66,7 @@ public class PanelDatosSimulacion extends JPanel {
 	}
 
 	/**
-	 * @brief Método del panel título: contiene un título
+	 * @brief Metodo del panel titulo: contiene un titulo
 	 * @return Component
 	 */
 	private Component crearPanelTitulo() {
@@ -79,7 +79,7 @@ public class PanelDatosSimulacion extends JPanel {
 		textoSuperior.setHorizontalAlignment(JLabel.CENTER);
 		textoSuperior.setVerticalAlignment(JLabel.BOTTOM);
 
-		JLabel textoInferior = new JLabel("SIMULACIÓN");
+		JLabel textoInferior = new JLabel("SIMULACION");
 		textoInferior.setFont(new Font(ARIAL, Font.BOLD, 20));
 		textoInferior.setHorizontalAlignment(JLabel.CENTER);
 		textoInferior.setVerticalAlignment(JLabel.NORTH);
@@ -91,7 +91,7 @@ public class PanelDatosSimulacion extends JPanel {
 	}
 
 	/**
-	 * @brief Método del panel datos: contiene los datos de la simulación
+	 * @brief Metodo del panel datos: contiene los datos de la simulacion
 	 * @return Component
 	 */
 	private Component crearPanelDatos() {
@@ -107,7 +107,7 @@ public class PanelDatosSimulacion extends JPanel {
 	}
 
 	/**
-	 * @brief Método del panel distancia: muestra la distancia total a recorrer en
+	 * @brief Metodo del panel distancia: muestra la distancia total a recorrer en
 	 *        el circuito
 	 * @return Component
 	 */
@@ -133,7 +133,7 @@ public class PanelDatosSimulacion extends JPanel {
 	}
 
 	/**
-	 * @brief Método del panel tiempo: muestra el tiempo necesario para completar el
+	 * @brief Metodo del panel tiempo: muestra el tiempo necesario para completar el
 	 *        circuito
 	 * @return Component
 	 */
@@ -159,7 +159,7 @@ public class PanelDatosSimulacion extends JPanel {
 	}
 
 	/**
-	 * @brief Método del panel velocidad: muestra a que velocidad se realizó el
+	 * @brief Metodo del panel velocidad: muestra a que velocidad se realiza el
 	 *        circuito
 	 * @return Component
 	 */
@@ -185,7 +185,7 @@ public class PanelDatosSimulacion extends JPanel {
 	}
 
 	/**
-	 * @brief Método del panel vueltas rueda: muestra el número de vueltas de la
+	 * @brief Metodo del panel vueltas rueda: muestra el numero de vueltas de la
 	 *        rueda para completar el circuito
 	 * @return Component
 	 */
@@ -211,7 +211,7 @@ public class PanelDatosSimulacion extends JPanel {
 	}
 
 	/**
-	 * @brief Método para mostrar los datos de la simulación si esta se ha realizado
+	 * @brief Metodo para mostrar los datos de la simulacion si esta se ha realizado
 	 * @return void
 	 */
 	public void setDatosSimulacion() {
@@ -219,7 +219,7 @@ public class PanelDatosSimulacion extends JPanel {
 			distancia.setText(String.format("%.2f", circuito.getDistancia()) + " m");
 			tiempo.setText(String.format("%.2f", circuito.getTiempoRecorrido()) + " s");
 			velocidad.setText(String.format("%.2f", circuito.getVelocidadMaxima()) + " km/h");
-			vueltasRueda.setText(String.valueOf(Fisica.calcularVueltasTotal(circuito, coche)));
+			vueltasRueda.setText(String.valueOf(Fisica.calcularVueltasTotal(coche)));
 		} else {
 			distancia.setText("-");
 			tiempo.setText("-");
@@ -229,7 +229,7 @@ public class PanelDatosSimulacion extends JPanel {
 	}
 
 	/**
-	 * @brief Método para determinar el valor del objeto coche
+	 * @brief Metodo para determinar el valor del objeto coche
 	 * @param coche Datos del coche a utilizar por el usuario
 	 * @return void
 	 */
@@ -238,7 +238,7 @@ public class PanelDatosSimulacion extends JPanel {
 	}
 
 	/**
-	 * @brief Método para determinar el valor del objeto circuito
+	 * @brief Metodo para determinar el valor del objeto circuito
 	 * @param circuito Datos del circuito seleccionado
 	 * @return void
 	 */

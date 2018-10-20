@@ -7,5 +7,5 @@ var searchData=
   ['adaptadorcircuitos_2ejava',['AdaptadorCircuitos.java',['../_adaptador_circuitos_8java.html',1,'']]],
   ['adaptadortabla',['AdaptadorTabla',['../classpanelpractica_1_1_adaptador_tabla.html',1,'panelpractica']]],
   ['adaptadortabla_2ejava',['AdaptadorTabla.java',['../_adaptador_tabla_8java.html',1,'']]],
-  ['addobserver',['addObserver',['../interfaceinterfaces_1_1_observable.html#ae748dfa7a710149f30a29dbd38b59bcc',1,'interfaces.Observable.addObserver()'],['../classrecursos_1_1_barra_proceso.html#aabdad465704ed3eab4c36237f1688cea',1,'recursos.BarraProceso.addObserver()'],['../classx_bee_1_1_dispositivo_x_bee.html#a96976fdb434a4835e1efcd3ca7cc7dd5',1,'xBee.DispositivoXBee.addObserver()'],['../classx_bee_1_1_x_data_listener.html#aa260e6e6d5fc05cfd06622907bbad6c7',1,'xBee.XDataListener.addObserver()']]]
+  ['addobserver',['addObserver',['../interfaceinterfaces_1_1_observable.html#ae748dfa7a710149f30a29dbd38b59bcc',1,'interfaces.Observable.addObserver()'],['../classrecursos_1_1_barra_proceso.html#aabdad465704ed3eab4c36237f1688cea',1,'recursos.BarraProceso.addObserver()'],['../classx_bee_1_1_dispositivo_x_bee.html#a96976fdb434a4835e1efcd3ca7cc7dd5',1,'xbee.DispositivoXBee.addObserver()'],['../classx_bee_1_1_x_data_listener.html#aa260e6e6d5fc05cfd06622907bbad6c7',1,'xbee.XDataListener.addObserver()']]]
 ];

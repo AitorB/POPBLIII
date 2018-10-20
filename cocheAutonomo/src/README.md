@@ -10,23 +10,23 @@
  Unai          | Iraeta         | unai.iraeta@alumni.mondragon.edu     |
  Aitor         | Barreiro       | aitor.barreirom@alumni.mondragon.edu |
 
-@par Descripción
+@par Descripcion
 Programa para gestionar el control remoto de un coche de radio control en un circuito predefinido por el usuario.
 
-@par Organización del programa
+@par Organizacion del programa
 El programa consta de tres apartados principales:
 	- @c Bienvenida.java clase que muestra una pantalla de carga al inicio del programa.
 	- @c IniciarSesion.java clase que permite el acceso de diferentes usuarios al programa.
 	- @c VentanaPrincipal.java clase que muestra la interfaz principal para controlar el coche.
 @par
-El usuario que acceda al programa podrá:
-	- Introducir los datos de su coche de simulación.
-	- Crear sus propios circuitos para despues simularnos y ponerlos en práctica.
+El usuario que acceda al programa podra:
+	- Introducir los datos de su coche de simulacion.
+	- Crear sus propios circuitos para despues simularnos y ponerlos en practica.
 @par
-Iniciando sesión con el usuario 'Pruebas', se podrán realizar pruebas adicionales en el coche, solo disponibles en este modo.
+Iniciando sesion con el usuario 'Pruebas', se podrï¿½n realizar pruebas adicionales en el coche, solo disponibles en este modo.
 
-@par Instalación y ejecución
-El proyecto se ha realizado utilizando Eclipse IDE for Java Developers, disponible para su descarga en la siguiente dirección: 
+@par Instalacion y ejecucion
+El proyecto se ha realizado utilizando Eclipse IDE for Java Developers, disponible para su descarga en la siguiente direcciï¿½n: 
 <https://www.eclipse.org/downloads/eclipse-packages/Visual>
 @par
 Proyecto desarrollado en Windows

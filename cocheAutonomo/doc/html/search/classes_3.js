@@ -8,5 +8,5 @@ var searchData=
   ['dialogoopciones',['DialogoOpciones',['../classdialogos_1_1_dialogo_opciones.html',1,'dialogos']]],
   ['dialogoopcionesalerta',['DialogoOpcionesAlerta',['../classdialogos_1_1_dialogo_opciones_alerta.html',1,'dialogos']]],
   ['dialogoopcionesconfirmar',['DialogoOpcionesConfirmar',['../classdialogos_1_1_dialogo_opciones_confirmar.html',1,'dialogos']]],
-  ['dispositivoxbee',['DispositivoXBee',['../classx_bee_1_1_dispositivo_x_bee.html',1,'xBee']]]
+  ['dispositivoxbee',['DispositivoXBee',['../classx_bee_1_1_dispositivo_x_bee.html',1,'xbee']]]
 ];

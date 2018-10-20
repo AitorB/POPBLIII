@@ -20,6 +20,9 @@ import javax.swing.UIManager;
 
 import principal.VentanaPrincipal;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * @brief Clase Main
  */
@@ -27,6 +30,7 @@ public class Main {
 	/**
 	 * @brief Atributos
 	 */
+	private static final Logger LOGGER = Logger.getLogger( Main.class.getName() );
 	public static final String FICHERO_ORIGINAL = "archivos\\cocheAutonomo.dat";
 	public static final String FICHERO_COPIA = "archivos\\cocheAutonomoBackUp";
 	public static final int ANCHO_VENTANA = 1280;
@@ -39,7 +43,7 @@ public class Main {
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
-			LOGGER.log("context", e);
+			LOGGER.log(Level.SEVERE, e.toString(), e);
 		}
 
 		new VentanaPrincipal(true);

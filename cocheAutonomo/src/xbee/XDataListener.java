@@ -10,9 +10,9 @@
  *  @date 23/01/2017
  */
 
-/** @brief Paquete xBee
+/** @brief Paquete xbee
  */
-package xBee;
+package xbee;
 
 /** @brief Librerías
  */

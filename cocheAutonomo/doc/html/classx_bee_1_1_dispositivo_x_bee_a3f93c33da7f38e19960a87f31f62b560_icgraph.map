@@ -1,4 +1,4 @@
-<map id="xBee.DispositivoXBee.enviarDatosPrueba" name="xBee.DispositivoXBee.enviarDatosPrueba">
+<map id="xbee.DispositivoXBee.enviarDatosPrueba" name="xbee.DispositivoXBee.enviarDatosPrueba">
 <area shape="rect" id="node2" href="$classpanelpruebas_1_1_panel_derrape.html#a4c64f37b60f47e4efc87a6e1e0b88f59" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="249,5,469,47"/>
 <area shape="rect" id="node3" href="$classpanelpruebas_1_1_panel_distancia.html#a4666ed8f4f032c0f876f3bfd985c065c" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="244,71,473,112"/>
 <area shape="rect" id="node4" href="$classpanelpruebas_1_1_panel_freno.html#ad2a932da637923e4d44d285da52bc344" title="Método para tratar las acciones realizadas por el usuario. " alt="" coords="255,136,463,177"/>

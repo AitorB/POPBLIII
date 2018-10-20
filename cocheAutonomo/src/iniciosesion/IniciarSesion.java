@@ -29,14 +29,13 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -70,6 +69,7 @@ public class IniciarSesion extends JDialog implements ActionListener {
 	/**
 	 * @brief Atributos
 	 */
+	private static final Logger LOGGER = Logger.getLogger( IniciarSesion.class.getName() );
 	private static final String CONTEXT = "context";
 	private static final String ARIAL = "Arial";
 	private static final String FONDO_PANTALLA = "imagenes\\iniciar_sesion.jpg";
@@ -261,13 +261,17 @@ public class IniciarSesion extends JDialog implements ActionListener {
 		mapaUsuarios = new HashMap<>();
 		File archivo = new File(Main.FICHERO_ORIGINAL);
 
-		if (!archivo.createNewFile()) {
-			try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(archivo))) {
-				mapaUsuarios = (HashMap<String, Usuario>) reader.readObject();
+		try {
+			if (!archivo.createNewFile()) {
+				try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(archivo))) {
+					mapaUsuarios = (HashMap<String, Usuario>) reader.readObject();
+				}
+				catch (Exception e) {
+					LOGGER.log(Level.SEVERE, e.toString(), e);
+				}
 			}
-			catch (Exception e) {
-				LOGGER.log(CONTEXT, e);
-			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -292,10 +296,10 @@ public class IniciarSesion extends JDialog implements ActionListener {
 	private void reproducirMusica() {
 		try {
 			reproductor = new Reproductor();
-			reproductor.AbrirFichero(SONIDO);
-			reproductor.Reproducir();
+			reproductor.abrirFichero(SONIDO);
+			reproductor.reproducir();
 		} catch (Exception e) {
-			LOGGER.log(CONTEXT, e);
+			LOGGER.log(Level.SEVERE, e.toString(), e);
 		}
 	}
 
@@ -305,19 +309,19 @@ public class IniciarSesion extends JDialog implements ActionListener {
 	 */
 	private void pararMusica() {
 		try {
-			reproductor.Parar();
+			reproductor.parar();
 		} catch (Exception e) {
-			LOGGER.log(CONTEXT, e);
+			LOGGER.log(Level.SEVERE, e.toString(), e);
 		}
 	}
 
 	/**
 	 * @brief Método para comprobar si el usario introducido es correcto
 	 * @param nombre Nombre del usuario
-	 * @param contraseña Contraseña del usuario
+	 * @param contrasena Contraseña del usuario
 	 * @return boolean
 	 */
-	private boolean comprobarUsuario(String nombre, char[] contrasena) {
+	private void comprobarUsuario(String nombre, char[] contrasena) {
 		Iterator<String> iterator = mapaUsuarios.keySet().iterator();
 
 		while (iterator.hasNext() && !usuarioValido) {
@@ -352,7 +356,7 @@ public class IniciarSesion extends JDialog implements ActionListener {
 		try (ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(Main.FICHERO_ORIGINAL))) {
 			writer.writeObject(mapaUsuarios);
 		} catch (Exception e) {
-			LOGGER.log(CONTEXT, e);
+			LOGGER.log(Level.SEVERE, e.toString(), e);
 		}
 	}
 

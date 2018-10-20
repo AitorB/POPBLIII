@@ -29,7 +29,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import dialogos.DialogoOpcionesAlerta;
-import xBee.DispositivoXBee;
+import xbee.DispositivoXBee;
 
 /**
  * @brief Clase PanelDerrape
