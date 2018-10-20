@@ -23,10 +23,10 @@ El usuario que acceda al programa podra:
 	- Introducir los datos de su coche de simulacion.
 	- Crear sus propios circuitos para despues simularnos y ponerlos en practica.
 @par
-Iniciando sesion con el usuario 'Pruebas', se podr�n realizar pruebas adicionales en el coche, solo disponibles en este modo.
+Iniciando sesion con el usuario 'Pruebas', se podran realizar pruebas adicionales en el coche, solo disponibles en este modo.
 
 @par Instalacion y ejecucion
-El proyecto se ha realizado utilizando Eclipse IDE for Java Developers, disponible para su descarga en la siguiente direcci�n: 
+El proyecto se ha realizado utilizando Eclipse IDE for Java Developers, disponible para su descarga en la siguiente direccion: 
 <https://www.eclipse.org/downloads/eclipse-packages/Visual>
 @par
 Proyecto desarrollado en Windows

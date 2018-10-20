@@ -35,6 +35,10 @@ hs_err_pid*
 logListModel/
 target/
 
+# ---- ITs
+.sonar
+.scannerwork
+
 # Created by https://www.gitignore.io/api/eclipse
 
 # Eclipse

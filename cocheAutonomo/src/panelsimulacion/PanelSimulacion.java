@@ -1,38 +1,22 @@
-/** @file PanelSimulacion.java
- *  @brief Clase para crear un panel que permite visualizar la simulación del circuito seleccionado
- *  @authors
- *  Nombre        | Apellido       | Email                                |
- *  ------------- | -------------- | ------------------------------------ |
- *  Iker	      | Mendi          | iker.mendi@alumni.mondragon.edu      |
- *  Julen	      | Uribarren	   | julen.uribarren@alumni.mondragon.edu |
- *  Unai          | Iraeta         | unai.iraeta@alumni.mondragon.edu     |
- *  Aitor         | Barreiro       | aitor.barreirom@alumni.mondragon.edu |
- *  @date 23/01/2017
+/**
+ * @file PanelSimulacion.java
+ * @brief Clase para crear un panel que permite visualizar la simulacion del circuito seleccionado
+ * @authors Nombre        | Apellido       | Email                                |
+ * ------------- | -------------- | ------------------------------------ |
+ * Iker	      | Mendi          | iker.mendi@alumni.mondragon.edu      |
+ * Julen	      | Uribarren	   | julen.uribarren@alumni.mondragon.edu |
+ * Unai          | Iraeta         | unai.iraeta@alumni.mondragon.edu     |
+ * Aitor         | Barreiro       | aitor.barreirom@alumni.mondragon.edu |
+ * @date 23/01/2017
+ * @brief Paquete panelSimulacion
  */
 
 /** @brief Paquete panelSimulacion
  */
 package panelsimulacion;
 
-/** @brief Librerías
+/** @brief Librerias
  */
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 import interfaces.Observable;
 import interfaces.Observer;
@@ -41,225 +25,231 @@ import panelconfiguracion.Coche;
 import recursos.BarraProceso;
 import recursos.Fisica;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+
 /**
  * @brief Clase PanelSimulacion
  */
 public class PanelSimulacion extends JPanel implements ActionListener, Observer {
-	/**
-	 * @brief Número de versión de la clase
-	 */
-	private static final long serialVersionUID = 1L;
+    /**
+     * @brief Numero de version de la clase
+     */
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * @brief Atributos
-	 */
-	private static final String ARIAL = "Arial";
-	private JFrame ventana;
-	private Circuito circuito;
-	private Coche coche;
-	private PanelDibujo panelDibujo;
-	private JButton iniciar;
-	private JButton detener;
-	private JLabel nombreCircuito;
-	private JLabel estado;
-	private BarraProceso barraProceso;
+    /**
+     * @brief Atributos
+     */
+    private static final String ARIAL = "Arial";
+    private JFrame ventana;
+    private Circuito circuito;
+    private Coche coche;
+    private PanelDibujo panelDibujo;
+    private JButton iniciar;
+    private JButton detener;
+    private JLabel nombreCircuito;
+    private JLabel estado;
+    private BarraProceso barraProceso;
 
-	/**
-	 * @brief Constructor
-	 * @param ventana Ventana principal del programa
-	 */
-	public PanelSimulacion(JFrame ventana) {
-		this.setLayout(new BorderLayout(0, 10));
-		this.ventana = ventana;
-		
-		this.add(crearPanelTitulo(), BorderLayout.NORTH);
-		this.add(crearPanelDatos(), BorderLayout.CENTER);
-		this.add(crearPanelBotones(), BorderLayout.SOUTH);
-	}
+    /**
+     * @brief Constructor
+     * @param ventana Ventana principal del programa
+     */
+    public PanelSimulacion(JFrame ventana) {
+        this.setLayout(new BorderLayout(0, 10));
+        this.ventana = ventana;
 
-	/**
-	 * @brief Método del panel título: contiene un título
-	 * @return Component
-	 */
-	private Component crearPanelTitulo() {
-		JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		panel.setBorder(BorderFactory.createEtchedBorder());
+        this.add(crearPanelTitulo(), BorderLayout.NORTH);
+        this.add(crearPanelDatos(), BorderLayout.CENTER);
+        this.add(crearPanelBotones(), BorderLayout.SOUTH);
+    }
 
-		nombreCircuito = new JLabel();
-		nombreCircuito.setFont(new Font(ARIAL, Font.BOLD, 20));
+    /**
+     * @brief Metodo del panel titulo: contiene un titulo
+     * @return Component
+     */
+    private Component crearPanelTitulo() {
+        JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panel.setBorder(BorderFactory.createEtchedBorder());
 
-		panel.add(nombreCircuito);
+        nombreCircuito = new JLabel();
+        nombreCircuito.setFont(new Font(ARIAL, Font.BOLD, 20));
 
-		return panel;
-	}
+        panel.add(nombreCircuito);
 
-	/**
-	 * @brief Método del panel datos: contiene los paneles para mostrar la barra de proceso y el circuito
-	 * @return Component
-	 */
-	private Component crearPanelDatos() {
-		JPanel panel = new JPanel(new BorderLayout(20, 0));
+        return panel;
+    }
 
-		panel.add(crearPanelProceso(), BorderLayout.WEST);
-		panel.add(crearPanelDibujo(), BorderLayout.CENTER);
+    /**
+     * @brief Metodo del panel datos: contiene los paneles para mostrar la barra de proceso y el circuito
+     * @return Component
+     */
+    private Component crearPanelDatos() {
+        JPanel panel = new JPanel(new BorderLayout(20, 0));
 
-		return panel;
-	}
+        panel.add(crearPanelProceso(), BorderLayout.WEST);
+        panel.add(crearPanelDibujo(), BorderLayout.CENTER);
 
-	/**
-	 * @brief Método del panel proceso: contiene la barra de proceso y su estado
-	 * @return Component
-	 */
-	private Component crearPanelProceso() {
-		JPanel panel = new JPanel(new BorderLayout());
-		panel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
-		panel.setPreferredSize(new Dimension(200, 0));
+        return panel;
+    }
 
-		barraProceso = new BarraProceso(205, 460, "VERTICAL", new Color(16, 137, 141), false, false);
-		barraProceso.addObserver(this);
+    /**
+     * @brief Metodo del panel proceso: contiene la barra de proceso y su estado
+     * @return Component
+     */
+    private Component crearPanelProceso() {
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        panel.setPreferredSize(new Dimension(200, 0));
 
-		panel.add(crearPanelEstado(), BorderLayout.NORTH);
-		panel.add(barraProceso, BorderLayout.CENTER);
+        barraProceso = new BarraProceso(205, 460, "VERTICAL", new Color(16, 137, 141), false, false);
+        barraProceso.addObserver(this);
 
-		return panel;
-	}
+        panel.add(crearPanelEstado(), BorderLayout.NORTH);
+        panel.add(barraProceso, BorderLayout.CENTER);
 
-	/**
-	 * @brief Método del panel estado: contiene el estado de la barra de proceso
-	 * @return Component
-	 */
-	private Component crearPanelEstado() {
-		JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		panel.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
+        return panel;
+    }
 
-		estado = new JLabel();
-		estado.setText("0 % COMPLETADO");
-		estado.setFont(new Font(ARIAL, Font.BOLD, 15));
+    /**
+     * @brief Metodo del panel estado: contiene el estado de la barra de proceso
+     * @return Component
+     */
+    private Component crearPanelEstado() {
+        JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panel.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
 
-		panel.add(estado);
+        estado = new JLabel();
+        estado.setText("0 % COMPLETADO");
+        estado.setFont(new Font(ARIAL, Font.BOLD, 15));
 
-		return panel;
-	}
+        panel.add(estado);
 
-	/**
-	 * @brief Método del panel dibujo: contiene la animación de la simulación
-	 * @return Component
-	 */
-	private Component crearPanelDibujo() {
-		JPanel panel = new JPanel(new BorderLayout());
-		panel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        return panel;
+    }
 
-		panelDibujo = new PanelDibujo();
+    /**
+     * @brief Metodo del panel dibujo: contiene la animacion de la simulacion
+     * @return Component
+     */
+    private Component crearPanelDibujo() {
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
-		panel.add(panelDibujo, BorderLayout.CENTER);
+        panelDibujo = new PanelDibujo();
 
-		return panel;
-	}
+        panel.add(panelDibujo, BorderLayout.CENTER);
 
-	/**
-	 * @brief Método del panel botones: contiene los botones iniciar y detener
-	 * @return Component
-	 */
-	private Component crearPanelBotones() {
-		JPanel panel = new JPanel(new GridLayout(1, 2, 10, 0));
-		panel.setPreferredSize(new Dimension(0, 50));
-		
-		iniciar = new JButton("  INICIAR", new ImageIcon("iconos\\iniciar.png"));
-		iniciar.setFont(new Font(ARIAL, Font.BOLD, 20));
-		iniciar.setMnemonic(KeyEvent.VK_I);
-		iniciar.setActionCommand("iniciar");
-		iniciar.addActionListener(this);
+        return panel;
+    }
 
-		detener = new JButton("  DETENER", new ImageIcon("iconos\\detener.png"));
-		detener.setFont(new Font(ARIAL, Font.BOLD, 20));
-		detener.setMnemonic(KeyEvent.VK_D);
-		detener.setActionCommand("detener");
-		detener.addActionListener(this);
-		detener.setEnabled(false);
+    /**
+     * @brief Metodo del panel botones: contiene los botones iniciarBtn y detenerBtn
+     * @return Component
+     */
+    private Component crearPanelBotones() {
+        JPanel panel = new JPanel(new GridLayout(1, 2, 10, 0));
+        panel.setPreferredSize(new Dimension(0, 50));
 
-		panel.add(iniciar);
-		panel.add(detener);
+        iniciar = new JButton("  INICIAR", new ImageIcon("iconos\\iniciarBtn.png"));
+        iniciar.setFont(new Font(ARIAL, Font.BOLD, 20));
+        iniciar.setMnemonic(KeyEvent.VK_I);
+        iniciar.setActionCommand("iniciarBtn");
+        iniciar.addActionListener(this);
 
-		return panel;
-	}
+        detener = new JButton("  DETENER", new ImageIcon("iconos\\detenerBtn.png"));
+        detener.setFont(new Font(ARIAL, Font.BOLD, 20));
+        detener.setMnemonic(KeyEvent.VK_D);
+        detener.setActionCommand("detenerBtn");
+        detener.addActionListener(this);
+        detener.setEnabled(false);
 
-	/**
-	 * @brief Método para iniciar la simulación
-	 * @return void
-	 */
-	public void iniciarSimulacion() {
-		Fisica.calcularDistancia(circuito);
-		Fisica.calcularVelocidadMaxima(circuito);
-		Fisica.calcularVueltasRecta(circuito, coche);
-		Fisica.calcularVueltasCurva(circuito, coche);
-		Fisica.calcularTiempo(circuito);
+        panel.add(iniciar);
+        panel.add(detener);
 
-		panelDibujo.moverCoche(circuito.getTiempoRecorrido());
-		barraProceso.iniciar(circuito.getTiempoRecorrido());
-	}
+        return panel;
+    }
 
-	/**
-	 * @brief Método para crear un diálogo que permite visualizar los datos de la simulación completada
-	 * @return void
-	 */
-	public void mostrarResultado() {
-		new PanelResultado(ventana, circuito);
-		circuito.setSimulacionRealizada(true);
-	}
+    /**
+     * @brief Metodo para iniciar la simulacion
+     * @return void
+     */
+    public void iniciarSimulacion() {
+        Fisica.calcularDistancia(circuito);
+        Fisica.calcularVelocidadMaxima(circuito);
+        Fisica.calcularVueltasRecta(circuito, coche);
+        Fisica.calcularVueltasCurva(circuito, coche);
+        Fisica.calcularTiempo(circuito);
 
-	/**
-	 * @brief Método para tratar las acciones realizadas por el usuario
-	 * @param e Acción realizada por el usuario
-	 * @return void
-	 */
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (e.getActionCommand().equals("iniciar")) {
-			iniciar.setEnabled(false);
-			detener.setEnabled(true);
-			iniciarSimulacion();
-		} else if (e.getActionCommand().equals("detener")) {
-			iniciar.setEnabled(true);
-			detener.setEnabled(false);
-			panelDibujo.pararCronometro();
-			barraProceso.reiniciar();
-		}
-	}
+        panelDibujo.moverCoche(circuito.getTiempoRecorrido());
+        barraProceso.iniciar(circuito.getTiempoRecorrido());
+    }
 
-	/**
-	 * @brief Método que se ejecuta tras detectar un cambio en una clase observable
-	 * @param observable Clase que es observada para saber cuando cambia
-	 * @param objeto Referencia a la clase que ha tenido un cambio
-	 * @return void
-	 */
-	@Override
-	public void update(Observable observable, Object objeto) {
-		estado.setText(String.valueOf(barraProceso.getPorcentaje()) + " %" + " COMPLETADO");
-		if (barraProceso.getPorcentaje() == 100) {
-			iniciar.setEnabled(true);
-			detener.setEnabled(false);
-			barraProceso.detener();
-			mostrarResultado();
-		}
-	}
+    /**
+     * @brief Metodo para crear un dialogo que permite visualizar los datos de la simulacion completada
+     * @return void
+     */
+    public void mostrarResultado() {
+        new PanelResultado(ventana, circuito);
+        circuito.setSimulacionRealizada(true);
+    }
 
-	/**
-	 * @brief Método para determinar el valor de la variable circuito
-	 * @param circuito Circuito seleccionado por el usuario
-	 * @return void
-	 */
-	public void setCircuito(Circuito circuito) {
-		this.circuito = circuito;
-		nombreCircuito.setText("Simulación del circuito: " + circuito.getNombre());
-	}
+    /**
+     * @brief Metodo para tratar las acciones realizadas por el usuario
+     * @param e Accion realizada por el usuario
+     * @return void
+     */
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getActionCommand().equals("iniciarBtn")) {
+            iniciar.setEnabled(false);
+            detener.setEnabled(true);
+            iniciarSimulacion();
+        } else if (e.getActionCommand().equals("detenerBtn")) {
+            iniciar.setEnabled(true);
+            detener.setEnabled(false);
+            panelDibujo.pararCronometro();
+            barraProceso.reiniciar();
+        }
+    }
 
-	/**
-	 * @brief Método para determinar el valor de la variable coche
-	 * @param coche Coche introducido por el usuario
-	 * @return void
-	 */
-	public void setCoche(Coche coche) {
-		this.coche = coche;
-	}
+    /**
+     * @brief Metodo que se ejecuta tras detectar un cambio en una clase observable
+     * @param observable Clase que es observada para saber cuando cambia
+     * @param objeto Referencia a la clase que ha tenido un cambio
+     * @return void
+     */
+    @Override
+    public void update(Observable observable, Object objeto) {
+        estado.setText(String.valueOf(barraProceso.getPorcentaje()) + " %" + " COMPLETADO");
+        if (barraProceso.getPorcentaje() == 100) {
+            iniciar.setEnabled(true);
+            detener.setEnabled(false);
+            barraProceso.detener();
+            mostrarResultado();
+        }
+    }
+
+    /**
+     * @brief Metodo para determinar el valor de la variable circuito
+     * @param circuito Circuito seleccionado por el usuario
+     * @return void
+     */
+    public void setCircuito(Circuito circuito) {
+        this.circuito = circuito;
+        nombreCircuito.setText("Simulacion del circuito: " + circuito.getNombre());
+    }
+
+    /**
+     * @brief Metodo para determinar el valor de la variable coche
+     * @param coche Coche introducido por el usuario
+     * @return void
+     */
+    public void setCoche(Coche coche) {
+        this.coche = coche;
+    }
 
 }
